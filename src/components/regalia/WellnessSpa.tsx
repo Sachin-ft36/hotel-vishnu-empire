@@ -1,7 +1,7 @@
 import { GoldDivider } from "./GoldDivider";
 import spaImg from "@/assets/exp_spa.png";
 import { motion } from "framer-motion";
-import { Link } from "./LinkStub";
+import { Link } from "react-router-dom";
 
 export const WellnessSpa = () => {
   return (

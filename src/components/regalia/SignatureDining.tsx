@@ -1,7 +1,7 @@
 import { GoldDivider } from "./GoldDivider";
 import diningImg from "@/assets/home_dining.png";
 import { motion } from "framer-motion";
-import { Link } from "./LinkStub";
+import { Link } from "react-router-dom";
 
 export const SignatureDining = () => {
   return (

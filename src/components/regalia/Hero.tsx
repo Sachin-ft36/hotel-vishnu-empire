@@ -1,11 +1,11 @@
 import { GoldDivider } from "./GoldDivider";
 import hotelVideo from "@/assets/hotel.mp4";
-import { Link } from "./LinkStub";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const Hero = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-ink">
+    <section className="relative h-[110vh] w-full overflow-hidden bg-ink">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
@@ -24,27 +24,33 @@ export const Hero = () => {
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
 
-      {/* Hero Content - Centered Layout */}
-      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-center items-center text-center">
-        <div className="max-w-4xl flex flex-col items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="flex flex-col items-center"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <GoldDivider width="40px" />
-              <span className="eyebrow">A New Standard of Royalty</span>
-              <GoldDivider width="40px" />
-            </div>
+      {/* Hero Content - Responsive Layout with Precise Alignment */}
+      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          
+          {/* HEADING & EYEBROW - Left on Desktop, Shifted Up */}
+          <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left lg:translate-y-4">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex flex-col items-center lg:items-start"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <GoldDivider width="40px" />
+                <span className="eyebrow">A New Standard of Royalty</span>
+              </div>
 
-            <h1 className="font-serif-display text-soft font-light leading-[1.1] tracking-[0.05em] text-[clamp(2.75rem,6.40vw,5rem)] uppercase mb-8">
-              Exclusively <br />
-              <span className="text-gold italic normal-case tracking-normal">for You</span>
-            </h1>
+              <h1 className="font-serif-display text-soft font-light leading-[1.1] tracking-[0.05em] text-[clamp(2.75rem,6.40vw,5.5rem)] uppercase">
+                Exclusively <br />
+                <span className="text-gold italic normal-case tracking-normal">for You</span>
+              </h1>
+            </motion.div>
+          </div>
 
-            <p className="text-soft-dim/80 text-base md:text-lg leading-relaxed font-light tracking-wide max-w-2xl mb-12">
+          {/* DESCRIPTION & BUTTONS - Right on Desktop, Aligned with Heading */}
+          <div className="order-2 flex flex-col items-center text-center lg:pt-16">
+            <p className="text-soft-dim/80 text-sm md:text-base leading-relaxed font-light tracking-wide max-w-md mb-12">
               Experience the storied legacy of Baghelkhand, where the majesty 
               of white tigers meets the pinnacle of royal hospitality. 
               A sanctuary crafted for the discerning few in Rewa, Madhya Pradesh.
@@ -60,7 +66,8 @@ export const Hero = () => {
                 <span>Explore More</span>
               </button>
             </div>
-          </motion.div>
+          </div>
+
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import { Link, NavLink } from "./LinkStub";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Search, MapPin } from "lucide-react";
 
@@ -42,15 +42,15 @@ export const Navbar = () => {
         <div className="w-full max-w-[1700px] mx-auto flex items-center justify-between gap-4 px-6 lg:px-8 xl:px-10">
           {/* Logo */}
           <Link to="/" className="group flex items-center gap-2 shrink-0">
-            <span 
+            <span
               className="font-serif-display text-white text-base md:text-lg tracking-[0.12em] font-light transition-all duration-500 group-hover:text-gold"
-              style={{ 
+              style={{
                 textShadow: `
                   0 0 2px rgba(255, 255, 255, 0.8),
                   0 -8px 25px rgba(255, 215, 0, 0.9),
                   0 -4px 12px rgba(255, 215, 0, 0.7),
                   0 -2px 5px rgba(255, 215, 0, 0.5)
-                ` 
+                `
               }}
             >
               THE VIJAY VILLAS
@@ -75,7 +75,7 @@ export const Navbar = () => {
 
           {/* Right */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
-            <button 
+            <button
               onClick={() => { setSearchQuery(""); setSearchOpen(true); }}
               className="text-soft/40 hover:text-gold transition-colors p-1"
             >
@@ -84,7 +84,7 @@ export const Navbar = () => {
             <Link to="/hotels" className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]">
               Find a Hotel
             </Link>
-            <button 
+            <button
               onClick={() => setLoginOpen(true)}
               className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]"
             >
@@ -114,19 +114,19 @@ export const Navbar = () => {
           }`}
       >
         <div className="absolute inset-0 bg-ink-deep/98 backdrop-blur-2xl" onClick={() => setSearchOpen(false)} />
-        <button 
+        <button
           onClick={(e) => { e.stopPropagation(); setSearchOpen(false); }}
           className="absolute top-8 right-8 z-[110] text-gold p-4 hover:rotate-90 transition-transform duration-500 cursor-pointer"
         >
           <X size={32} strokeWidth={1} />
         </button>
-        
+
         <div className="relative h-full flex flex-col items-center justify-center px-6">
           <div className="w-full max-w-2xl">
             <span className="eyebrow text-gold/40 mb-4 block text-center">Search The Vijay Villas</span>
-            <input 
+            <input
               autoFocus={searchOpen}
-              type="text" 
+              type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => {
@@ -155,18 +155,18 @@ export const Navbar = () => {
       >
         <div className="absolute inset-0 bg-ink-deep/95 backdrop-blur-xl" onClick={() => setLoginOpen(false)} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-10 bg-panel border border-gold/20 shadow-2xl">
-          <button 
+          <button
             onClick={() => setLoginOpen(false)}
             className="absolute top-4 right-4 text-soft/40 hover:text-gold transition-colors"
           >
             <X size={20} strokeWidth={1} />
           </button>
-          
+
           <div className="text-center mb-10">
             <span className="eyebrow text-gold mb-2 block">Royal Circle</span>
             <h2 className="font-serif-display text-3xl text-soft uppercase tracking-widest">Sign In</h2>
           </div>
-          
+
           <div className="space-y-6">
             <div className="space-y-1">
               <label className="small-caps text-[0.6rem] text-soft/60 tracking-widest">Email Address</label>
@@ -188,15 +188,32 @@ export const Navbar = () => {
 
       {/* Mobile drawer & More dropdown */}
       <div
-        className={`fixed inset-0 z-40 transition-opacity duration-700 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-40 transition-opacity duration-150 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
-        style={{ transitionTimingFunction: "var(--ease-luxe)" }}
+        style={{ willChange: "opacity, backdrop-filter" }}
       >
-        <div className="absolute inset-0 bg-ink-deep/97 backdrop-blur-xl" onClick={() => setOpen(false)} />
+        <div 
+          className="absolute inset-0 bg-ink-deep/95" 
+          style={{ 
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)'
+          }}
+          onClick={() => setOpen(false)} 
+        />
+        
+        {/* Radial Glow Effect */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.25), transparent 60%)',
+            filter: 'blur(60px)',
+            zIndex: 0
+          }}
+        />
+
         <div
-          className={`relative h-full flex flex-col items-center justify-center gap-8 transition-transform duration-700 ${open ? "translate-y-0" : "translate-y-6"
+          className={`relative h-full flex flex-col items-center justify-center gap-8 transition-all duration-300 z-10 ${open ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
-          style={{ transitionTimingFunction: "var(--ease-luxe)" }}
         >
           <span className="gold-line-solid w-12 h-px" />
           {NAV.map((item) => (
@@ -209,10 +226,10 @@ export const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          
+
           {/* Extra links in drawer */}
           <Link to="/hotels" onClick={() => setOpen(false)} className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors mt-4">Find a Hotel</Link>
-          <button 
+          <button
             onClick={() => { setOpen(false); setLoginOpen(true); }}
             className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors"
           >

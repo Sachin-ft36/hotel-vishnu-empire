@@ -1,7 +1,7 @@
 import { GoldDivider } from "./GoldDivider";
 import heritageImg from "@/assets/home_heritage.png";
 import { motion } from "framer-motion";
-import { Link } from "./LinkStub";
+import { Link } from "react-router-dom";
 
 export const HeritageStories = () => {
   return (

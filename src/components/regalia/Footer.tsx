@@ -1,4 +1,4 @@
-import { Link } from "./LinkStub";
+import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
 

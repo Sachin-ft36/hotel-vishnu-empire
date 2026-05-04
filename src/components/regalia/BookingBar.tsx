@@ -1,7 +1,7 @@
 import { Calendar, Users, MapPin, ChevronDown } from "lucide-react";
-import { Link } from "./LinkStub";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CustomCalendar } from "./CustomCalendar";
 
 export const BookingBar = () => {
@@ -15,6 +15,27 @@ export const BookingBar = () => {
   };
 
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 5) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current - 5) {
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const BookingInputs = () => (
     <div className="flex flex-col lg:flex-row flex-1 items-stretch lg:items-center gap-6 lg:gap-12 w-full lg:w-auto">
@@ -112,14 +133,18 @@ export const BookingBar = () => {
   return (
     <>
       {/* Mobile Sticky Button */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-4 bg-ink-deep/80 backdrop-blur-md border-t border-gold/10">
+      <motion.div 
+        animate={{ y: isVisible ? 0 : 150 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-4 bg-ink-deep/80 backdrop-blur-md border-t border-gold/10"
+      >
         <button
           onClick={() => setIsMobileOpen(true)}
           className="btn-gold w-full py-4 text-xs tracking-[0.2em]"
         >
           <span>CHECK AVAILABILITY</span>
         </button>
-      </div>
+      </motion.div>
 
       {/* Mobile Drawer */}
       <AnimatePresence>
@@ -153,9 +178,8 @@ export const BookingBar = () => {
 
       {/* Desktop Bar */}
       <motion.div
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
+        animate={{ y: isVisible ? 0 : 150 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="fixed bottom-0 left-0 right-0 z-40 bg-ink-deep/95 backdrop-blur-2xl border-t border-gold/20 py-4 px-6 hidden lg:block"
       >
         <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-8">
@@ -171,4 +195,3 @@ export const BookingBar = () => {
     </>
   );
 };
-
