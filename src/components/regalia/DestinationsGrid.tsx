@@ -18,7 +18,7 @@ const DESTS = [
 
 export const DestinationsGrid = () => {
   return (
-    <section className="relative bg-ink-deep py-24 md:py-32">
+    <section className="relative bg-ink-deep pb-24 md:pb-32 pt-0">
       <div className="container mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="flex flex-col items-center text-center mb-16">

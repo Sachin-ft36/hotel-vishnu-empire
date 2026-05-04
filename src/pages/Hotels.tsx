@@ -54,22 +54,22 @@ const Hotels = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={hotelAmber} 
-            alt="The Vijay Villas Rewa" 
+          <img
+            src={hotelAmber}
+            alt="The Vijay Villas Rewa"
             className="w-full h-full object-cover scale-105 slow-zoom opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/20 to-ink" />
         </div>
-        
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-24">
-          <motion.div 
+
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-14">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="eyebrow mb-6 block text-gold tracking-widest">The Rewa Collection</span>
-            <h1 className="font-serif-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase tracking-wider mb-4">
+            <h1 className="font-serif-display text-[clamp(1.8rem,4.5vw,3rem)] leading-none uppercase tracking-wider mb-4">
               Our <br />
               <span className="text-gold italic normal-case tracking-normal">Residences</span>
             </h1>
@@ -79,7 +79,7 @@ const Hotels = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-24 px-6 container mx-auto text-center">
+      <section className="pb-24 pt-0 px-6 container mx-auto text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-xl md:text-2xl font-light leading-relaxed text-soft-dim italic">
             "Exploring the deep heritage of Rewa, through a collection of stays that define Baghelkhandi luxury."
@@ -94,7 +94,7 @@ const Hotels = () => {
       <section className="pb-32 px-6 container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           {hotelsData.map((hotel, index) => (
-            <motion.div 
+            <motion.div
               key={hotel.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -103,13 +103,13 @@ const Hotels = () => {
               className="group cursor-pointer"
             >
               <div className="relative aspect-[4/5] overflow-hidden mb-8">
-                <img 
-                  src={hotel.image} 
+                <img
+                  src={hotel.image}
                   alt={hotel.name}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-ink/20 group-hover:bg-ink/0 transition-colors duration-500" />
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-6 left-6">
                   <span className="bg-ink/60 backdrop-blur-md border border-gold/30 text-gold px-4 py-1 small-caps text-[0.6rem]">
@@ -130,11 +130,11 @@ const Hotels = () => {
                   <span className="small-caps text-[0.5rem] text-soft/40">Per Night</span>
                 </div>
               </div>
-              
+
               <p className="mt-6 text-soft-dim/70 font-light leading-relaxed max-w-sm">
                 {hotel.description}
               </p>
-              
+
               <button className="mt-8 link-underline text-gold text-xs small-caps">
                 Explore Property
               </button>

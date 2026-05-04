@@ -27,7 +27,7 @@ const OFFERS = [
 
 export const LatestOffers = () => {
   return (
-    <section className="relative bg-ink py-24 md:py-40">
+    <section className="relative bg-ink pb-24 md:pb-40 pt-0">
       <div className="container mx-auto px-6 lg:px-10">
         <div className="flex flex-col items-center text-center mb-20 md:mb-28 reveal is-visible">
           <span className="eyebrow mb-6 block">Privileges</span>

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { GoldDivider } from "./GoldDivider";
 
 const ITEMS = [
@@ -12,7 +13,7 @@ const ITEMS = [
   {
     img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
     eyebrow: "Curated",
-    title: "Taj Holidays",
+    title: "The Vijay Villas Holidays",
     desc: "Editorial itineraries through India's most storied destinations and beyond.",
   },
   {
@@ -40,7 +41,7 @@ export const FeaturedCarousel = () => {
   };
 
   return (
-    <section className="relative bg-ink py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-ink pb-24 md:pb-32 pt-0 overflow-hidden">
       <div className="container mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 reveal is-visible">
           <div>
@@ -110,11 +111,13 @@ export const FeaturedCarousel = () => {
                   {item.desc}
                 </p>
                 
-                <button className="flex items-center gap-3 text-gold-deep font-medium tracking-widest uppercase text-xs group/btn">
-                  Explore More 
-                  <span className="w-10 h-[1px] bg-gold-deep group-hover/btn:w-16 transition-all duration-500" />
-                  <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform duration-500" />
-                </button>
+                <Link to="/experiences">
+                  <button className="flex items-center gap-3 text-gold-deep font-medium tracking-widest uppercase text-xs group/btn">
+                    Explore More 
+                    <span className="w-10 h-[1px] bg-gold-deep group-hover/btn:w-16 transition-all duration-500" />
+                    <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform duration-500" />
+                  </button>
+                </Link>
               </div>
             </div>
           </article>

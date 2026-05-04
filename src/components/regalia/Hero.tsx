@@ -1,4 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
+import phoneVideo from "@/assets/phonehome.mp4";
 import hotelVideo from "@/assets/hotel.mp4";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -8,15 +9,30 @@ export const Hero = () => {
     <section className="relative h-[110vh] w-full overflow-hidden bg-ink">
       {/* Background Video */}
       <div className="absolute inset-0">
+        {/* Desktop Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="h-full w-full object-cover scale-105 slow-zoom"
+          className="hidden md:block h-full w-full object-cover scale-105 slow-zoom"
         >
           <source
             src={hotelVideo}
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Mobile Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="md:hidden h-full w-full object-cover scale-105 slow-zoom"
+        >
+          <source
+            src={phoneVideo}
             type="video/mp4"
           />
         </video>
@@ -62,9 +78,11 @@ export const Hero = () => {
                   <span>Book a Stay</span>
                 </button>
               </Link>
-              <button className="btn-ghost-gold">
-                <span>Explore More</span>
-              </button>
+              <Link to="/gallery">
+                <button className="btn-ghost-gold">
+                  <span>Explore More</span>
+                </button>
+              </Link>
             </div>
           </div>
 

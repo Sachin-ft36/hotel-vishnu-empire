@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const WellnessSpa = () => {
   return (
-    <section className="py-32 px-6 bg-ink relative">
+    <section className="pb-32 pt-0 px-6 bg-ink relative">
       <div className="container mx-auto text-center max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -14,7 +14,7 @@ export const WellnessSpa = () => {
           transition={{ duration: 1 }}
         >
           <span className="eyebrow text-gold mb-6 block">Sanctuary of Peace</span>
-          <h2 className="font-serif-display text-4xl lg:text-7xl text-soft mb-12">
+          <h2 className="font-serif-display text-3xl lg:text-5xl text-soft mb-12">
             Wellness & <span className="text-gold italic normal-case">Sacred</span> Rituals
           </h2>
           

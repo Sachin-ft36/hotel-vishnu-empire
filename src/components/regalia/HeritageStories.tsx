@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const HeritageStories = () => {
   return (
-    <section className="py-32 px-6 bg-panel/10 relative overflow-hidden">
+    <section className="pb-32 pt-0 px-6 bg-panel/10 relative overflow-hidden">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gold/5 -skew-x-12 translate-x-1/2" />
       
@@ -42,7 +42,7 @@ export const HeritageStories = () => {
             <span className="eyebrow text-gold">The Soul of The Vijay Villas</span>
           </div>
           
-          <h2 className="font-serif-display text-4xl lg:text-6xl text-soft mb-10 leading-tight">
+          <h2 className="font-serif-display text-3xl lg:text-4xl text-soft mb-10 leading-tight">
             Storied <br />
             <span className="text-gold italic normal-case">Heritage</span> & Legends
           </h2>

@@ -41,27 +41,27 @@ const Experiences = () => {
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={expSpa} 
-            alt="Curated Experiences" 
+          <img
+            src={expSpa}
+            alt="Curated Experiences"
             className="w-full h-full object-cover scale-105 slow-zoom opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink via-transparent to-ink" />
         </div>
-        
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-24">
-          <motion.div 
+
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-14">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="eyebrow mb-6 block text-gold">Bespoke</span>
-            <h1 className="font-serif-display text-[clamp(2.8rem,7vw,5rem)] leading-none uppercase tracking-wider mb-6">
+            <h1 className="font-serif-display text-[clamp(2rem,5vw,3.5rem)] leading-none uppercase tracking-wider mb-6">
               Curated <br />
               <span className="text-gold italic normal-case tracking-normal">Experiences</span>
             </h1>
             <p className="text-soft-dim max-w-xl mx-auto text-lg md:text-xl font-light leading-relaxed">
-              Private journeys, cellar evenings, and ancient rituals — 
+              Private journeys, cellar evenings, and ancient rituals —
               composed with quiet intention for the discerning few.
             </p>
           </motion.div>
@@ -69,17 +69,16 @@ const Experiences = () => {
       </section>
 
       {/* Experiences List */}
-      <section className="py-32 px-6">
+      <section className="pb-32 pt-5 px-6">
         <div className="container mx-auto">
           {experiences.map((exp, index) => (
-            <div 
-              key={exp.id} 
-              className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-32 lg:mb-48 ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+            <div
+              key={exp.id}
+              className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-32 lg:mb-48 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
+                }`}
             >
               {/* Image Side */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -87,13 +86,13 @@ const Experiences = () => {
                 className="w-full lg:w-3/5"
               >
                 <div className="relative aspect-[16/10] overflow-hidden group">
-                  <img 
-                    src={exp.image} 
+                  <img
+                    src={exp.image}
                     alt={exp.title}
                     className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-ink/10 group-hover:bg-ink/0 transition-colors duration-700" />
-                  
+
                   {/* Subtle tag */}
                   <div className="absolute bottom-8 right-8">
                     <span className="text-[0.6rem] eyebrow text-soft/40 tracking-[0.4em]">
@@ -104,7 +103,7 @@ const Experiences = () => {
               </motion.div>
 
               {/* Content Side */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -115,15 +114,15 @@ const Experiences = () => {
                   <GoldDivider width="40px" />
                   <span className="small-caps text-gold text-[0.7rem]">{exp.subtitle}</span>
                 </div>
-                
+
                 <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-soft mb-8 leading-[1.1]">
                   {exp.title}
                 </h2>
-                
+
                 <p className="text-soft-dim/80 text-lg leading-relaxed font-light mb-10">
                   {exp.description}
                 </p>
-                
+
                 <button className="btn-ghost-gold">
                   <span>Inquire Details</span>
                 </button>

@@ -12,10 +12,14 @@ import { SignatureDining } from "@/components/regalia/SignatureDining";
 import { HeritageStories } from "@/components/regalia/HeritageStories";
 import { WellnessSpa } from "@/components/regalia/WellnessSpa";
 import { BookingBar } from "@/components/regalia/BookingBar";
+import { LuxuryGallery } from "@/components/regalia/LuxuryGallery";
+import { UpcomingEvents } from "@/components/regalia/UpcomingEvents";
+import { AnnouncementBar } from "@/components/regalia/AnnouncementBar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-ink text-soft">
+      <AnnouncementBar />
       <CustomCursor />
       <Navbar />
       <main className="pb-24 lg:pb-0">
@@ -26,6 +30,8 @@ const Index = () => {
         <SignatureDining />
         <DestinationsGrid />
         <HeritageStories />
+        <LuxuryGallery />
+        <UpcomingEvents />
         <WellnessSpa />
         <MembershipTeaser />
       </main>

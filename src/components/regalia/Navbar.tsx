@@ -4,6 +4,7 @@ import { Menu, X, Search, MapPin } from "lucide-react";
 
 const NAV = [
   { label: "Home", to: "/" },
+  { label: "Gallery", to: "/gallery" },
   { label: "Destinations", to: "/destinations" },
   { label: "Hotels", to: "/hotels" },
   { label: "Experiences", to: "/experiences" },
@@ -30,12 +31,28 @@ export const Navbar = () => {
     return () => { document.body.style.overflow = ""; };
   }, [open, searchOpen, loginOpen]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (to.startsWith("/#")) {
+      e.preventDefault();
+      const id = to.split("#")[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setOpen(false);
+      } else if (window.location.pathname !== "/") {
+        window.location.href = to;
+      }
+    } else {
+      setOpen(false);
+    }
+  };
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled
-          ? "bg-ink/85 backdrop-blur-md border-b border-gold/20 py-3"
-          : "bg-transparent py-5"
+        className={`fixed left-0 right-0 z-50 transition-all duration-700 ${scrolled
+          ? "bg-ink/85 backdrop-blur-md border-b border-gold/20 py-3 top-0"
+          : "bg-transparent py-5 top-[36px]"
           }`}
         style={{ transitionTimingFunction: "var(--ease-luxe)" }}
       >
@@ -63,8 +80,9 @@ export const Navbar = () => {
               <NavLink
                 key={item.to}
                 to={item.to}
+                onClick={(e) => handleNavClick(e, item.to)}
                 className={({ isActive }) =>
-                  `link-underline small-caps text-soft/85 hover:text-gold transition-colors duration-500 whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] ${isActive ? "text-gold" : ""
+                  `link-underline small-caps text-soft/85 hover:text-gold transition-colors duration-500 whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] ${isActive && !item.to.includes("#") ? "text-gold" : ""
                   }`
                 }
               >
@@ -75,15 +93,6 @@ export const Navbar = () => {
 
           {/* Right */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
-            <button
-              onClick={() => { setSearchQuery(""); setSearchOpen(true); }}
-              className="text-soft/40 hover:text-gold transition-colors p-1"
-            >
-              <Search size={13} strokeWidth={2} />
-            </button>
-            <Link to="/hotels" className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]">
-              Find a Hotel
-            </Link>
             <button
               onClick={() => setLoginOpen(true)}
               className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]"
@@ -192,17 +201,17 @@ export const Navbar = () => {
           }`}
         style={{ willChange: "opacity, backdrop-filter" }}
       >
-        <div 
-          className="absolute inset-0 bg-ink-deep/95" 
-          style={{ 
+        <div
+          className="absolute inset-0 bg-ink-deep/95"
+          style={{
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)'
           }}
-          onClick={() => setOpen(false)} 
+          onClick={() => setOpen(false)}
         />
-        
+
         {/* Radial Glow Effect */}
-        <div 
+        <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background: 'radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.25), transparent 60%)',
@@ -220,15 +229,13 @@ export const Navbar = () => {
             <Link
               key={item.to}
               to={item.to}
-              onClick={() => setOpen(false)}
+              onClick={(e) => handleNavClick(e, item.to)}
               className="font-serif-display text-soft text-3xl tracking-[0.15em] hover:text-gold transition-colors"
             >
               {item.label}
             </Link>
           ))}
 
-          {/* Extra links in drawer */}
-          <Link to="/hotels" onClick={() => setOpen(false)} className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors mt-4">Find a Hotel</Link>
           <button
             onClick={() => { setOpen(false); setLoginOpen(true); }}
             className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors"

@@ -54,27 +54,27 @@ const Memberships = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
-          <img 
-            src={seal} 
-            alt="Membership Seal" 
+          <img
+            src={seal}
+            alt="Membership Seal"
             className="w-full h-full object-cover scale-105 opacity-40 blur-sm"
           />
           <div className="absolute inset-0 bg-ink/80" />
         </div>
-        
+
         <div className="relative z-10 text-center px-6 pt-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="eyebrow mb-6 block text-gold tracking-[0.5em]">The Inner Circle</span>
-            <h1 className="font-serif-display text-[clamp(2.8rem,7vw,5rem)] leading-none uppercase tracking-wider mb-8">
+            <h1 className="font-serif-display text-[clamp(2rem,5vw,3.5rem)] leading-none uppercase tracking-wider mb-8">
               THE VIJAY VILLAS <br />
               <span className="text-gold italic normal-case tracking-normal">Privileges</span>
             </h1>
             <p className="text-soft-dim max-w-xl mx-auto text-lg font-light leading-relaxed">
-              A membership of restraint. Recognition that travels with you, 
+              A membership of restraint. Recognition that travels with you,
               across the collection and beyond.
             </p>
           </motion.div>
@@ -82,10 +82,10 @@ const Memberships = () => {
       </section>
 
       {/* Tiers Section */}
-      <section className="py-24 px-6 container mx-auto">
+      <section className="pb-32 pt-24 px-6 container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {tiers.map((tier, index) => (
-            <motion.div 
+            <motion.div
               key={tier.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ const Memberships = () => {
               <p className="text-soft-dim/70 text-sm font-light mb-10 h-12">
                 {tier.description}
               </p>
-              
+
               <div className="space-y-6 mb-12 flex-grow">
                 {tier.features.map((feature) => (
                   <div key={feature} className="flex gap-4 items-start">
@@ -108,12 +108,11 @@ const Memberships = () => {
                   </div>
                 ))}
               </div>
-              
-              <button className={`w-full py-4 small-caps text-[0.7rem] transition-all duration-500 tracking-[0.2em] ${
-                index === 1 
-                ? 'bg-gold text-ink hover:bg-gold-bright' 
+
+              <button className={`w-full py-4 small-caps text-[0.7rem] transition-all duration-500 tracking-[0.2em] ${index === 1
+                ? 'bg-gold text-ink hover:bg-gold-bright'
                 : 'border border-gold/30 text-gold hover:bg-gold/10'
-              }`}>
+                }`}>
                 {tier.cta}
               </button>
             </motion.div>
@@ -135,13 +134,13 @@ const Memberships = () => {
               Local Grace.
             </h2>
             <p className="text-soft-dim/80 text-lg font-light leading-relaxed mb-10">
-              Whether you are in the heart of London or the desert sands of Jodhpur, 
-              your status as a member ensures a level of service that is 
+              Whether you are in the heart of London or the desert sands of Jodhpur,
+              your status as a member ensures a level of service that is
               felt, not just seen.
             </p>
             <GoldDivider width="80px" />
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
