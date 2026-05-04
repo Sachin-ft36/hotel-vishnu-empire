@@ -70,7 +70,7 @@ const Memberships = () => {
           >
             <span className="eyebrow mb-6 block text-gold tracking-[0.5em]">The Inner Circle</span>
             <h1 className="font-serif-display text-[clamp(2.8rem,7vw,5rem)] leading-none uppercase tracking-wider mb-8">
-              REGALIA <br />
+              THE VIJAY VILLAS <br />
               <span className="text-gold italic normal-case tracking-normal">Privileges</span>
             </h1>
             <p className="text-soft-dim max-w-xl mx-auto text-lg font-light leading-relaxed">
@@ -136,7 +136,7 @@ const Memberships = () => {
             </h2>
             <p className="text-soft-dim/80 text-lg font-light leading-relaxed mb-10">
               Whether you are in the heart of London or the desert sands of Jodhpur, 
-              your status as a Regalia member ensures a level of service that is 
+              your status as a member ensures a level of service that is 
               felt, not just seen.
             </p>
             <GoldDivider width="80px" />

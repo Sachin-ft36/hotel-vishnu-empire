@@ -39,7 +39,7 @@ export const HeritageStories = () => {
         >
           <div className="flex items-center gap-4 mb-8">
             <GoldDivider width="40px" />
-            <span className="eyebrow text-gold">The Soul of Regalia</span>
+            <span className="eyebrow text-gold">The Soul of The Vijay Villas</span>
           </div>
           
           <h2 className="font-serif-display text-4xl lg:text-6xl text-soft mb-10 leading-tight">

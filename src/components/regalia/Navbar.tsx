@@ -58,13 +58,13 @@ export const Navbar = () => {
           </Link>
 
           {/* Center nav */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `link-underline small-caps text-soft/85 hover:text-gold transition-colors duration-500 whitespace-nowrap text-[9px] xl:text-[10px] 2xl:text-[11px] ${isActive ? "text-gold" : ""
+                  `link-underline small-caps text-soft/85 hover:text-gold transition-colors duration-500 whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] ${isActive ? "text-gold" : ""
                   }`
                 }
               >
@@ -74,24 +74,24 @@ export const Navbar = () => {
           </nav>
 
           {/* Right */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
             <button 
               onClick={() => { setSearchQuery(""); setSearchOpen(true); }}
               className="text-soft/40 hover:text-gold transition-colors p-1"
             >
-              <Search size={14} strokeWidth={2} />
+              <Search size={13} strokeWidth={2} />
             </button>
-            <Link to="/hotels" className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] tracking-[0.15em]">
+            <Link to="/hotels" className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]">
               Find a Hotel
             </Link>
             <button 
               onClick={() => setLoginOpen(true)}
-              className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] tracking-[0.15em]"
+              className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]"
             >
               Login / Join
             </button>
             <Link to="/book">
-              <button className="btn-gold whitespace-nowrap scale-90 xl:scale-100 origin-right">
+              <button className="btn-gold whitespace-nowrap scale-[0.85] xl:scale-95 origin-right px-6">
                 <span>Book a Stay</span>
               </button>
             </Link>
