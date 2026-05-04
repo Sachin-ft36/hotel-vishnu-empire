@@ -1,8 +1,9 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "./LinkStub";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search, MapPin } from "lucide-react";
 
 const NAV = [
+  { label: "Home", to: "/" },
   { label: "Destinations", to: "/destinations" },
   { label: "Hotels", to: "/hotels" },
   { label: "Experiences", to: "/experiences" },
@@ -13,6 +14,9 @@ const NAV = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -22,54 +26,75 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    document.body.style.overflow = (open || searchOpen || loginOpen) ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [open]);
+  }, [open, searchOpen, loginOpen]);
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          scrolled
-            ? "bg-ink/85 backdrop-blur-md border-b border-gold/20 py-3"
-            : "bg-transparent py-5"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled
+          ? "bg-ink/85 backdrop-blur-md border-b border-gold/20 py-3"
+          : "bg-transparent py-5"
+          }`}
         style={{ transitionTimingFunction: "var(--ease-luxe)" }}
       >
-        <div className="container mx-auto flex items-center justify-between px-6 lg:px-10">
+        <div className="w-full max-w-[1700px] mx-auto flex items-center justify-between gap-4 px-6 lg:px-8 xl:px-10">
           {/* Logo */}
-          <Link to="/" className="group flex items-center gap-2">
-            <span className="font-serif-display text-gold text-2xl md:text-3xl tracking-[0.25em] font-light">
-              REGALIA
+          <Link to="/" className="group flex items-center gap-2 shrink-0">
+            <span 
+              className="font-serif-display text-white text-base md:text-lg tracking-[0.12em] font-light transition-all duration-500 group-hover:text-gold"
+              style={{ 
+                textShadow: `
+                  0 0 2px rgba(255, 255, 255, 0.8),
+                  0 -8px 25px rgba(255, 215, 0, 0.9),
+                  0 -4px 12px rgba(255, 215, 0, 0.7),
+                  0 -2px 5px rgba(255, 215, 0, 0.5)
+                ` 
+              }}
+            >
+              THE VIJAY VILLAS
             </span>
           </Link>
 
           {/* Center nav */}
-          <nav className="hidden lg:flex items-center gap-9">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `link-underline small-caps text-soft/85 hover:text-gold transition-colors duration-500 ${
-                    isActive ? "text-gold" : ""
+                  `link-underline small-caps text-soft/85 hover:text-gold transition-colors duration-500 whitespace-nowrap text-[9px] xl:text-[10px] 2xl:text-[11px] ${isActive ? "text-gold" : ""
                   }`
                 }
               >
                 {item.label}
               </NavLink>
             ))}
-            <span className="small-caps text-soft/60 cursor-default select-none">More</span>
           </nav>
 
           {/* Right */}
-          <div className="hidden lg:flex items-center gap-7">
-            <button className="link-underline small-caps text-soft/85 hover:text-gold transition-colors">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
+            <button 
+              onClick={() => { setSearchQuery(""); setSearchOpen(true); }}
+              className="text-soft/40 hover:text-gold transition-colors p-1"
+            >
+              <Search size={14} strokeWidth={2} />
+            </button>
+            <Link to="/hotels" className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] tracking-[0.15em]">
+              Find a Hotel
+            </Link>
+            <button 
+              onClick={() => setLoginOpen(true)}
+              className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] 2xl:text-[10px] tracking-[0.15em]"
+            >
               Login / Join
             </button>
-            <button className="btn-gold">
-              <span>Book a Stay</span>
-            </button>
+            <Link to="/book">
+              <button className="btn-gold whitespace-nowrap scale-90 xl:scale-100 origin-right">
+                <span>Book a Stay</span>
+              </button>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -83,18 +108,94 @@ export const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile drawer */}
+      {/* Search Overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-700 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-[100] transition-all duration-700 ${searchOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+      >
+        <div className="absolute inset-0 bg-ink-deep/98 backdrop-blur-2xl" onClick={() => setSearchOpen(false)} />
+        <button 
+          onClick={(e) => { e.stopPropagation(); setSearchOpen(false); }}
+          className="absolute top-8 right-8 z-[110] text-gold p-4 hover:rotate-90 transition-transform duration-500 cursor-pointer"
+        >
+          <X size={32} strokeWidth={1} />
+        </button>
+        
+        <div className="relative h-full flex flex-col items-center justify-center px-6">
+          <div className="w-full max-w-2xl">
+            <span className="eyebrow text-gold/40 mb-4 block text-center">Search The Vijay Villas</span>
+            <input 
+              autoFocus={searchOpen}
+              type="text" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setSearchOpen(false);
+                  window.location.href = "/hotels";
+                }
+              }}
+              placeholder="Where to next?"
+              className="w-full bg-transparent border-b border-gold/20 py-6 text-3xl md:text-5xl font-serif-display text-soft outline-none focus:border-gold transition-colors text-center placeholder:text-soft/10"
+            />
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+              <span className="small-caps text-[0.6rem] text-soft/30">Suggestions:</span>
+              <button onClick={() => setSearchQuery("Jaipur")} className="text-gold/60 hover:text-gold text-[0.6rem] small-caps transition-colors">Jaipur</button>
+              <button onClick={() => setSearchQuery("Wellness")} className="text-gold/60 hover:text-gold text-[0.6rem] small-caps transition-colors">Wellness</button>
+              <button onClick={() => setSearchQuery("Memberships")} className="text-gold/60 hover:text-gold text-[0.6rem] small-caps transition-colors">Memberships</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Login Modal */}
+      <div
+        className={`fixed inset-0 z-[100] transition-all duration-700 ${loginOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+      >
+        <div className="absolute inset-0 bg-ink-deep/95 backdrop-blur-xl" onClick={() => setLoginOpen(false)} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-10 bg-panel border border-gold/20 shadow-2xl">
+          <button 
+            onClick={() => setLoginOpen(false)}
+            className="absolute top-4 right-4 text-soft/40 hover:text-gold transition-colors"
+          >
+            <X size={20} strokeWidth={1} />
+          </button>
+          
+          <div className="text-center mb-10">
+            <span className="eyebrow text-gold mb-2 block">Royal Circle</span>
+            <h2 className="font-serif-display text-3xl text-soft uppercase tracking-widest">Sign In</h2>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="space-y-1">
+              <label className="small-caps text-[0.6rem] text-soft/60 tracking-widest">Email Address</label>
+              <input type="email" placeholder="email@example.com" className="w-full bg-ink/50 border border-gold/10 p-3 text-soft outline-none focus:border-gold/40 transition-colors font-light" />
+            </div>
+            <div className="space-y-1">
+              <label className="small-caps text-[0.6rem] text-soft/60 tracking-widest">Password</label>
+              <input type="password" placeholder="••••••••" className="w-full bg-ink/50 border border-gold/10 p-3 text-soft outline-none focus:border-gold/40 transition-colors font-light" />
+            </div>
+            <button className="btn-gold w-full py-4 mt-4" onClick={() => setLoginOpen(false)}>
+              <span>Sign In</span>
+            </button>
+            <div className="pt-4 text-center border-t border-gold/10">
+              <p className="text-soft/40 text-[0.7rem] font-light italic">Not a member yet? <button className="text-gold/60 hover:text-gold transition-colors">Join the Royal Circle</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile drawer & More dropdown */}
+      <div
+        className={`fixed inset-0 z-40 transition-opacity duration-700 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
         style={{ transitionTimingFunction: "var(--ease-luxe)" }}
       >
         <div className="absolute inset-0 bg-ink-deep/97 backdrop-blur-xl" onClick={() => setOpen(false)} />
         <div
-          className={`relative h-full flex flex-col items-center justify-center gap-8 transition-transform duration-700 ${
-            open ? "translate-y-0" : "translate-y-6"
-          }`}
+          className={`relative h-full flex flex-col items-center justify-center gap-8 transition-transform duration-700 ${open ? "translate-y-0" : "translate-y-6"
+            }`}
           style={{ transitionTimingFunction: "var(--ease-luxe)" }}
         >
           <span className="gold-line-solid w-12 h-px" />
@@ -108,10 +209,22 @@ export const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <span className="gold-line-solid w-12 h-px mt-4" />
-          <button className="btn-gold mt-4" onClick={() => setOpen(false)}>
-            <span>Book a Stay</span>
+          
+          {/* Extra links in drawer */}
+          <Link to="/hotels" onClick={() => setOpen(false)} className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors mt-4">Find a Hotel</Link>
+          <button 
+            onClick={() => { setOpen(false); setLoginOpen(true); }}
+            className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors"
+          >
+            Login / Join
           </button>
+
+          <span className="gold-line-solid w-12 h-px mt-4" />
+          <Link to="/book" onClick={() => setOpen(false)}>
+            <button className="btn-gold mt-4">
+              <span>Book a Stay</span>
+            </button>
+          </Link>
         </div>
       </div>
     </>

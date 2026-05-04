@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "./LinkStub";
 import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
 
@@ -13,7 +13,7 @@ const COLS = [
   },
   {
     title: "Company",
-    links: ["About REGALIA", "Sustainability", "Careers", "Press"],
+    links: ["About THE VIJAY VILLAS", "Sustainability", "Careers", "Press"],
   },
   {
     title: "Connect",
@@ -73,8 +73,8 @@ export const Footer = () => {
         {/* Wordmark */}
         <div className="flex flex-col items-center gap-6 py-10 border-t border-gold/15">
           <GoldDivider width="40px" />
-          <span className="font-serif-display text-gold text-4xl md:text-5xl tracking-[0.35em] font-light">
-            REGALIA
+          <span className="font-serif-display text-gold text-4xl md:text-5xl tracking-[0.35em] font-light text-center">
+            THE VIJAY VILLAS
           </span>
           <span className="small-caps text-warm/60">A Royal Hospitality Collection</span>
           <div className="flex items-center gap-5 mt-2">
@@ -92,7 +92,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 pt-6 text-xs text-warm/55 font-light tracking-wide">
-          <span>© {new Date().getFullYear()} REGALIA Hotels & Palaces. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} THE VIJAY VILLAS. All rights reserved.</span>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold transition-colors">Privacy</a>
             <a href="#" className="hover:text-gold transition-colors">Terms</a>

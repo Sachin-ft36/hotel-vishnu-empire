@@ -1,53 +1,57 @@
-import { Reveal } from "./Reveal";
-import statementImg from "@/assets/statement-bg.jpg";
+import { GoldDivider } from "./GoldDivider";
+import palaceBg from "@/assets/palace_bg.png";
 
 export const BrandStatement = () => {
   return (
-    <section className="relative h-[80vh] min-h-[560px] w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-12 lg:pt-20 pb-12 lg:pb-20">
+      {/* Background Image with Slow Zoom */}
       <div className="absolute inset-0">
         <img
-          src={statementImg}
-          alt="Grand palatial hall with chandeliers"
-          loading="lazy"
-          className="slow-zoom h-full w-full object-cover"
+          src={palaceBg}
+          alt="Grand Indian Palace Architecture"
+          className="h-full w-full object-cover slow-zoom"
         />
+        <div className="absolute inset-0 bg-ink/60" />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
-      <div className="absolute inset-0 bg-ink/70" />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
 
-      <div className="relative z-10 h-full container mx-auto px-6 flex flex-col items-center justify-center text-center">
-        <Reveal>
-          <span className="eyebrow mb-7 block">Our Heritage</span>
-        </Reveal>
+      <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center">
+        <div className="reveal is-visible">
+          <span className="eyebrow mb-10 block text-gold tracking-[0.4em]">Our Legacy</span>
+        </div>
 
-        <Reveal delay={120}>
-          <div className="flex items-center gap-5 md:gap-8 mb-7">
-            <span className="gold-line-solid w-16 md:w-28 h-px" />
-            <span className="small-caps text-gold">— II —</span>
-            <span className="gold-line-solid w-16 md:w-28 h-px" />
+        <div className="flex items-center justify-center gap-6 md:gap-10 mb-10 w-full max-w-4xl reveal is-visible" style={{ transitionDelay: '200ms' }}>
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold" />
+          <span className="small-caps text-gold px-4">SINCE 1903</span>
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold" />
+        </div>
+
+        <div className="reveal is-visible" style={{ transitionDelay: '400ms' }}>
+          <div className="flex items-center justify-center gap-6 md:gap-16">
+            <div className="hidden lg:block h-[1px] w-32 bg-gradient-to-r from-transparent to-gold" />
+            <h2 className="font-serif-display text-soft font-light leading-[1.05] tracking-[0.05em] text-[clamp(2.5rem,7vw,6.5rem)] uppercase">
+              India's Pride <br />
+              <span className="text-gold italic normal-case tracking-normal">World's Strongest</span>
+            </h2>
+            <div className="hidden lg:block h-[1px] w-32 bg-gradient-to-l from-transparent to-gold" />
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal delay={220}>
-          <h2 className="font-serif-display text-soft font-light leading-[1.05] tracking-wide text-[clamp(2.25rem,6vw,5rem)] max-w-5xl">
-            India's Pride.
-            <span className="block italic text-gold/95">The World's Welcome.</span>
-          </h2>
-        </Reveal>
-
-        <Reveal delay={360}>
-          <p className="mt-8 max-w-2xl text-soft-dim/85 text-base md:text-lg font-light leading-relaxed">
-            For more than a century, REGALIA has been the keeper of stories — of
-            kings and travelers, of artisans and dreamers. Each property, a chapter.
-            Each stay, a quiet inheritance.
+        <div className="mt-12 max-w-2xl mx-auto reveal is-visible" style={{ transitionDelay: '600ms' }}>
+          <p className="text-soft-dim/90 text-lg md:text-xl font-light leading-relaxed tracking-wide italic">
+            "To the guests, we offer the world. To the world, we offer India."
           </p>
-        </Reveal>
+          <p className="mt-6 text-soft-dim/70 text-base font-light leading-relaxed max-w-lg mx-auto">
+            A century of stories, a thousand years of culture, and a future 
+            defined by the timeless grace of Indian hospitality.
+          </p>
+        </div>
 
-        <Reveal delay={500}>
-          <button className="btn-ghost-gold mt-10">
-            <span>Discover Our Story</span>
+        <div className="reveal is-visible" style={{ transitionDelay: '800ms' }}>
+          <button className="btn-gold mt-14">
+            <span>Our Heritage</span>
           </button>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
