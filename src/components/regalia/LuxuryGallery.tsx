@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const GALLERY_IMAGES = [
-  { id: 1, src: "/src/assets/vijayvillas_image/unnamed (1).jpg", category: "Interior" },
-  { id: 2, src: "/src/assets/vijayvillas_image/unnamed (2).jpg", category: "Exterior" },
-  { id: 3, src: "/src/assets/vijayvillas_image/unnamed (3).jpg", category: "Dining" },
-  { id: 4, src: "/src/assets/vijayvillas_image/unnamed (4).jpg", category: "Interior" },
-  { id: 5, src: "/src/assets/vijayvillas_image/unnamed (5).jpg", category: "Wellness" },
-  { id: 6, src: "/src/assets/vijayvillas_image/unnamed (6).jpg", category: "Interior" },
-  { id: 7, src: "/src/assets/vijayvillas_image/unnamed (7).jpg", category: "Detail" },
-  { id: 8, src: "/src/assets/vijayvillas_image/unnamed (8).jpg", category: "Exterior" },
-  { id: 9, src: "/src/assets/vijayvillas_image/unnamed (12).jpg", category: "Dining" },
-  { id: 10, src: "/src/assets/vijayvillas_image/unnamed (13).jpg", category: "Interior" },
-  { id: 11, src: "/src/assets/vijayvillas_image/unnamed (14).jpg", category: "Wellness" },
-  { id: 12, src: "/src/assets/vijayvillas_image/unnamed (21).jpg", category: "Detail" },
+  { id: 1, src: "/gallery/unnamed (1).jpg", category: "Interior" },
+  { id: 2, src: "/gallery/unnamed (2).jpg", category: "Exterior" },
+  { id: 3, src: "/gallery/unnamed (3).jpg", category: "Dining" },
+  { id: 4, src: "/gallery/unnamed (4).jpg", category: "Interior" },
+  { id: 5, src: "/gallery/unnamed (5).jpg", category: "Wellness" },
+  { id: 6, src: "/gallery/unnamed (6).jpg", category: "Interior" },
+  { id: 7, src: "/gallery/unnamed (7).jpg", category: "Detail" },
+  { id: 8, src: "/gallery/unnamed (8).jpg", category: "Exterior" },
+  { id: 9, src: "/gallery/unnamed (12).jpg", category: "Dining" },
+  { id: 10, src: "/gallery/unnamed (13).jpg", category: "Interior" },
+  { id: 11, src: "/gallery/unnamed (14).jpg", category: "Wellness" },
+  { id: 12, src: "/gallery/unnamed (21).jpg", category: "Detail" },
 ];
 
 export const LuxuryGallery = ({ showTitle = true }: { showTitle?: boolean }) => {
