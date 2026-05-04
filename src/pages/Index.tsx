@@ -32,7 +32,6 @@ const Index = () => {
         <HeritageStories />
         <LuxuryGallery limit={4} />
         <UpcomingEvents />
-        <WellnessSpa />
         <MembershipTeaser />
       </main>
       <BookingBar />

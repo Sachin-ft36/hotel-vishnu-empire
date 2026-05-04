@@ -21,7 +21,7 @@ export const CustomCalendar = ({ onSelect, onClose }: CustomCalendarProps) => {
   
   // Empty slots for previous month days
   for (let i = 0; i < startDay; i++) {
-    days.push(<div key={`empty-${i}`} className="h-10 w-10" />);
+    days.push(<div key={`empty-${i}`} className="h-7 w-7" />);
   }
   
   // Real days
@@ -33,7 +33,7 @@ export const CustomCalendar = ({ onSelect, onClose }: CustomCalendarProps) => {
           onSelect(new Date(year, month, d));
           onClose();
         }}
-        className="h-10 w-10 flex items-center justify-center font-serif-display text-sm hover:bg-gold hover:text-ink transition-colors rounded-full"
+        className="h-7 w-7 flex items-center justify-center font-serif-display text-[0.65rem] hover:bg-gold hover:text-ink transition-colors rounded-full"
       >
         {d}
       </button>
@@ -46,28 +46,28 @@ export const CustomCalendar = ({ onSelect, onClose }: CustomCalendarProps) => {
   ];
 
   return (
-    <div className="bg-ink-deep border border-gold/30 p-6 shadow-2xl w-[320px] animate-in fade-in zoom-in duration-300">
-      <div className="flex items-center justify-between mb-6">
+    <div className="bg-ink-deep border border-gold/30 p-3 shadow-2xl w-[220px] animate-in fade-in zoom-in duration-300">
+      <div className="flex items-center justify-between mb-3">
         <button 
           onClick={() => setCurrentDate(new Date(year, month - 1))}
           className="text-gold/60 hover:text-gold transition-colors"
         >
-          <ChevronLeft size={20} />
+          <ChevronLeft size={16} />
         </button>
-        <h3 className="font-serif-display text-lg text-soft uppercase tracking-widest">
+        <h3 className="font-serif-display text-sm text-soft uppercase tracking-widest">
           {monthNames[month]} {year}
         </h3>
         <button 
           onClick={() => setCurrentDate(new Date(year, month + 1))}
           className="text-gold/60 hover:text-gold transition-colors"
         >
-          <ChevronRight size={20} />
+          <ChevronRight size={16} />
         </button>
       </div>
       
       <div className="grid grid-cols-7 gap-1 mb-2">
         {["SU", "MO", "TU", "WE", "TH", "FR", "SA"].map(d => (
-          <div key={d} className="h-8 w-10 flex items-center justify-center text-[0.6rem] text-gold/40 font-bold tracking-tighter">
+          <div key={d} className="h-5 w-7 flex items-center justify-center text-[0.5rem] text-gold/40 font-bold tracking-tighter">
             {d}
           </div>
         ))}
@@ -79,7 +79,7 @@ export const CustomCalendar = ({ onSelect, onClose }: CustomCalendarProps) => {
       
       <button 
         onClick={onClose}
-        className="mt-6 w-full py-2 border-t border-gold/10 text-[0.6rem] small-caps text-soft/40 hover:text-gold transition-colors"
+        className="mt-4 w-full py-2 border-t border-gold/10 text-[0.55rem] small-caps text-soft/40 hover:text-gold transition-colors"
       >
         Close Calendar
       </button>

@@ -13,10 +13,6 @@ export const WellnessSpa = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <span className="eyebrow text-gold mb-6 block">Sanctuary of Peace</span>
-          <h2 className="font-serif-display text-3xl lg:text-5xl text-soft mb-12">
-            Wellness & <span className="text-gold italic normal-case">Sacred</span> Rituals
-          </h2>
           
           <div className="relative aspect-video overflow-hidden mb-16 shadow-2xl">
             <img 

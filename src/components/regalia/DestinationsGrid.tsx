@@ -8,12 +8,12 @@ import kerala from "@/assets/dest-kerala.jpg";
 import london from "@/assets/dest-london.jpg";
 
 const DESTS = [
-  { img: udaipur, name: "Udaipur", region: "Rajasthan", span: "tall" },
-  { img: jaipur, name: "Jaipur", region: "Rajasthan", span: "short" },
-  { img: mumbai, name: "Mumbai", region: "Maharashtra", span: "short" },
-  { img: goa, name: "Goa", region: "South India", span: "tall" },
-  { img: kerala, name: "Kerala", region: "Backwaters", span: "short" },
-  { img: london, name: "London", region: "United Kingdom", span: "short" },
+  { img: "/vijayvillas.png", name: "The Vijay Villas", region: "The Estate", span: "tall" },
+  { img: "/tiger.png", name: "White Tiger Sanctuary", region: "Rewa Wilds", span: "short" },
+  { img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=800", name: "Govindgarh Palace", region: "Lake Heritage", span: "short" },
+  { img: "/rewafort.jpg", name: "Rewa Fort", region: "The Museum", span: "tall" },
+  { img: "https://images.unsplash.com/photo-1621262102003-87625170d30f?auto=format&fit=crop&q=80&w=800", name: "Royal Heritage Wing", region: "The Estate", span: "short" },
+  { img: "/chaco-fall.jpg", name: "Chachai Falls", region: "Natural Wonder", span: "short" },
 ];
 
 export const DestinationsGrid = () => {
@@ -22,11 +22,11 @@ export const DestinationsGrid = () => {
       <div className="container mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="eyebrow mb-4">Around the World</span>
+            <span className="eyebrow mb-4">Discover Rewa</span>
             <div className="flex items-center gap-5">
               <GoldDivider width="40px" />
               <h2 className="font-serif-display text-soft text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">
-                Storied <span className="italic text-gold/95">Destinations</span>
+                Royal <span className="italic text-gold/95">Landmarks</span>
               </h2>
               <GoldDivider width="40px" />
             </div>
@@ -47,7 +47,7 @@ export const DestinationsGrid = () => {
                   src={d.img}
                   alt={`${d.name}, ${d.region}`}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1400ms] group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover lg:grayscale group-hover:grayscale-0 transition-all duration-[1400ms] group-hover:scale-105"
                   style={{ transitionTimingFunction: "var(--ease-luxe)" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />

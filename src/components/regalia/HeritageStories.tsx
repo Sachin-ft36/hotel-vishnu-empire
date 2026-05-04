@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-import heritageImg from "@/assets/home_heritage.png";
+const heritageImg = "/oldphoto.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -25,8 +25,8 @@ export const HeritageStories = () => {
             />
           </div>
           <div className="absolute -bottom-8 -right-8 bg-ink p-8 border border-gold/20 hidden md:block">
-            <span className="font-serif-display text-gold text-4xl italic leading-none">1903</span>
-            <p className="small-caps text-[0.6rem] mt-2 text-soft-dim tracking-widest">A Legacy Begins</p>
+            <span className="font-serif-display text-gold text-4xl italic leading-none">2024</span>
+            <p className="small-caps text-[0.6rem] mt-2 text-soft-dim tracking-widest">A New Era of Royalty</p>
           </div>
         </motion.div>
 

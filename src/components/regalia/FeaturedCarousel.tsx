@@ -5,25 +5,25 @@ import { GoldDivider } from "./GoldDivider";
 
 const ITEMS = [
   {
-    img: "https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&q=80&w=800",
+    img: "/Signature Experiences/wedding.jpg",
     eyebrow: "Signature",
     title: "Timeless Weddings",
     desc: "A bespoke atelier of weddings, set within palaces, beachfronts and private estates.",
   },
   {
-    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-    eyebrow: "Curated",
-    title: "The Vijay Villas Holidays",
-    desc: "Editorial itineraries through India's most storied destinations and beyond.",
+    img: "/Signature Experiences/room.jpg",
+    eyebrow: "Heritage",
+    title: "Luxury Suites",
+    desc: "Sanctuaries of refined comfort, where historical grandeur meets modern luxury.",
   },
   {
-    img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800",
+    img: "/Signature Experiences/corridor.jpg",
     eyebrow: "Sanctuary",
-    title: "Wellness & Spa",
-    desc: "Ancient rituals, modern science — restoration shaped to your essence.",
+    title: "Hallways of Elegance",
+    desc: "A journey through time, where every corridor whispers stories of a storied past.",
   },
   {
-    img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=800",
+    img: "/Signature Experiences/food.jpg",
     eyebrow: "Maison",
     title: "Culinary Journeys",
     desc: "Tables set by master chefs, vintages drawn from a vault of three centuries.",

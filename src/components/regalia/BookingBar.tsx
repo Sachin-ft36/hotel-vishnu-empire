@@ -38,16 +38,14 @@ export const BookingBar = () => {
   }, []);
 
   const BookingInputs = () => (
-    <div className="flex flex-col lg:flex-row flex-1 items-stretch lg:items-center gap-6 lg:gap-12 w-full lg:w-auto">
+    <div className="flex flex-col lg:flex-row flex-1 items-stretch lg:items-center gap-6 lg:gap-8 xl:gap-12 w-full">
       {/* Destination Select */}
       <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
         <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
           <MapPin size={10} /> Destination
         </span>
-        <select className="bg-transparent text-soft text-sm outline-none cursor-pointer font-light hover:text-gold transition-colors">
+        <select className="bg-transparent text-soft text-sm outline-none cursor-default font-light hover:text-gold transition-colors appearance-none pr-0">
           <option>The Vijay Villas, Rewa</option>
-          <option>Royal Heritage Wing, Rewa</option>
-          <option>The White Tiger Sanctuary, Rewa</option>
         </select>
       </div>
 
@@ -59,8 +57,8 @@ export const BookingBar = () => {
           onClick={() => setShowIn(!showIn)}
           className="flex flex-col gap-1 cursor-pointer group"
         >
-          <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
-            <Calendar size={10} /> Check In
+          <span className="small-caps text-[0.6rem] lg:text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-1">
+            <Calendar size={10} /> Check In <span className="opacity-40 text-[0.55rem] lg:text-[0.45rem]">12 PM</span>
           </span>
           <div className="flex items-center gap-2">
             <span className="text-soft text-sm font-light group-hover:text-gold transition-colors">
@@ -90,8 +88,8 @@ export const BookingBar = () => {
           onClick={() => setShowOut(!showOut)}
           className="flex flex-col gap-1 cursor-pointer group"
         >
-          <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
-            <Calendar size={10} /> Check Out
+          <span className="small-caps text-[0.6rem] lg:text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-1">
+            <Calendar size={10} /> Check Out <span className="opacity-40 text-[0.55rem] lg:text-[0.45rem]">12 PM</span>
           </span>
           <div className="flex items-center gap-2">
             <span className="text-soft text-sm font-light group-hover:text-gold transition-colors">

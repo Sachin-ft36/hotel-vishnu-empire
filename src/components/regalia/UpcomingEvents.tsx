@@ -107,16 +107,6 @@ export const UpcomingEvents = () => {
         </div>
 
         {/* View All */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-20 flex flex-col items-center gap-6"
-        >
-          <div className="w-px h-16 bg-gradient-to-b from-gold/40 to-transparent" />
-          <button className="link-underline text-gold text-xs small-caps tracking-[0.2em]">
-            View Full Season Calendar
-          </button>
-        </motion.div>
       </div>
     </section>
   );

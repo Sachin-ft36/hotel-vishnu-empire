@@ -78,9 +78,9 @@ export const LuxuryGallery = ({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="h2 text-soft mb-6"
+                className="text-6xl md:text-8xl font-serif-display text-soft mb-8 italic font-light tracking-wider"
               >
-                The Luxury <br /><span className="italic font-light">Gallery</span>
+                Gallery
               </motion.h2>
             </div>
           </div>

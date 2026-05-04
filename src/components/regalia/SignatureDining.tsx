@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-import diningImg from "@/assets/home_dining.png";
+const diningImg = "/dinning_experience/dinning.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 

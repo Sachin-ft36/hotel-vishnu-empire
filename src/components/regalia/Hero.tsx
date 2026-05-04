@@ -41,12 +41,12 @@ export const Hero = () => {
       </div>
 
       {/* Hero Content - Responsive Layout with Precise Alignment */}
-      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          
+      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:justify-center pt-32 md:pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start translate-y-0 md:-translate-y-16">
+
           {/* HEADING & EYEBROW - Left on Desktop, Shifted Up */}
-          <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left lg:translate-y-4">
-            <motion.div 
+          <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left lg:pt-10">
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -65,10 +65,10 @@ export const Hero = () => {
           </div>
 
           {/* DESCRIPTION & BUTTONS - Right on Desktop, Aligned with Heading */}
-          <div className="order-2 flex flex-col items-center text-center lg:pt-16">
-            <p className="text-soft-dim/80 text-sm md:text-base leading-relaxed font-light tracking-wide max-w-md mb-12">
-              Experience the storied legacy of Baghelkhand, where the majesty 
-              of white tigers meets the pinnacle of royal hospitality. 
+          <div className="order-2 flex flex-col items-center text-center lg:pt-24">
+            <p className="text-soft-dim/80 text-sm md:text-base leading-relaxed font-light tracking-wide max-w-md mb-8">
+              Experience the storied legacy of Baghelkhand, where the majesty
+              of white tigers meets the pinnacle of royal hospitality.
               A sanctuary crafted for the discerning few in Rewa, Madhya Pradesh.
             </p>
 
