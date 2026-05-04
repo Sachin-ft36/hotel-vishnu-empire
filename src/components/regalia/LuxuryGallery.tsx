@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const GALLERY_IMAGES = [
   { id: 1, src: "/gallery/unnamed (1).jpg", category: "Interior" },
@@ -17,15 +18,25 @@ const GALLERY_IMAGES = [
   { id: 12, src: "/gallery/unnamed (21).jpg", category: "Detail" },
 ];
 
-export const LuxuryGallery = ({ showTitle = true }: { showTitle?: boolean }) => {
+export const LuxuryGallery = ({
+  showTitle = true,
+  limit,
+  showExploreButton = true,
+  showFilters = true
+}: {
+  showTitle?: boolean;
+  limit?: number;
+  showExploreButton?: boolean;
+  showFilters?: boolean;
+}) => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const categories = ["All", ...new Set(GALLERY_IMAGES.map(img => img.category))];
 
   const filteredImages = activeFilter === "All"
-    ? GALLERY_IMAGES
-    : GALLERY_IMAGES.filter(img => img.category === activeFilter);
+    ? (limit ? GALLERY_IMAGES.slice(0, limit) : GALLERY_IMAGES)
+    : GALLERY_IMAGES.filter((img) => img.category === activeFilter);
 
   const selectedIdx = selectedImage !== null
     ? GALLERY_IMAGES.findIndex(img => img.id === selectedImage)
@@ -69,30 +80,32 @@ export const LuxuryGallery = ({ showTitle = true }: { showTitle?: boolean }) => 
                 transition={{ delay: 0.1 }}
                 className="h2 text-soft mb-6"
               >
-                The Luxury <br /><span className="italic font-light">Perspective</span>
+                The Luxury <br /><span className="italic font-light">Gallery</span>
               </motion.h2>
             </div>
           </div>
         )}
 
-        <div className="flex flex-wrap justify-center gap-4 md:gap-10 border-b border-gold/10 pb-5 w-full max-w-3xl mx-auto mb-20">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveFilter(cat)}
-              className={`small-caps text-[0.65rem] tracking-[0.2em] transition-all relative px-2 ${activeFilter === cat ? "text-gold" : "text-soft/40 hover:text-soft"
-                }`}
-            >
-              {cat}
-              {activeFilter === cat && (
-                <motion.div
-                  layoutId="galleryFilter"
-                  className="absolute -bottom-5 left-0 right-0 h-px bg-gold"
-                />
-              )}
-            </button>
-          ))}
-        </div>
+        {showFilters && (
+          <div className="flex flex-wrap justify-center gap-4 md:gap-10 border-b border-gold/10 pb-5 w-full max-w-3xl mx-auto mb-20">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                className={`small-caps text-[0.65rem] tracking-[0.2em] transition-all relative px-2 ${activeFilter === cat ? "text-gold" : "text-soft/40 hover:text-soft"
+                  }`}
+              >
+                {cat}
+                {activeFilter === cat && (
+                  <motion.div
+                    layoutId="galleryFilter"
+                    className="absolute -bottom-5 left-0 right-0 h-px bg-gold"
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+        )}
 
         <motion.div
           layout
@@ -125,15 +138,19 @@ export const LuxuryGallery = ({ showTitle = true }: { showTitle?: boolean }) => 
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-20 flex justify-center"
-        >
-          <button className="btn-gold group">
-            <span>Explore Full Gallery</span>
-          </button>
-        </motion.div>
+        {showExploreButton && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="mt-20 flex justify-center"
+          >
+            <Link to="/gallery">
+              <button className="btn-gold group">
+                <span>Explore Full Gallery</span>
+              </button>
+            </Link>
+          </motion.div>
+        )}
       </div>
 
       {/* Lightbox */}

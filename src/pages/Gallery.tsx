@@ -43,7 +43,7 @@ const GalleryPage = () => {
         </section>
 
         {/* Gallery Grid */}
-        <LuxuryGallery showTitle={false} />
+        <LuxuryGallery showTitle={false} showExploreButton={false} />
 
         {/* Instagram/Social Call to Action */}
         <section className="py-32 border-t border-gold/10 bg-ink-deep/30">

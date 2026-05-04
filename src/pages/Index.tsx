@@ -30,7 +30,7 @@ const Index = () => {
         <SignatureDining />
         <DestinationsGrid />
         <HeritageStories />
-        <LuxuryGallery />
+        <LuxuryGallery limit={4} />
         <UpcomingEvents />
         <WellnessSpa />
         <MembershipTeaser />
