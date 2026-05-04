@@ -7,18 +7,42 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: "1.5rem",
+      screens: { "2xl": "1440px" },
     },
     extend: {
+      fontFamily: {
+        serif: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          deep: "hsl(var(--ink-deep))",
+        },
+        panel: {
+          DEFAULT: "hsl(var(--panel))",
+          2: "hsl(var(--panel-2))",
+        },
+        soft: {
+          DEFAULT: "hsl(var(--soft))",
+          dim: "hsl(var(--soft-dim))",
+        },
+        warm: {
+          DEFAULT: "hsl(var(--warm-gray))",
+          dim: "hsl(var(--warm-gray-dim))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          bright: "hsl(var(--gold-bright))",
+          deep: "hsl(var(--gold-deep))",
+          foreground: "hsl(var(--gold-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -60,30 +84,20 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 1px)",
+        sm: "calc(var(--radius) - 2px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "fade-in": { "0%": { opacity: "0", transform: "translateY(12px)" }, "100%": { opacity: "1", transform: "translateY(0)" } },
+        "fade-in-slow": { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+        "fade-in-slow": "fade-in-slow 1.6s ease-out",
       },
     },
   },
