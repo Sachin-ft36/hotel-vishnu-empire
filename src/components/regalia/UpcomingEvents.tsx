@@ -9,7 +9,7 @@ const EVENTS = [
     date: "May 24, 2026",
     title: "Royal Baghelkhandi Feast",
     description: "An exclusive culinary journey into the forgotten royal recipes of the Rewa dynasty, hosted by the royal family.",
-    image: "/src/assets/home_dining.png",
+    image: "/events/feast.png",
     category: "Culinary Assembly"
   },
   {
@@ -17,7 +17,7 @@ const EVENTS = [
     date: "June 12, 2026",
     title: "Sufi Nights at the Fort",
     description: "A soulful evening of Sufi music and light under the stars at our private heritage site.",
-    image: "/src/assets/palace_bg.png",
+    image: "/events/sufi.png",
     category: "Heritage Evening"
   },
   {
@@ -25,7 +25,7 @@ const EVENTS = [
     date: "July 05, 2026",
     title: "White Tiger Gala",
     description: "A black-tie evening dedicated to the conservation legacy of the world's first white tiger.",
-    image: "/src/assets/hotel_amber.png",
+    image: "/events/gala.png",
     category: "Conservation Gala"
   }
 ];
