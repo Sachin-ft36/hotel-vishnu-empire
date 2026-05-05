@@ -18,7 +18,7 @@ export const Hero = () => {
           className="hidden md:block h-full w-full object-cover scale-105 slow-zoom"
         >
           <source
-            src={hotelVideo}
+            src={`${hotelVideo}#t=0,108`}
             type="video/mp4"
           />
         </video>
