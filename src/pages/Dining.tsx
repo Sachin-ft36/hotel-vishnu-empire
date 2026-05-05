@@ -50,7 +50,7 @@ const Dining = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full overflow-hidden">
+      <section className="relative h-[40vh] md:h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/dinning_experience/dinning.jpg"
@@ -90,8 +90,8 @@ const Dining = () => {
             <span className="text-gold italic normal-case">Journey</span> through Time
           </h2>
           <p className="text-soft-dim/80 text-xl leading-relaxed font-light mb-20 max-w-2xl mx-auto">
-            From royal recipes passed down through generations to modern interpretations 
-            of heritage flavors, our culinary team crafts moments that linger on the palate 
+            From royal recipes passed down through generations to modern interpretations
+            of heritage flavors, our culinary team crafts moments that linger on the palate
             long after the evening concludes.
           </p>
         </div>
@@ -99,20 +99,19 @@ const Dining = () => {
         {/* List */}
         <div className="max-w-[1400px] mx-auto text-left">
           {DINING_EXPERIENCES.map((exp, index) => (
-            <div 
+            <div
               key={exp.id}
-              className={`flex flex-col lg:flex-row gap-16 lg:gap-32 mb-48 ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`flex flex-col lg:flex-row gap-16 lg:gap-32 mb-48 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
+                }`}
             >
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
                 className="w-full lg:w-3/5 aspect-[16/10] overflow-hidden shadow-2xl"
               >
-                <img 
+                <img
                   src={exp.image}
                   alt={exp.title}
                   className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-110"
@@ -164,7 +163,7 @@ const Dining = () => {
             <span className="text-gold italic normal-case">Discreet</span> Cellars
           </h2>
           <p className="text-soft-dim/70 max-w-xl mx-auto text-lg mb-12 font-light">
-            Our sommelier curates a selection of the world's finest labels, stored 
+            Our sommelier curates a selection of the world's finest labels, stored
             in temperature-controlled heritage cellars for the perfect pairing.
           </p>
         </div>

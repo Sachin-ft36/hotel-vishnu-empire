@@ -3,8 +3,8 @@ import { Navbar } from "@/components/regalia/Navbar";
 import { Footer } from "@/components/regalia/Footer";
 import { GoldDivider } from "@/components/regalia/GoldDivider";
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, Crown, Sparkles, Gem, 
+import {
+  ShieldCheck, Crown, Sparkles, Gem,
   ArrowRight, Check, Star, Mail, Phone, User
 } from "lucide-react";
 
@@ -53,8 +53,8 @@ const PlatinumCircle = () => {
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden pb-1">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/Signature Experiences/room.jpg" 
+          <img
+            src="/Signature Experiences/room.jpg"
             className="w-full h-full object-cover opacity-30 scale-105 slow-zoom"
             alt="Royal Heritage"
           />
@@ -136,27 +136,27 @@ const PlatinumCircle = () => {
                   <div className="space-y-6">
                     <div className="relative group">
                       <User className="absolute left-0 top-1/2 -translate-y-1/2 text-gold/40 group-focus-within:text-gold transition-colors" size={18} />
-                      <input 
+                      <input
                         required
-                        type="text" 
-                        placeholder="Full Name" 
+                        type="text"
+                        placeholder="Full Name"
                         className="w-full bg-transparent border-b border-gold/20 py-4 pl-10 text-soft focus:border-gold outline-none transition-all placeholder:text-soft/20 font-light"
                       />
                     </div>
                     <div className="relative group">
                       <Mail className="absolute left-0 top-1/2 -translate-y-1/2 text-gold/40 group-focus-within:text-gold transition-colors" size={18} />
-                      <input 
+                      <input
                         required
-                        type="email" 
-                        placeholder="Email Address" 
+                        type="email"
+                        placeholder="Email Address"
                         className="w-full bg-transparent border-b border-gold/20 py-4 pl-10 text-soft focus:border-gold outline-none transition-all placeholder:text-soft/20 font-light"
                       />
                     </div>
                     <div className="relative group">
                       <Phone className="absolute left-0 top-1/2 -translate-y-1/2 text-gold/40 group-focus-within:text-gold transition-colors" size={18} />
-                      <input 
-                        type="tel" 
-                        placeholder="Phone Number (Optional)" 
+                      <input
+                        type="tel"
+                        placeholder="Phone Number (Optional)"
                         className="w-full bg-transparent border-b border-gold/20 py-4 pl-10 text-soft focus:border-gold outline-none transition-all placeholder:text-soft/20 font-light"
                       />
                     </div>
@@ -173,7 +173,7 @@ const PlatinumCircle = () => {
                   </div>
                 </form>
               ) : (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-20 space-y-8"
@@ -185,7 +185,7 @@ const PlatinumCircle = () => {
                   </div>
                   <h3 className="font-serif-display text-3xl uppercase tracking-widest">Application Received</h3>
                   <p className="text-soft-dim/60 font-light italic leading-relaxed">
-                    Thank you for your interest in The Royal Circle. Our Membership Director 
+                    Thank you for your interest in The Royal Circle. Our Membership Director
                     will review your application and contact you within 48 hours.
                   </p>
                   <button onClick={() => setIsSubmitted(false)} className="text-gold small-caps text-xs tracking-widest hover:underline pt-4">

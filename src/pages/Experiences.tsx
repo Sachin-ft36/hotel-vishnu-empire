@@ -39,7 +39,7 @@ const Experiences = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full overflow-hidden">
+      <section className="relative h-[50vh] md:h-[85vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={expSpa}

@@ -52,7 +52,7 @@ const Hotels = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden">
+      <section className="relative h-[40vh] md:h-[70vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={hotelAmber}

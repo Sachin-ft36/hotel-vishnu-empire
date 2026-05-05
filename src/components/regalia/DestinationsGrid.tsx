@@ -8,13 +8,20 @@ import goa from "@/assets/dest-goa.jpg";
 import kerala from "@/assets/dest-kerala.jpg";
 import london from "@/assets/dest-london.jpg";
 
+import vijayVillas from "@/assets/generated/the_vijay_villas.png";
+import whiteTiger from "@/assets/generated/white_tiger.png";
+import govindgarh from "@/assets/generated/govindgarh.png";
+import rewaFort from "@/assets/generated/rewa_fort.png";
+import heritageWing from "@/assets/generated/royal_heritage_wing.png";
+import chachaiFalls from "@/assets/generated/chachai_falls.png";
+
 const DESTS = [
   { img: "/vijayvillas.png", name: "The Vijay Villas", region: "The Estate", span: "tall" },
-  { img: "/tiger.png", name: "White Tiger Sanctuary", region: "Rewa Wilds", span: "short" },
-  { img: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=800", name: "Govindgarh Palace", region: "Lake Heritage", span: "short" },
-  { img: "/rewafort.jpg", name: "Rewa Fort", region: "The Museum", span: "tall" },
-  { img: "https://images.unsplash.com/photo-1621262102003-87625170d30f?auto=format&fit=crop&q=80&w=800", name: "Royal Heritage Wing", region: "The Estate", span: "short" },
-  { img: "/chaco-fall.jpg", name: "Chachai Falls", region: "Natural Wonder", span: "short" },
+  { img: whiteTiger, name: "White Tiger Sanctuary", region: "Rewa Wilds", span: "short" },
+  { img: govindgarh, name: "Govindgarh Palace", region: "Lake Heritage", span: "short" },
+  { img: rewaFort, name: "Rewa Fort", region: "The Museum", span: "tall" },
+  { img: heritageWing, name: "Royal Heritage Wing", region: "The Estate", span: "short" },
+  { img: chachaiFalls, name: "Chachai Falls", region: "Natural Wonder", span: "short" },
 ];
 
 export const DestinationsGrid = () => {
@@ -39,9 +46,8 @@ export const DestinationsGrid = () => {
             <Reveal
               key={d.name}
               delay={i * 90}
-              className={`${d.span === "tall" ? "row-span-2" : "row-span-1"} ${
-                i === 0 ? "lg:col-span-2" : ""
-              }`}
+              className={`${d.span === "tall" ? "row-span-2" : "row-span-1"} ${i === 0 ? "lg:col-span-2" : ""
+                }`}
             >
               <Link to="/destinations" className="block h-full w-full">
                 <article className="group relative h-full w-full overflow-hidden cursor-pointer">

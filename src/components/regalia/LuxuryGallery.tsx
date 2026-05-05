@@ -62,7 +62,7 @@ export const LuxuryGallery = ({
   }, [selectedImage, selectedIdx]);
 
   return (
-    <section className="pb-32 pt-0 bg-ink px-6 lg:px-12 overflow-hidden" id="gallery">
+    <section className="pb-2 pt-0 bg-ink px-6 lg:px-12 overflow-hidden" id="gallery">
       <div className="max-w-[1700px] mx-auto">
         {showTitle && (
           <div className="flex flex-col items-center text-center mb-20 gap-10">

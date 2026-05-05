@@ -13,7 +13,7 @@ const GalleryPage = () => {
 
       <main>
         {/* Gallery Hero */}
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden pt-24">
+        <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden pt-24">
           <div className="absolute inset-0">
             <img
               src="/src/assets/palace_bg.png"
@@ -46,7 +46,7 @@ const GalleryPage = () => {
         <LuxuryGallery showTitle={false} showExploreButton={false} />
 
         {/* Instagram/Social Call to Action */}
-        <section className="py-32 border-t border-gold/10 bg-ink-deep/30">
+        <section className="pt-32 pb-2 border-t border-gold/10 bg-ink-deep/30">
           <div className="max-w-4xl mx-auto text-center px-6">
             <h3 className="font-serif-display text-3xl md:text-4xl text-soft mb-8">Share Your Moments</h3>
             <p className="text-soft/60 font-light mb-12 max-w-xl mx-auto">

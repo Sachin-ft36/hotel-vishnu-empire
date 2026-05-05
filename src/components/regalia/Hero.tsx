@@ -32,7 +32,7 @@ export function Hero() {
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
 
-      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:justify-center pt-52 md:pt-0">
+      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:pt-32 lg:pt-40 pt-44">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div

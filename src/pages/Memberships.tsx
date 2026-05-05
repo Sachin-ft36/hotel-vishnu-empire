@@ -53,7 +53,7 @@ const Memberships = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden flex items-center justify-center">
+      <section className="relative h-[40vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
           <img
             src={seal}
@@ -110,7 +110,7 @@ const Memberships = () => {
                 ))}
               </div>
 
-              <Link 
+              <Link
                 to={index === 0 ? "/silver-circle" : index === 1 ? "/join-the-circle" : "/platinum-circle"}
                 className="w-full"
               >

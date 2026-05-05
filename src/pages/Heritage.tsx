@@ -30,7 +30,7 @@ const Heritage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[85vh] w-full overflow-hidden">
+      <section className="relative h-[40vh] md:h-[85vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/oldphoto.jpg"
@@ -92,20 +92,19 @@ const Heritage = () => {
       <section className="py-32 px-6 lg:px-12 bg-ink">
         <div className="max-w-[1400px] mx-auto">
           {HERITAGE_CHAPTERS.map((chapter, index) => (
-            <div 
+            <div
               key={chapter.id}
-              className={`flex flex-col lg:flex-row gap-20 lg:gap-32 mb-48 ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`flex flex-col lg:flex-row gap-20 lg:gap-32 mb-48 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
+                }`}
             >
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
                 className="w-full lg:w-3/5 relative group overflow-hidden shadow-2xl"
               >
-                <img 
+                <img
                   src={chapter.image}
                   alt={chapter.title}
                   className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
@@ -113,7 +112,7 @@ const Heritage = () => {
                 <div className="absolute inset-0 bg-ink/10 group-hover:bg-ink/0 transition-colors duration-700" />
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -156,8 +155,8 @@ const Heritage = () => {
             "To understand our future, we must first honor the walls that witnessed our past."
           </blockquote>
           <div className="mt-12 flex flex-col items-center gap-4">
-             <GoldDivider width="60px" />
-             <span className="small-caps text-gold tracking-widest text-xs font-medium">The Royal Decree</span>
+            <GoldDivider width="60px" />
+            <span className="small-caps text-gold tracking-widest text-xs font-medium">The Royal Decree</span>
           </div>
         </div>
       </section>
