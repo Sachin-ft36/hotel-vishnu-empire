@@ -42,7 +42,7 @@ const Weddings = () => {
          <Navbar />
 
          {/* Hero Section */}
-         <section className="relative h-[40vh] md:h-[85vh] w-full overflow-hidden">
+         <section className="relative h-[100vh] w-full overflow-hidden">
             <div className="absolute inset-0">
                <img
                   src="/Signature Experiences/wedding.jpg"
@@ -96,12 +96,12 @@ const Weddings = () => {
          {/* Venue Showcase */}
          <section className="py-32 bg-ink">
             <div className="container mx-auto px-6">
-               <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-20">
+               <div className="flex flex-col items-center text-center gap-8 mb-20">
                   <div>
                      <span className="eyebrow text-gold mb-4 block">The Estate</span>
                      <h2 className="font-serif-display text-4xl md:text-6xl text-soft">Our Venues</h2>
                   </div>
-                  <p className="text-soft-dim/60 max-w-sm text-sm font-light leading-relaxed">
+                  <p className="text-soft-dim/60 max-w-2xl text-sm md:text-base font-light leading-relaxed">
                      Choose from a selection of historic indoor and outdoor venues,
                      each offering a unique perspective of our heritage estate.
                   </p>

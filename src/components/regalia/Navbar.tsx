@@ -233,7 +233,7 @@ export const Navbar = () => {
         />
 
         <div
-          className={`relative h-full flex flex-col items-center justify-center gap-8 transition-all duration-300 z-10 ${open ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          className={`relative h-full flex flex-col items-center justify-center gap-6 transition-all duration-300 z-10 ${open ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
           <span className="gold-line-solid w-12 h-px" />
@@ -242,7 +242,7 @@ export const Navbar = () => {
               key={item.to}
               to={item.to}
               onClick={(e) => handleNavClick(e, item.to)}
-              className="font-serif-display text-soft text-3xl tracking-[0.15em] hover:text-gold transition-colors"
+              className="font-serif-display text-soft text-xl tracking-[0.15em] hover:text-gold transition-colors"
             >
               {item.label}
             </Link>
@@ -251,14 +251,14 @@ export const Navbar = () => {
           <Link
             to="/reserve-table"
             onClick={() => setOpen(false)}
-            className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors"
+            className="small-caps text-soft/40 hover:text-gold text-xs tracking-widest transition-colors"
           >
             Reserve a Table
           </Link>
 
           <button
             onClick={() => { setOpen(false); setLoginOpen(true); }}
-            className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors"
+            className="small-caps text-soft/40 hover:text-gold text-xs tracking-widest transition-colors"
           >
             Login / Join
           </button>
