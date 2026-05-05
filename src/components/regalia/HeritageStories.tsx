@@ -68,7 +68,7 @@ export const HeritageStories = () => {
             </li>
           </ul>
           
-          <Link to="/destinations">
+          <Link to="/heritage">
             <button className="link-underline text-gold small-caps text-xs">
               Discover Our Story
             </button>

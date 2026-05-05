@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { GoldDivider } from "./GoldDivider";
+import { Link } from "react-router-dom";
 
 const OFFERS = [
   {
@@ -46,36 +47,37 @@ export const LatestOffers = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {OFFERS.map((offer, i) => (
-            <article
-              key={offer.title}
-              className="group relative bg-panel overflow-hidden reveal is-visible"
-              style={{ transitionDelay: `${i * 150}ms` }}
-            >
-              <div className="relative aspect-[3/4] overflow-hidden">
-                <img
-                  src={offer.img}
-                  alt={offer.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700" />
-              </div>
+            <Link to="/offers" key={offer.title}>
+              <article
+                className="group relative bg-panel overflow-hidden reveal is-visible"
+                style={{ transitionDelay: `${i * 150}ms` }}
+              >
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={offer.img}
+                    alt={offer.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700" />
+                </div>
 
-              <div className="absolute inset-x-6 bottom-6 bg-soft p-8 shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
-                <span className="block text-[0.65rem] uppercase tracking-[0.32em] text-gold-deep font-medium mb-3">
-                  {offer.eyebrow} · {offer.dates}
-                </span>
-                <h3 className="font-serif-display text-2xl md:text-3xl font-normal leading-tight mb-4 text-ink">
-                  {offer.title}
-                </h3>
-                <p className="text-ink/70 text-sm leading-relaxed font-light mb-6">
-                  {offer.desc}
-                </p>
-                <button className="flex items-center gap-2 text-gold-deep font-medium tracking-widest uppercase text-[10px] group/btn">
-                  View Offer 
-                  <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </article>
+                <div className="absolute inset-x-6 bottom-6 bg-soft p-8 shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
+                  <span className="block text-[0.65rem] uppercase tracking-[0.32em] text-gold-deep font-medium mb-3">
+                    {offer.eyebrow} · {offer.dates}
+                  </span>
+                  <h3 className="font-serif-display text-2xl md:text-3xl font-normal leading-tight mb-4 text-ink">
+                    {offer.title}
+                  </h3>
+                  <p className="text-ink/70 text-sm leading-relaxed font-light mb-6">
+                    {offer.desc}
+                  </p>
+                  <button className="flex items-center gap-2 text-gold-deep font-medium tracking-widest uppercase text-[10px] group/btn">
+                    View Offer 
+                    <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>

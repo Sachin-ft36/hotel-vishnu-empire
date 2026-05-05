@@ -9,24 +9,28 @@ const ITEMS = [
     eyebrow: "Signature",
     title: "Timeless Weddings",
     desc: "A bespoke atelier of weddings, set within palaces, beachfronts and private estates.",
+    id: "weddings"
   },
   {
     img: "/Signature Experiences/room.jpg",
     eyebrow: "Heritage",
     title: "Luxury Suites",
     desc: "Sanctuaries of refined comfort, where historical grandeur meets modern luxury.",
+    id: "suites"
   },
   {
     img: "/Signature Experiences/corridor.jpg",
     eyebrow: "Sanctuary",
     title: "Hallways of Elegance",
     desc: "A journey through time, where every corridor whispers stories of a storied past.",
+    id: "hallways"
   },
   {
     img: "/Signature Experiences/food.jpg",
     eyebrow: "Maison",
     title: "Culinary Journeys",
     desc: "Tables set by master chefs, vintages drawn from a vault of three centuries.",
+    id: "culinary"
   },
 ];
 
@@ -140,7 +144,13 @@ export const FeaturedCarousel = () => {
                   {item.desc}
                 </p>
                 
-                <Link to="/experiences">
+                <Link to={
+                  item.id === "weddings" ? "/weddings" :
+                  item.id === "suites" ? "/luxury-suites" : 
+                  item.id === "hallways" ? "/hallways-of-elegance" : 
+                  item.id === "culinary" ? "/culinary-journeys" :
+                  `/signature-experiences#${item.id}`
+                }>
                   <button className="flex items-center gap-3 text-gold-deep font-medium tracking-widest uppercase text-xs group/btn">
                     Explore More 
                     <span className="w-10 h-[1px] bg-gold-deep group-hover/btn:w-16 transition-all duration-500" />

@@ -78,9 +78,9 @@ export const Hero = () => {
                   <span>Book a Stay</span>
                 </button>
               </Link>
-              <Link to="/gallery">
+              <Link to="/weddings">
                 <button className="btn-ghost-gold">
-                  <span>Explore More</span>
+                  <span>Book Banquet</span>
                 </button>
               </Link>
             </div>

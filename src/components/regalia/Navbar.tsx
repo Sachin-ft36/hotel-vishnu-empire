@@ -58,7 +58,7 @@ export const Navbar = () => {
       >
         <div className="w-full max-w-[1700px] mx-auto flex items-center justify-between gap-4 px-6 lg:px-8 xl:px-10">
           {/* Logo */}
-          <Link to="/" className="group flex items-center gap-2 shrink-0">
+          <Link to="/" className={`group flex items-center gap-2 shrink-0 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             <span
               className="font-serif-display text-white text-base md:text-lg tracking-[0.12em] font-light transition-all duration-500 group-hover:text-gold"
               style={{
@@ -93,6 +93,9 @@ export const Navbar = () => {
 
           {/* Right */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
+            <Link to="/reserve-table" className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]">
+              Reserve Table
+            </Link>
             <button
               onClick={() => setLoginOpen(true)}
               className="link-underline small-caps text-soft/70 hover:text-gold transition-colors whitespace-nowrap text-[8px] xl:text-[9px] tracking-[0.12em]"
@@ -189,7 +192,16 @@ export const Navbar = () => {
               <span>Sign In</span>
             </button>
             <div className="pt-4 text-center border-t border-gold/10">
-              <p className="text-soft/40 text-[0.7rem] font-light italic">Not a member yet? <button className="text-gold/60 hover:text-gold transition-colors">Join the Royal Circle</button></p>
+              <p className="text-soft/40 text-[0.7rem] font-light italic">
+                Not a member yet?{" "}
+                <Link 
+                  to="/join-the-circle" 
+                  onClick={() => setLoginOpen(false)}
+                  className="text-gold/60 hover:text-gold transition-colors underline underline-offset-4"
+                >
+                  Join the Royal Circle
+                </Link>
+              </p>
             </div>
           </div>
         </div>
@@ -235,6 +247,14 @@ export const Navbar = () => {
               {item.label}
             </Link>
           ))}
+
+          <Link
+            to="/reserve-table"
+            onClick={() => setOpen(false)}
+            className="small-caps text-soft/40 hover:text-gold text-sm tracking-widest transition-colors"
+          >
+            Reserve a Table
+          </Link>
 
           <button
             onClick={() => { setOpen(false); setLoginOpen(true); }}

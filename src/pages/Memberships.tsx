@@ -3,6 +3,7 @@ import { Footer } from "@/components/regalia/Footer";
 import { GoldDivider } from "@/components/regalia/GoldDivider";
 import seal from "@/assets/membership_seal.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 
 const tiers = [
@@ -109,12 +110,17 @@ const Memberships = () => {
                 ))}
               </div>
 
-              <button className={`w-full py-4 small-caps text-[0.7rem] transition-all duration-500 tracking-[0.2em] ${index === 1
-                ? 'bg-gold text-ink hover:bg-gold-bright'
-                : 'border border-gold/30 text-gold hover:bg-gold/10'
-                }`}>
-                {tier.cta}
-              </button>
+              <Link 
+                to={index === 0 ? "/silver-circle" : index === 1 ? "/join-the-circle" : "/platinum-circle"}
+                className="w-full"
+              >
+                <button className={`w-full py-4 small-caps text-[0.7rem] transition-all duration-500 tracking-[0.2em] ${index === 1
+                  ? 'bg-gold text-ink hover:bg-gold-bright'
+                  : 'border border-gold/30 text-gold hover:bg-gold/10'
+                  }`}>
+                  {tier.cta}
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>

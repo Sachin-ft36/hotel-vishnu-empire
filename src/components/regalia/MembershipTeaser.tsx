@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import membershipImg from "@/assets/membership-key.jpg";
 
 const BENEFITS = [
@@ -36,10 +37,12 @@ export const MembershipTeaser = () => {
               ))}
             </ul>
 
-            <button className="btn-gold">
-              <span>Join the Circle</span>
-              <ArrowRight size={14} strokeWidth={1.2} />
-            </button>
+            <Link to="/join-the-circle">
+              <button className="btn-gold">
+                <span>Join the Circle</span>
+                <ArrowRight size={14} strokeWidth={1.2} />
+              </button>
+            </Link>
           </div>
         </Reveal>
 

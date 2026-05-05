@@ -5,19 +5,39 @@ import { GoldDivider } from "./GoldDivider";
 const COLS = [
   {
     title: "Explore",
-    links: ["Destinations", "Hotels & Palaces", "Experiences", "Journal"],
+    links: [
+      { name: "Destinations", path: "/destinations" },
+      { name: "Hotels & Palaces", path: "/hotels" },
+      { name: "Experiences", path: "/experiences" },
+      { name: "Gallery", path: "/gallery" },
+    ],
   },
   {
     title: "Stay",
-    links: ["Offers", "Memberships", "Gift Cards", "Plan an Event"],
+    links: [
+      { name: "Offers", path: "/offers" },
+      { name: "Memberships", path: "/memberships" },
+      { name: "Luxury Suites", path: "/luxury-suites" },
+      { name: "Weddings", path: "/weddings" },
+    ],
   },
   {
-    title: "Company",
-    links: ["About THE VIJAY VILLAS", "Sustainability", "Careers", "Press"],
+    title: "Taste & Heritage",
+    links: [
+      { name: "Dining", path: "/dining" },
+      { name: "Culinary Journeys", path: "/culinary-journeys" },
+      { name: "Heritage", path: "/heritage" },
+      { name: "Signature Experiences", path: "/signature-experiences" },
+    ],
   },
   {
     title: "Connect",
-    links: ["Contact", "Concierge", "Reservations", "Feedback"],
+    links: [
+      { name: "Book Now", path: "/book" },
+      { name: "Request Invitation", path: "/request-invitation" },
+      { name: "Join the Circle", path: "/join-the-circle" },
+      { name: "Contact", path: "/contact" },
+    ],
   },
 ];
 
@@ -56,12 +76,12 @@ export const Footer = () => {
               <h4 className="small-caps text-gold mb-5">{col.title}</h4>
               <ul className="space-y-3">
                 {col.links.map((l) => (
-                  <li key={l}>
+                  <li key={l.name}>
                     <Link
-                      to="/"
+                      to={l.path}
                       className="text-soft-dim/75 hover:text-gold transition-colors text-sm font-light tracking-wide link-underline"
                     >
-                      {l}
+                      {l.name}
                     </Link>
                   </li>
                 ))}
@@ -76,7 +96,7 @@ export const Footer = () => {
           <span className="font-serif-display text-gold text-4xl md:text-5xl tracking-[0.35em] font-light text-center">
             THE VIJAY VILLAS
           </span>
-          <span className="small-caps text-warm/60">A Royal Hospitality Collection</span>
+          <span className="small-caps text-warm/60">Hotels & Banquets</span>
           <div className="flex items-center gap-5 mt-2">
             {[
               { Icon: Instagram, href: "https://www.instagram.com/thevijayvillas/" },

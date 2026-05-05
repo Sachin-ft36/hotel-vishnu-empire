@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal";
 import { GoldDivider } from "./GoldDivider";
 import udaipur from "@/assets/dest-udaipur.jpg";
@@ -42,26 +43,28 @@ export const DestinationsGrid = () => {
                 i === 0 ? "lg:col-span-2" : ""
               }`}
             >
-              <article className="group relative h-full w-full overflow-hidden cursor-pointer">
-                <img
-                  src={d.img}
-                  alt={`${d.name}, ${d.region}`}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover lg:grayscale group-hover:grayscale-0 transition-all duration-[1400ms] group-hover:scale-105"
-                  style={{ transitionTimingFunction: "var(--ease-luxe)" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
-                <div className="absolute inset-0 border border-gold/0 group-hover:border-gold/40 transition-all duration-700" />
+              <Link to="/destinations" className="block h-full w-full">
+                <article className="group relative h-full w-full overflow-hidden cursor-pointer">
+                  <img
+                    src={d.img}
+                    alt={`${d.name}, ${d.region}`}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover lg:grayscale group-hover:grayscale-0 transition-all duration-[1400ms] group-hover:scale-105"
+                    style={{ transitionTimingFunction: "var(--ease-luxe)" }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
+                  <div className="absolute inset-0 border border-gold/0 group-hover:border-gold/40 transition-all duration-700" />
 
-                <div className="absolute bottom-0 left-0 p-5 md:p-7">
-                  <span className="small-caps text-gold/90 text-[0.65rem] block mb-2">
-                    {d.region}
-                  </span>
-                  <h3 className="font-serif-display text-soft text-2xl md:text-3xl font-light tracking-wider link-underline">
-                    {d.name}
-                  </h3>
-                </div>
-              </article>
+                  <div className="absolute bottom-0 left-0 p-5 md:p-7">
+                    <span className="small-caps text-gold/90 text-[0.65rem] block mb-2">
+                      {d.region}
+                    </span>
+                    <h3 className="font-serif-display text-soft text-2xl md:text-3xl font-light tracking-wider link-underline">
+                      {d.name}
+                    </h3>
+                  </div>
+                </article>
+              </Link>
             </Reveal>
           ))}
         </div>

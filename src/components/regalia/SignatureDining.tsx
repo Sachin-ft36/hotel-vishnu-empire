@@ -41,7 +41,7 @@ export const SignatureDining = () => {
             </div>
           </div>
           
-          <Link to="/experiences">
+          <Link to="/dining">
             <button className="btn-gold px-8">
               <span>Explore Dining</span>
             </button>

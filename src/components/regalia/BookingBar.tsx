@@ -44,9 +44,7 @@ export const BookingBar = () => {
         <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
           <MapPin size={10} /> Destination
         </span>
-        <select className="bg-transparent text-soft text-sm outline-none cursor-default font-light hover:text-gold transition-colors appearance-none pr-0">
-          <option>The Vijay Villas, Rewa</option>
-        </select>
+        <span className="text-soft text-sm font-light">The Vijay Villas, Rewa</span>
       </div>
 
       <div className="hidden lg:block h-8 w-px bg-gold/10" />
@@ -154,8 +152,10 @@ export const BookingBar = () => {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="lg:hidden fixed inset-0 z-[60] bg-ink flex flex-col"
           >
+            <h1 className="font-serif-display text-5xl md:text-7xl uppercase tracking-wider">
+              Check <span className="text-gold italic normal-case">Availability & Book</span>
+            </h1>
             <div className="flex items-center justify-between p-6 border-b border-gold/10">
-              <span className="small-caps text-gold tracking-widest">Plan Your Stay</span>
               <button onClick={() => setIsMobileOpen(false)} className="text-soft/60">
                 <ChevronDown size={24} />
               </button>
@@ -164,7 +164,10 @@ export const BookingBar = () => {
               <BookingInputs />
             </div>
             <div className="p-6 border-t border-gold/10">
-              <Link to="/book" className="w-full">
+              <Link 
+                to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${1}`} // Simplified guest passing for now or use a state
+                className="w-full"
+              >
                 <button className="btn-gold w-full py-5">
                   <span>CONFIRM & SEARCH</span>
                 </button>
@@ -183,7 +186,7 @@ export const BookingBar = () => {
         <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-8">
           <BookingInputs />
 
-          <Link to="/book">
+          <Link to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${1}`}>
             <button className="btn-gold px-12 py-4 whitespace-nowrap">
               <span>Check Availability</span>
             </button>
