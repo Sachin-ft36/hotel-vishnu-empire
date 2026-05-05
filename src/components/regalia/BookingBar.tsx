@@ -23,7 +23,7 @@ export const BookingBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY < 50) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY.current + 5) {
@@ -31,7 +31,7 @@ export const BookingBar = () => {
       } else if (currentScrollY < lastScrollY.current - 5) {
         setIsVisible(true);
       }
-      
+
       lastScrollY.current = currentScrollY;
     };
 
@@ -119,7 +119,7 @@ export const BookingBar = () => {
 
       {/* Guests */}
       <div className="relative min-w-[140px]">
-        <div 
+        <div
           onClick={() => setShowGuests(!showGuests)}
           className="flex flex-col gap-1 cursor-pointer group"
         >
@@ -148,9 +148,8 @@ export const BookingBar = () => {
                       setGuests(opt);
                       setShowGuests(false);
                     }}
-                    className={`w-full text-left px-6 py-3 text-xs tracking-widest transition-all duration-300 ${
-                      guests === opt ? 'bg-gold/10 text-gold font-medium' : 'text-soft/60 hover:bg-gold/5 hover:text-soft'
-                    }`}
+                    className={`w-full text-left px-6 py-3 text-xs tracking-widest transition-all duration-300 ${guests === opt ? 'bg-gold/10 text-gold font-medium' : 'text-soft/60 hover:bg-gold/5 hover:text-soft'
+                      }`}
                   >
                     {opt}
                   </button>
@@ -166,7 +165,7 @@ export const BookingBar = () => {
   return (
     <>
       {/* Mobile Sticky Button */}
-      <motion.div 
+      <motion.div
         animate={{ y: isVisible ? 0 : 150 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-4 bg-ink-deep/80 backdrop-blur-md border-t border-gold/10"
@@ -201,7 +200,7 @@ export const BookingBar = () => {
               <BookingInputs />
             </div>
             <div className="p-6 border-t border-gold/10">
-          <Link to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${guests.split(' ')[0]}`}>
+              <Link to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${guests.split(' ')[0]}`}>
                 <button className="btn-gold w-full py-5">
                   <span>CONFIRM & SEARCH</span>
                 </button>

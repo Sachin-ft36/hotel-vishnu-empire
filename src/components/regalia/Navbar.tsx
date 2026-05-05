@@ -58,19 +58,11 @@ export const Navbar = () => {
         <div className="w-full max-w-[1700px] mx-auto flex items-center justify-between gap-4 px-6 lg:px-8 xl:px-10">
           {/* Logo */}
           <Link to="/" className={`group flex items-center gap-2 shrink-0 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-            <span
-              className="font-serif-display text-white text-base md:text-lg tracking-[0.12em] font-light transition-all duration-500 group-hover:text-gold"
-              style={{
-                textShadow: `
-                  0 0 2px rgba(255, 255, 255, 0.8),
-                  0 -8px 25px rgba(255, 215, 0, 0.9),
-                  0 -4px 12px rgba(255, 215, 0, 0.7),
-                  0 -2px 5px rgba(255, 215, 0, 0.5)
-                `
-              }}
-            >
-              VISHNU VILAS
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="Hotel Vishnu Vilas" 
+              className="h-14 md:h-10 lg:h-10 w-auto object-contain transition-all duration-500 group-hover:brightness-110 group-hover:scale-105"
+            />
           </Link>
 
           {/* Center nav */}
@@ -114,7 +106,7 @@ export const Navbar = () => {
             className="lg:hidden text-gold p-2 -mr-2"
             aria-label="Toggle menu"
           >
-            {open ? <X size={22} strokeWidth={1.2} /> : <Menu size={22} strokeWidth={1.2} />}
+            {open ? <X size={32} strokeWidth={1.2} /> : <Menu size={32} strokeWidth={1.2} />}
           </button>
         </div>
       </header>
