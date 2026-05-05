@@ -71,7 +71,7 @@ const Memberships = () => {
           >
             <span className="eyebrow mb-6 block text-gold tracking-[0.5em]">The Inner Circle</span>
             <h1 className="font-serif-display text-[clamp(2rem,5vw,3.5rem)] leading-none uppercase tracking-wider mb-8">
-              THE VIJAY VILLAS <br />
+              VISHNU VILAS <br />
               <span className="text-gold italic normal-case tracking-normal">Privileges</span>
             </h1>
             <p className="text-soft-dim max-w-xl mx-auto text-lg font-light leading-relaxed">

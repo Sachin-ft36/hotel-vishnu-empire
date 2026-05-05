@@ -18,7 +18,7 @@ const COLS = [
       { name: "Offers", path: "/offers" },
       { name: "Memberships", path: "/memberships" },
       { name: "Luxury Suites", path: "/luxury-suites" },
-      { name: "Weddings", path: "/weddings" },
+      { name: "Celebrations", path: "/celebrations" },
     ],
   },
   {
@@ -94,13 +94,17 @@ export const Footer = () => {
         <div className="flex flex-col items-center gap-6 py-10 border-t border-gold/15">
           <GoldDivider width="40px" />
           <span className="font-serif-display text-gold text-4xl md:text-5xl tracking-[0.35em] font-light text-center">
-            THE VIJAY VILLAS
+            VISHNU VILAS
           </span>
-          <span className="small-caps text-warm/60">Hotels & Banquets</span>
+          <div className="flex flex-col items-center gap-2 text-center">
+            <span className="small-caps text-warm/60">Hotels & Banquets</span>
+            <span className="text-soft-dim/60 text-xs font-light tracking-widest mt-2 uppercase">Opp. Samarth Tower, Rewa, MP, India</span>
+            <a href="tel:+919424953899" className="text-gold/80 text-sm font-light tracking-[0.2em] hover:text-gold transition-colors mt-1">+91 94249 53899</a>
+          </div>
           <div className="flex items-center gap-5 mt-2">
             {[
-              { Icon: Instagram, href: "https://www.instagram.com/thevijayvillas/" },
-              { Icon: Facebook, href: "https://www.facebook.com/people/The-Vijay-Villas/61566145322954/" },
+              { Icon: Instagram, href: "https://www.instagram.com/hotelvishnuvilasrewa/" },
+              { Icon: Facebook, href: "https://www.facebook.com/people/Vishnu-Vilas/" },
               { Icon: Twitter, href: "#" },
               { Icon: Youtube, href: "#" }
             ].map((social, i) => (
@@ -119,7 +123,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 pt-6 text-xs text-warm/55 font-light tracking-wide">
-          <span>© {new Date().getFullYear()} THE VIJAY VILLAS. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} VISHNU VILAS. All rights reserved.</span>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold transition-colors">Privacy</a>
             <a href="#" className="hover:text-gold transition-colors">Terms</a>

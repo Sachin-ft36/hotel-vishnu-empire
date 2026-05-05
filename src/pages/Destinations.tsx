@@ -53,7 +53,7 @@ const Destinations = () => {
         <div className="absolute inset-0">
           <img
             src={destHeritage}
-            alt="The Vijay Villas Rewa"
+            alt="Vishnu Vilas Rewa"
             className="w-full h-full object-cover scale-105 slow-zoom opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-transparent to-ink" />
@@ -72,7 +72,7 @@ const Destinations = () => {
             </h1>
             <p className="text-soft-dim max-w-2xl mx-auto text-lg font-light leading-relaxed">
               Experience the untamed beauty and royal grandeur of Baghelkhand.
-              The Vijay Villas invites you to discover the land of white tigers,
+              Vishnu Vilas invites you to discover the land of white tigers,
               ancient forts, and cascading waterfalls.
             </p>
           </motion.div>
@@ -136,7 +136,7 @@ const Destinations = () => {
           <p className="font-serif-display text-2xl md:text-4xl text-soft-dim/90 leading-relaxed italic">
             "Rewa is not just a place; it's a legacy of the white tiger and the pride of Vindhya."
           </p>
-          <span className="mt-8 block eyebrow text-gold/60 text-[0.7rem]">— The Vijay Villas Philosophy</span>
+          <span className="mt-8 block eyebrow text-gold/60 text-[0.7rem]">— Vishnu Vilas Philosophy</span>
         </div>
       </section>
 

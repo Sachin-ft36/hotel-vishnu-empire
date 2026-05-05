@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-const palaceBg = "/vijayvillas.png";
+const palaceBg = "/vishnu_vilas/2.jpg";
 
 export const BrandStatement = () => {
   return (
@@ -30,8 +30,8 @@ export const BrandStatement = () => {
           <div className="flex items-center justify-center gap-6 md:gap-16">
             <div className="hidden lg:block h-[1px] w-32 bg-gradient-to-r from-transparent to-gold" />
             <h2 className="font-serif-display text-soft font-light leading-[1.05] tracking-[0.05em] text-[clamp(2.5rem,7vw,6.5rem)] uppercase">
-              India's Pride <br />
-              <span className="text-gold italic normal-case tracking-normal">World's Strongest</span>
+              The Majesty <br />
+              <span className="text-gold italic normal-case tracking-normal">of Rewa</span>
             </h2>
             <div className="hidden lg:block h-[1px] w-32 bg-gradient-to-l from-transparent to-gold" />
           </div>
@@ -39,11 +39,11 @@ export const BrandStatement = () => {
 
         <div className="mt-12 max-w-2xl mx-auto reveal is-visible" style={{ transitionDelay: '600ms' }}>
           <p className="text-soft-dim/90 text-lg md:text-xl font-light leading-relaxed tracking-wide italic">
-            "To the guests, we offer the world. To the world, we offer India."
+            "Echoing the legacy of kings, where every stone tells a story of Baghelkhand."
           </p>
           <p className="mt-6 text-soft-dim/70 text-base font-light leading-relaxed max-w-lg mx-auto">
-            A century of stories, a thousand years of culture, and a future
-            defined by the timeless grace of Indian hospitality.
+            At Hotel Vishnu Vilas, we don't just provide a stay; we revive a centuries-old 
+            heritage. Experience the pinnacle of royal hospitality in the heart of Rewa.
           </p>
         </div>
 

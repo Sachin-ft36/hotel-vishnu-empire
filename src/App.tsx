@@ -13,7 +13,8 @@ import Booking from "./pages/Booking.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import RequestInvitation from "./pages/RequestInvitation.tsx";
 import SignatureExperiences from "./pages/SignatureExperiences.tsx";
-import Weddings from "./pages/Weddings.tsx";
+import Celebrations from "./pages/Celebrations.tsx";
+import CelebrationInquiry from "./pages/CelebrationInquiry.tsx";
 import LuxurySuites from "./pages/LuxurySuites.tsx";
 import HallwaysOfElegance from "./pages/HallwaysOfElegance.tsx";
 import CulinaryJourneys from "./pages/CulinaryJourneys.tsx";
@@ -47,7 +48,8 @@ const App = () => (
           <Route path="/memberships" element={<Memberships />} />
           <Route path="/request-invitation" element={<RequestInvitation />} />
           <Route path="/signature-experiences" element={<SignatureExperiences />} />
-          <Route path="/weddings" element={<Weddings />} />
+          <Route path="/celebrations" element={<Celebrations />} />
+          <Route path="/celebration-inquiry" element={<CelebrationInquiry />} />
           <Route path="/luxury-suites" element={<LuxurySuites />} />
           <Route path="/hallways-of-elegance" element={<HallwaysOfElegance />} />
           <Route path="/culinary-journeys" element={<CulinaryJourneys />} />

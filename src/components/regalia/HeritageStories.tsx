@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-const heritageImg = "/oldphoto.jpg";
+const heritageImg = "/vishnu_vilas/vilas.jpg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -39,7 +39,7 @@ export const HeritageStories = () => {
         >
           <div className="flex items-center gap-4 mb-8">
             <GoldDivider width="40px" />
-            <span className="eyebrow text-gold">The Soul of The Vijay Villas</span>
+            <span className="eyebrow text-gold">The Soul of Vishnu Vilas</span>
           </div>
           
           <h2 className="font-serif-display text-3xl lg:text-4xl text-soft mb-10 leading-tight">

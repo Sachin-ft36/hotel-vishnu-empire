@@ -6,7 +6,7 @@ export const FloatingSocials = () => {
     <div className="fixed bottom-24 right-6 z-[60] flex flex-col gap-4">
       {/* Instagram Button */}
       <motion.a
-        href="https://www.instagram.com/thevijayvillas/?utm_source=ig_web_button_share_sheet"
+        href="https://www.instagram.com/hotelvishnuvilasrewa/"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ opacity: 0, x: 20 }}
@@ -22,7 +22,7 @@ export const FloatingSocials = () => {
 
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/917880087501?text=Greetings!%20I%20am%20interested%20in%20exploring%20The%20Vijay%20Villas.%20Could%20you%20please%20assist%20me%20with%20more%20details?" 
+        href="https://wa.me/919424953899?text=Greetings!%20I%20am%20interested%20in%20exploring%20Hotel%20Vishnu%20Vilas.%20Could%20you%20please%20assist%20me%20with%20more%20details?" 
         target="_blank"
         rel="noopener noreferrer"
         initial={{ opacity: 0, x: 20 }}

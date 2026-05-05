@@ -6,20 +6,22 @@ import { GoldDivider } from "./GoldDivider";
 const ITEMS = [
   {
     img: "/Signature Experiences/wedding.jpg",
+    video: "/weeding.mp4",
     eyebrow: "Signature",
-    title: "Timeless Weddings",
-    desc: "A bespoke atelier of weddings, set within palaces, beachfronts and private estates.",
+    title: "Timeless Celebrations",
+    desc: "A bespoke destination for weddings, celebrations, dining, and unforgettable experiences.",
     id: "weddings"
   },
   {
     img: "/Signature Experiences/room.jpg",
+    video: "/bedroom.mp4",
     eyebrow: "Heritage",
     title: "Luxury Suites",
     desc: "Sanctuaries of refined comfort, where historical grandeur meets modern luxury.",
     id: "suites"
   },
   {
-    img: "/Signature Experiences/corridor.jpg",
+    img: "/vishnu_vilas/hall.webp",
     eyebrow: "Sanctuary",
     title: "Hallways of Elegance",
     desc: "A journey through time, where every corridor whispers stories of a storied past.",
@@ -27,6 +29,7 @@ const ITEMS = [
   },
   {
     img: "/Signature Experiences/food.jpg",
+    video: "/food.mp4",
     eyebrow: "Maison",
     title: "Culinary Journeys",
     desc: "Tables set by master chefs, vintages drawn from a vault of three centuries.",
@@ -45,7 +48,7 @@ export const FeaturedCarousel = () => {
     if (!isPaused.current && scrollRef.current) {
       const el = scrollRef.current;
       el.scrollLeft += 0.5; // Slow, continuous speed
-      
+
       if (el.scrollLeft >= el.scrollWidth / 2) {
         el.scrollLeft = 0;
       }
@@ -68,7 +71,7 @@ export const FeaturedCarousel = () => {
   };
 
   return (
-    <section 
+    <section
       className="relative bg-ink pb-24 md:pb-32 pt-0 overflow-hidden"
       onMouseEnter={() => isPaused.current = true}
       onMouseLeave={() => isPaused.current = false}
@@ -118,12 +121,23 @@ export const FeaturedCarousel = () => {
             style={{ transitionDelay: `${(i % ITEMS.length) * 100}ms` }}
           >
             <div className="absolute inset-0 overflow-hidden">
-              <img
-                src={item.img}
-                alt={item.title}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-              />
+              {(item as any).video ? (
+                <video
+                  src={(item as any).video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                />
+              ) : (
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
+                />
+              )}
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700" />
             </div>
 
@@ -133,26 +147,26 @@ export const FeaturedCarousel = () => {
               </span>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-              <div className="bg-soft p-8 md:p-10 shadow-2xl relative overflow-hidden">
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+              <div className="bg-soft p-5 md:p-10 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left" />
-                
-                <h3 className="font-serif-display text-ink text-3xl md:text-4xl font-normal leading-tight mb-4">
+
+                <h3 className="font-serif-display text-ink text-xl md:text-4xl font-normal leading-tight mb-2 md:mb-4">
                   {item.title}
                 </h3>
-                <p className="text-ink/70 text-base leading-relaxed font-light mb-8 max-w-md">
+                <p className="text-ink/70 text-xs md:text-base leading-relaxed font-light mb-4 md:mb-8 max-w-md">
                   {item.desc}
                 </p>
-                
+
                 <Link to={
-                  item.id === "weddings" ? "/weddings" :
-                  item.id === "suites" ? "/luxury-suites" : 
-                  item.id === "hallways" ? "/hallways-of-elegance" : 
-                  item.id === "culinary" ? "/culinary-journeys" :
-                  `/signature-experiences#${item.id}`
+                  item.id === "weddings" ? "/celebrations" :
+                    item.id === "suites" ? "/luxury-suites" :
+                      item.id === "hallways" ? "/hallways-of-elegance" :
+                        item.id === "culinary" ? "/culinary-journeys" :
+                          `/signature-experiences#${item.id}`
                 }>
                   <button className="flex items-center gap-3 text-gold-deep font-medium tracking-widest uppercase text-xs group/btn">
-                    Explore More 
+                    Explore More
                     <span className="w-10 h-[1px] bg-gold-deep group-hover/btn:w-16 transition-all duration-500" />
                     <ArrowRight size={14} className="group-hover/btn:translate-x-2 transition-transform duration-500" />
                   </button>

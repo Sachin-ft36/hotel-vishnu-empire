@@ -55,11 +55,14 @@ export const SignatureDining = () => {
           transition={{ duration: 1.2 }}
           className="order-1 lg:order-2 relative"
         >
-          <div className="aspect-[4/5] overflow-hidden">
-            <img 
-              src={diningImg} 
-              alt="Signature Dining" 
-              className="w-full h-full object-cover slow-zoom"
+          <div className="aspect-[4/5] overflow-hidden bg-ink-deep">
+            <video 
+              src="/dining.mp4" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full h-full object-cover scale-105 slow-zoom opacity-80"
             />
           </div>
           {/* Decorative frame */}

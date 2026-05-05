@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 const SIGNATURE_ITEMS = [
   {
     id: "weddings",
-    title: "Timeless Weddings",
+    title: "Timeless Celebrations",
     eyebrow: "Bespoke Ateliers",
-    description: "A bespoke atelier of weddings, set within palaces, beachfronts and private estates. We craft celebrations that are not just events, but milestones of a lifetime.",
+    description: "A bespoke destination for weddings, celebrations, dining, and unforgettable experiences. We craft celebrations that are not just events, but milestones of a lifetime.",
     image: "/Signature Experiences/wedding.jpg",
     details: [
       { icon: MapPin, label: "Palaces, Estates & Beachfronts" },

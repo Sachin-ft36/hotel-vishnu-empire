@@ -13,9 +13,12 @@ const LuxurySuites = () => {
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/Signature Experiences/room.jpg"
-            alt="Luxury Suites"
+          <video
+            src="/bedroom.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover scale-105 slow-zoom opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/20 to-ink" />
@@ -57,11 +60,11 @@ const LuxurySuites = () => {
               <span className="text-gold italic normal-case">Poem</span> of Rest
             </h2>
             <p className="text-soft-dim/80 text-lg leading-relaxed font-light mb-10">
-              Each suite at The Vijay Villas is a meticulously restored sanctuary, 
-              featuring original period furniture, hand-carved marble, and the 
+              Each suite at Vishnu Vilas is a meticulously restored sanctuary,
+              featuring original period furniture, hand-carved marble, and the
               finest Italian linens. Here, silence is the ultimate luxury.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-10 border-t border-gold/10 pt-10">
               <div className="flex flex-col gap-3">
                 <Bed size={24} className="text-gold" />
@@ -73,7 +76,7 @@ const LuxurySuites = () => {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -81,8 +84,8 @@ const LuxurySuites = () => {
             transition={{ duration: 1.2 }}
             className="aspect-square overflow-hidden shadow-2xl border border-gold/10"
           >
-            <img 
-              src="/Signature Experiences/room.jpg" 
+            <img
+              src="/Signature Experiences/room.jpg"
               className="w-full h-full object-cover slow-zoom"
               alt="Suite Detail"
             />
@@ -94,31 +97,31 @@ const LuxurySuites = () => {
       <section className="py-32 bg-ink border-y border-gold/10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-24">
-             <GoldDivider width="40px" className="mx-auto mb-8" />
-             <h2 className="font-serif-display text-4xl md:text-6xl text-soft">In-Suite <span className="text-gold italic">Privileges</span></h2>
+            <GoldDivider width="40px" className="mx-auto mb-8" />
+            <h2 className="font-serif-display text-4xl md:text-6xl text-soft">In-Suite <span className="text-gold italic">Privileges</span></h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             <div className="text-center group">
-               <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold group-hover:text-ink transition-all duration-500">
-                  <Coffee size={24} strokeWidth={1} />
-               </div>
-               <h4 className="font-serif-display text-2xl text-soft mb-4">Personal Butler</h4>
-               <p className="text-soft-dim/60 text-sm font-light">Discreet, 24-hour service tailored to your every preference.</p>
+              <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold group-hover:text-ink transition-all duration-500">
+                <Coffee size={24} strokeWidth={1} />
+              </div>
+              <h4 className="font-serif-display text-2xl text-soft mb-4">Personal Butler</h4>
+              <p className="text-soft-dim/60 text-sm font-light">Discreet, 24-hour service tailored to your every preference.</p>
             </div>
             <div className="text-center group">
-               <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold group-hover:text-ink transition-all duration-500">
-                  <Tv size={24} strokeWidth={1} />
-               </div>
-               <h4 className="font-serif-display text-2xl text-soft mb-4">State-of-the-art Tech</h4>
-               <p className="text-soft-dim/60 text-sm font-light">Seamlessly integrated smart home features within heritage walls.</p>
+              <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold group-hover:text-ink transition-all duration-500">
+                <Tv size={24} strokeWidth={1} />
+              </div>
+              <h4 className="font-serif-display text-2xl text-soft mb-4">State-of-the-art Tech</h4>
+              <p className="text-soft-dim/60 text-sm font-light">Seamlessly integrated smart home features within heritage walls.</p>
             </div>
             <div className="text-center group">
-               <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold group-hover:text-ink transition-all duration-500">
-                  <GoldDivider width="24px" />
-               </div>
-               <h4 className="font-serif-display text-2xl text-soft mb-4">Pillow Menu</h4>
-               <p className="text-soft-dim/60 text-sm font-light">A curated selection of artisanal pillows for the perfect night's rest.</p>
+              <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-gold group-hover:text-ink transition-all duration-500">
+                <GoldDivider width="24px" />
+              </div>
+              <h4 className="font-serif-display text-2xl text-soft mb-4">Pillow Menu</h4>
+              <p className="text-soft-dim/60 text-sm font-light">A curated selection of artisanal pillows for the perfect night's rest.</p>
             </div>
           </div>
         </div>
@@ -126,13 +129,13 @@ const LuxurySuites = () => {
 
       {/* Call to Action */}
       <section className="py-32 text-center px-6">
-          <h2 className="font-serif-display text-4xl md:text-6xl text-soft mb-12">Experience the <br /><span className="text-gold italic">Pinnacle</span> of Comfort</h2>
-          <Link to="/request-invitation">
-            <button className="btn-gold px-12 group">
-              <span>Reserve Your Stay</span>
-              <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
-            </button>
-          </Link>
+        <h2 className="font-serif-display text-4xl md:text-6xl text-soft mb-12">Experience the <br /><span className="text-gold italic">Pinnacle</span> of Comfort</h2>
+        <Link to="/request-invitation">
+          <button className="btn-gold px-12 group">
+            <span>Reserve Your Stay</span>
+            <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
+          </button>
+        </Link>
       </section>
 
       <Footer />

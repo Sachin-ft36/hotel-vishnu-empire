@@ -13,9 +13,12 @@ const CulinaryJourneys = () => {
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/Signature Experiences/food.jpg"
-            alt="Culinary Journeys"
+          <video
+            src="/food.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover scale-105 slow-zoom opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/20 to-ink" />

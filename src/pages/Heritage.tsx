@@ -10,7 +10,7 @@ const HERITAGE_CHAPTERS = [
     id: "architecture",
     title: "Architectural Grandeur",
     eyebrow: "The Living Stone",
-    description: "Every arch, pillar, and facade at The Vijay Villas is a custodian of history. Our restoration process meticulously preserves the original craftsmanship while ensuring the highest standards of luxury.",
+    description: "Every arch, pillar, and facade at Vishnu Vilas is a custodian of history. Our restoration process meticulously preserves the original craftsmanship while ensuring the highest standards of luxury.",
     image: "/oldphoto.jpg",
     highlights: ["Hand-carved marble details", "Period-accurate restorations", "Heritage lighting design"]
   },

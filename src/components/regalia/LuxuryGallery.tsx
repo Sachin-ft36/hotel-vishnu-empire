@@ -4,18 +4,26 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const GALLERY_IMAGES = [
-  { id: 1, src: "/gallery/unnamed (1).jpg", category: "Interior" },
-  { id: 2, src: "/gallery/unnamed (2).jpg", category: "Exterior" },
-  { id: 3, src: "/gallery/unnamed (3).jpg", category: "Dining" },
-  { id: 4, src: "/gallery/unnamed (4).jpg", category: "Interior" },
-  { id: 5, src: "/gallery/unnamed (5).jpg", category: "Wellness" },
-  { id: 6, src: "/gallery/unnamed (6).jpg", category: "Interior" },
-  { id: 7, src: "/gallery/unnamed (7).jpg", category: "Detail" },
-  { id: 8, src: "/gallery/unnamed (8).jpg", category: "Exterior" },
-  { id: 9, src: "/gallery/unnamed (12).jpg", category: "Dining" },
-  { id: 10, src: "/gallery/unnamed (13).jpg", category: "Interior" },
-  { id: 11, src: "/gallery/unnamed (14).jpg", category: "Wellness" },
-  { id: 12, src: "/gallery/unnamed (21).jpg", category: "Detail" },
+  { id: 1, src: "/vishnu_vilas/1.jpg", category: "Exterior" },
+  { id: 2, src: "/vishnu_vilas/2.jpg", category: "Exterior" },
+  { id: 3, src: "/vishnu_vilas/vilas.jpg", category: "Exterior" },
+  { id: 4, src: "/vishnu_vilas/bedroom.jpg", category: "Interior" },
+  { id: 5, src: "/vishnu_vilas/bedroom10.jpg", category: "Interior" },
+  { id: 6, src: "/vishnu_vilas/bedroom11.jpg", category: "Interior" },
+  { id: 7, src: "/vishnu_vilas/bedoom9.jpg", category: "Interior" },
+  { id: 8, src: "/vishnu_vilas/masterbedroom.jpg", category: "Interior" },
+  { id: 9, src: "/vishnu_vilas/smallbedroom.jpg", category: "Interior" },
+  { id: 10, src: "/vishnu_vilas/dininghall.jpg", category: "Dining" },
+  { id: 11, src: "/vishnu_vilas/reciptioon.jpg", category: "Interior" },
+  { id: 12, src: "/vishnu_vilas/washroom.jpg", category: "Interior" },
+  { id: 13, src: "/vishnu_vilas/hall.webp", category: "Interior" },
+  { id: 14, src: "/vishnu_vilas/dininghall1.webp", category: "Dining" },
+  { id: 15, src: "/vishnu_vilas/bedroom1.webp", category: "Interior" },
+  { id: 16, src: "/vishnu_vilas/bedroom2.webp", category: "Interior" },
+  { id: 17, src: "/vishnu_vilas/bedroom3.webp", category: "Interior" },
+  { id: 18, src: "/vishnu_vilas/bedroom4.webp", category: "Interior" },
+  { id: 19, src: "/vishnu_vilas/bedroom6.webp", category: "Interior" },
+  { id: 20, src: "/vishnu_vilas/bedroom7.webp", category: "Interior" },
 ];
 
 export const LuxuryGallery = ({

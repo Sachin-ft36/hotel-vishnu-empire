@@ -7,10 +7,29 @@ const phoneVideo = "/heropage/phonehome.mp4";
 const hotelVideo = "/heropage/hotel.mp4";
 
 export function Hero() {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      // Loop back to start if we exceed 108 seconds
+      if (video.currentTime >= 108) {
+        video.currentTime = 0;
+        video.play();
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
+
   return (
     <section className="relative h-[110vh] w-full overflow-hidden bg-ink">
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
@@ -32,7 +51,7 @@ export function Hero() {
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
 
-      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:pt-32 lg:pt-40 pt-44">
+      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:pt-24 lg:pt-32 pt-36">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-start">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
@@ -42,25 +61,31 @@ export function Hero() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <GoldDivider width="40px" />
-                <span className="eyebrow uppercase tracking-[0.3em] text-gold/80">A New Standard of Royalty</span>
+                <span className="eyebrow uppercase tracking-[0.4em] text-gold/90 font-medium">Hotel Vishnu Vilas</span>
               </div>
-              <h1 className="font-serif-display text-soft font-light leading-[1.1] tracking-[0.05em] text-[clamp(2.75rem,6vw,5.5rem)] uppercase">
-                Exclusively <br />
-                <span className="text-gold italic normal-case tracking-normal">for You</span>
+              <h1 className="font-serif-display text-soft font-light leading-[1.1] tracking-[0.02em] text-[clamp(1.6rem,4.5vw,5rem)] uppercase max-w-md">
+                Where Legends <br />
+                <span className="text-gold italic normal-case tracking-normal">Reside</span>
               </h1>
             </motion.div>
           </div>
 
-          <div className="flex flex-col items-center text-center lg:pt-12">
-            <p className="text-soft-dim/80 text-sm md:text-base leading-relaxed font-light tracking-wide max-w-md mb-10">
-              Experience the storied legacy of Baghelkhand, where the majesty
-              of white tigers meets the pinnacle of royal hospitality.
-            </p>
+          <div className="flex flex-col items-center text-center lg:pt-10">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="text-soft-dim/90 text-base md:text-lg leading-relaxed font-light tracking-wide max-w-lg mb-12 italic"
+            >
+              "Enter a sanctuary where the golden era of Rewa lives on.
+              From the storied halls to our sun-drenched gardens,
+              discover an escape curated for those who seek the extraordinary."
+            </motion.p>
             <div className="flex flex-wrap gap-6 justify-center">
               <Link to="/book" className="btn-gold">
                 <span>Book a Stay</span>
               </Link>
-              <Link to="/weddings" className="btn-ghost-gold">
+              <Link to="/celebrations" className="btn-ghost-gold">
                 <span>Book Banquet</span>
               </Link>
             </div>

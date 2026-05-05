@@ -29,7 +29,7 @@ const GalleryPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="eyebrow text-gold mb-6 block"
             >
-              The Vijay Villas
+              Vishnu Vilas
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -50,10 +50,12 @@ const GalleryPage = () => {
           <div className="max-w-4xl mx-auto text-center px-6">
             <h3 className="font-serif-display text-3xl md:text-4xl text-soft mb-8">Share Your Moments</h3>
             <p className="text-soft/60 font-light mb-12 max-w-xl mx-auto">
-              Follow our journey and share your own experiences at The Vijay Villas using #TheVijayVillasRewa
+              Follow our journey and share your own experiences at Vishnu Vilas using #VishnuVilasRewa
             </p>
             <div className="flex justify-center gap-8">
-              <button className="small-caps text-gold hover:text-soft transition-colors tracking-[0.3em] text-xs">Instagram</button>
+              <a href="https://www.instagram.com/hotelvishnuvilasrewa/" target="_blank" rel="noopener noreferrer">
+                <button className="small-caps text-gold hover:text-soft transition-colors tracking-[0.3em] text-xs">Instagram</button>
+              </a>
               <button className="small-caps text-gold hover:text-soft transition-colors tracking-[0.3em] text-xs">Facebook</button>
               <button className="small-caps text-gold hover:text-soft transition-colors tracking-[0.3em] text-xs">Pinterest</button>
             </div>

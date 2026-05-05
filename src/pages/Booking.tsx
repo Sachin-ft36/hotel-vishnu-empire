@@ -7,7 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Calendar, Users, MapPin, CheckCircle2, ChevronRight, 
   ChevronLeft, Star, Wifi, Tv, Coffee, Wind, Info, 
-  ShieldCheck, ArrowRight, X, Image as ImageIcon
+  ShieldCheck, ArrowRight, X, Image as ImageIcon,
+  Maximize, BedSingle, Bath
 } from "lucide-react";
 import { LuxuryDatePicker } from "@/components/regalia/LuxuryDatePicker";
 import { LuxurySelect } from "@/components/regalia/LuxurySelect";
@@ -15,48 +16,233 @@ import { LuxurySelect } from "@/components/regalia/LuxurySelect";
 // Mock Room Data
 const ROOMS = [
   {
-    id: "deluxe-suite",
-    name: "Heritage Deluxe Suite",
-    desc: "Spacious luxury room with private balcony and garden views.",
-    price: 14999,
-    rating: 4.8,
-    reviews: 124,
-    images: ["/Signature Experiences/room.jpg", "/Signature Experiences/room.jpg"], // Use room images
-    amenities: ["AC", "WiFi", "TV", "Breakfast"],
-    stock: 2,
-    popular: true,
-    size: "450 sq. ft.",
-    bed: "King Size"
+    id: "executive-ac",
+    name: "Executive AC Room",
+    desc: "Modern and comfortable room with a double bed and essential amenities.",
+    images: [
+      "/rooms/executive AC/1.webp",
+      "/rooms/executive AC/2.avif",
+      "/rooms/executive AC/3.webp",
+      "/rooms/executive AC/4.jpg"
+    ],
+    stock: 5,
+    popular: false,
+    size: "225 sq. ft (21 sq. mt)",
+    bed: "1 Double Bed",
+    guestsMax: 3,
+    bathroom: "1 Bathroom",
+    packages: [
+      { id: "exec-standard", name: "Room With Free Cancellation", price: 1400, includes: ["Free Cancellation"] },
+      { id: "exec-breakfast", name: "Room With Free Cancellation | Breakfast included", price: 1700, includes: ["Free Cancellation", "Breakfast included"] }
+    ],
+    rating: 4.5,
+    reviews: 98,
+    amenities: ["Iron/Ironing Board", "Mineral Water - additional charge", "Daily Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning"],
+    categorizedAmenities: {
+      "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "Daily Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning", "Free Wi-Fi", "Room Service"],
+      "Room Features": ["Charging Points", "Seating Area", "Chair", "Telephone"],
+      "Beds and Blanket": ["Woollen Blanket"],
+      "Media and Entertainment": ["TV"],
+      "Bathroom": ["Shaving Mirror", "Towels", "Geyser/Water Heater", "Western Toilet Seat", "Hot & Cold Water", "Jetspray", "Toiletries"],
+      "Other Facilities": ["Newspaper", "Fan"]
+    }
   },
   {
-    id: "royal-chamber",
-    name: "The Royal Chamber",
-    desc: "Authentic heritage decor with modern state-of-the-art amenities.",
-    price: 19999,
-    rating: 4.9,
-    reviews: 86,
-    images: ["/Signature Experiences/room.jpg", "/Signature Experiences/room.jpg"],
-    amenities: ["AC", "WiFi", "Mini Bar", "Butler"],
+    id: "super-executive-ac",
+    name: "Super Executive AC Room",
+    desc: "Enhanced comfort with sophisticated decor and extra space.",
+    images: [
+      "/rooms/super executive Ac room/1.avif",
+      "/rooms/super executive Ac room/2.jfif",
+      "/rooms/super executive Ac room/3.jpg",
+      "/rooms/super executive Ac room/4.jpg",
+      "/rooms/super executive Ac room/5.jpg"
+    ],
+    stock: 3,
+    popular: true,
+    size: "270 sq. ft (25 sq. mt)",
+    bed: "1 Double Bed",
+    guestsMax: 3,
+    bathroom: "1 Bathroom",
+    packages: [
+      { id: "super-standard", name: "Room With Free Cancellation", price: 2389, includes: ["Free Cancellation"] },
+      { id: "super-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 2631, includes: ["Free Cancellation", "Breakfast"] }
+    ],
+    rating: 4.7,
+    reviews: 112,
+    amenities: ["Iron/Ironing Board", "Mineral Water - additional charge", "Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning"],
+    categorizedAmenities: {
+      "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning", "Wi-Fi", "Room Service"],
+      "Room Features": ["Closet", "Chair", "Work Desk", "Sofa"],
+      "Beds and Blanket": ["Woollen Blanket"],
+      "Safety and Security": ["Safe"],
+      "Media and Entertainment": ["TV"],
+      "Bathroom": ["Shaving Mirror", "Towels", "Geyser/Water Heater", "Western Toilet Seat", "Hot & Cold Water", "Jetspray", "Toiletries", "Bidet"],
+      "Other Facilities": ["Ceiling Fan"]
+    }
+  },
+  {
+    id: "royal-executive-ac",
+    name: "Royal Executive AC Room",
+    desc: "Grand room featuring 24-hour housekeeping and smoking options.",
+    images: [
+      "/rooms/royal executive Ac room/1.avif",
+      "/rooms/royal executive Ac room/2.jpg",
+      "/rooms/royal executive Ac room/3.jpg"
+    ],
+    stock: 2,
+    popular: false,
+    size: "300 sq. ft (28 sq. mt)",
+    bed: "1 Double Bed",
+    guestsMax: 3,
+    bathroom: "1 Bathroom",
+    packages: [
+      { id: "royal-standard", name: "Room With Free Cancellation", price: 2843, includes: ["Free Cancellation"] },
+      { id: "royal-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 3199, includes: ["Free Cancellation", "Breakfast"] }
+    ],
+    rating: 4.8,
+    reviews: 75,
+    amenities: ["Iron/Ironing Board", "Smoking Room", "Bathroom", "24-hour Housekeeping", "Laundry Service", "Air Conditioning"],
+    categorizedAmenities: {
+      "Popular with Guests": ["Iron/Ironing Board", "Smoking Room", "Bathroom", "24-hour Housekeeping", "Laundry Service", "Air Conditioning", "Free Wi-Fi", "Room Service"],
+      "Room Features": ["Telephone", "Closet", "Seating Area", "Chair", "Centre Table", "Work Desk", "Blackout Curtains"],
+      "Beds and Blanket": ["Woollen Blanket"],
+      "Safety and Security": ["Cupboards with Locks"],
+      "Media and Entertainment": ["TV"],
+      "Bathroom": ["Dental Kit", "Shower Cap", "Western Toilet Seat", "Hot & Cold Water", "Toiletries", "Towels"],
+      "Other Facilities": ["Newspaper", "Ceiling Fan"]
+    }
+  },
+  {
+    id: "luxury-suite",
+    name: "Suite",
+    desc: "Our most expansive sanctuary with a city view and premium services.",
+    images: [
+      "/rooms/suite/1.webp",
+      "/rooms/suite/2.jpeg",
+      "/rooms/suite/3.webp",
+      "/rooms/suite/4.webp",
+      "/rooms/suite/5.webp"
+    ],
     stock: 1,
     popular: false,
-    size: "600 sq. ft.",
-    bed: "Royal Canopy"
-  },
-  {
-    id: "executive-villa",
-    name: "Private Pool Villa",
-    desc: "Ultimate privacy with a dedicated plunge pool and courtyard.",
-    price: 34999,
-    rating: 5.0,
-    reviews: 42,
-    images: ["/Signature Experiences/room.jpg", "/Signature Experiences/room.jpg"],
-    amenities: ["Pool", "WiFi", "Spa", "Private Chef"],
-    stock: 3,
-    popular: false,
-    size: "1200 sq. ft.",
-    bed: "Super King"
+    size: "450 sq. ft (42 sq. mt)",
+    bed: "1 Queen Bed",
+    guestsMax: 3,
+    bathroom: "1 Bathroom",
+    packages: [
+      { id: "suite-standard", name: "Room With Free Cancellation", price: 4354, includes: ["Free Cancellation"] },
+      { id: "suite-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 4958, includes: ["Free Cancellation", "Breakfast"] }
+    ],
+    rating: 4.9,
+    reviews: 56,
+    amenities: ["Iron/Ironing Board", "Mineral Water - additional charge", "24-hour Housekeeping", "Shared Bathroom", "Laundry Service", "Air Conditioning", "City View"],
+    categorizedAmenities: {
+      "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "24-hour Housekeeping", "Shared Bathroom", "Laundry Service", "Air Conditioning", "Free Wi-Fi"],
+      "Room Features": ["Closet", "Living Area", "Seating Area", "Chair", "Centre Table", "Dining Area", "Work Desk", "Blackout Curtains", "Dining Table", "Sofa"],
+      "Basic Facilities": ["Kettle"],
+      "Beds and Blanket": ["Woollen Blanket"],
+      "Safety and Security": ["Cupboards with Locks"],
+      "Media and Entertainment": ["TV"],
+      "Bathroom": ["Dental Kit", "Geyser/Water Heater", "Shower Cap", "Slippers", "Bathrobes", "Weighing Scale", "Western Toilet Seat", "Hot & Cold Water", "Toiletries", "Towels"],
+      "Other Facilities": ["Private Pool", "Newspaper", "Ceiling Fan"]
+    }
   }
 ];
+
+// Room Gallery Component
+const RoomGallery = ({ images, name }: { images: string[], name: string }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  return (
+    <>
+      <div className="flex flex-col gap-3">
+        <div 
+          className="relative aspect-[16/10] overflow-hidden cursor-zoom-in group/main"
+          onClick={() => setIsFullScreen(true)}
+        >
+          <AnimatePresence mode="wait">
+            <motion.img 
+              key={activeIdx}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              src={images[activeIdx]} 
+              className="w-full h-full object-cover group-hover/main:scale-110 transition-transform duration-1000"
+              alt={`${name} - ${activeIdx + 1}`}
+            />
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-ink/0 group-hover/main:bg-ink/20 transition-colors duration-500 flex items-center justify-center">
+             <Maximize className="text-soft opacity-0 group-hover/main:opacity-100 transition-opacity duration-500" size={32} />
+          </div>
+        </div>
+        {images.length > 1 && (
+          <div className="flex gap-2 px-1 overflow-x-auto pb-2 scrollbar-hide">
+            {images.map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIdx(idx)}
+                className={`relative flex-shrink-0 w-16 aspect-video border transition-all duration-300 ${
+                  activeIdx === idx ? 'border-gold scale-105 z-10' : 'border-gold/10 opacity-50 hover:opacity-100'
+                }`}
+              >
+                <img src={img} className="w-full h-full object-cover" alt={`${name} thumb ${idx + 1}`} />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Full Screen Lightbox */}
+      <AnimatePresence>
+        {isFullScreen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] bg-ink/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12"
+          >
+            <button 
+              onClick={() => setIsFullScreen(false)}
+              className="absolute top-8 right-8 text-soft/60 hover:text-gold transition-colors z-[210]"
+            >
+               <X size={40} strokeWidth={1} />
+            </button>
+            
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-7xl aspect-[16/10] shadow-2xl"
+            >
+               <img src={images[activeIdx]} className="w-full h-full object-contain" alt={name} />
+               
+               {/* Navigation Arrows */}
+               {images.length > 1 && (
+                 <>
+                   <button 
+                     onClick={(e) => { e.stopPropagation(); setActiveIdx((activeIdx - 1 + images.length) % images.length); }}
+                     className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-ink transition-all"
+                   >
+                      <ChevronLeft size={24} />
+                   </button>
+                   <button 
+                     onClick={(e) => { e.stopPropagation(); setActiveIdx((activeIdx + 1) % images.length); }}
+                     className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-ink transition-all"
+                   >
+                      <ChevronRight size={24} />
+                   </button>
+                 </>
+               )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
 const Booking = () => {
   const location = useLocation();
@@ -69,10 +255,10 @@ const Booking = () => {
   const [checkOutDate, setCheckOutDate] = useState<Date | undefined>();
 
   const [formData, setFormData] = useState({
-    property: "The Vijay Villas",
+    property: "Vishnu Vilas",
     checkIn: "",
     checkOut: "",
-    guests: "2",
+    guests: "1",
     name: "",
     email: "",
     phone: "",
@@ -119,9 +305,14 @@ const Booking = () => {
 
   const prevStep = () => setStep(s => s - 1);
 
-  const handleBookRoom = (room: any) => {
-    setSelectedRoom(room);
+  const handleBookRoom = (room: any, pkg: any) => {
+    setSelectedRoom({ ...room, selectedPackage: pkg });
     setStep(4); // Go to Guest Details
+  };
+
+  const handleSubmit = (e: any) => {
+    if (e && e.preventDefault) e.preventDefault();
+    setStep(5);
   };
 
   return (
@@ -266,86 +457,127 @@ const Booking = () => {
                     </select>
                  </div>
               </div>
-
               <div className="grid grid-cols-1 gap-12">
                  {ROOMS.map((room) => (
                     <div 
                       key={room.id}
                       className="group bg-panel/10 border border-gold/10 overflow-hidden flex flex-col lg:flex-row hover:border-gold/30 transition-all duration-500"
                     >
-                       {/* Image Section */}
-                       <div className="lg:w-2/5 relative overflow-hidden aspect-video lg:aspect-auto">
-                          <img 
-                            src={room.images[0]} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                            alt={room.name}
-                          />
-                          {room.popular && (
-                             <div className="absolute top-4 left-4 bg-gold text-ink px-4 py-1 text-[0.6rem] font-bold small-caps tracking-widest">
-                               Most Popular
-                             </div>
-                          )}
-                          <div className="absolute bottom-4 left-4 flex gap-2">
-                             <div className="bg-ink/80 backdrop-blur-md px-3 py-1 flex items-center gap-1">
-                                <ImageIcon size={12} className="text-gold" />
-                                <span className="text-[0.6rem] text-soft">{room.images.length}</span>
-                             </div>
-                          </div>
-                       </div>
+                        {/* Image & Quick Info Section */}
+                        <div className="lg:w-1/3 relative border-r border-gold/10 bg-ink-deep/50 flex flex-col">
+                           <div className="p-4">
+                              <RoomGallery images={room.images} name={room.name} />
+                           </div>
 
-                       {/* Content Section */}
-                       <div className="flex-1 p-8 lg:p-12 flex flex-col">
-                          <div className="flex justify-between items-start mb-4">
-                             <div>
-                                <h3 className="font-serif-display text-3xl text-soft mb-2 group-hover:text-gold transition-colors">{room.name}</h3>
-                                <p className="text-soft-dim/60 text-sm font-light italic">{room.desc}</p>
-                             </div>
-                             <div className="text-right">
-                                <div className="flex items-center gap-1 text-gold mb-1 justify-end">
-                                   <Star size={14} fill="currentColor" />
-                                   <span className="text-sm font-medium">{room.rating}</span>
-                                </div>
-                                <span className="text-[0.6rem] text-soft/40 small-caps">{room.reviews} Reviews</span>
-                             </div>
-                          </div>
+                           {/* Availability Badge */}
+                           <div className="absolute top-8 left-8 z-20">
+                              <div className={`px-3 py-1.5 backdrop-blur-md border ${room.stock <= 2 
+                                 ? 'bg-orange-500/90 border-orange-400 text-white animate-pulse' 
+                                 : 'bg-ink/90 border-gold/40 text-gold'} small-caps text-[0.6rem] tracking-[0.1em] flex items-center gap-2`}>
+                                 <div className={`w-1.5 h-1.5 rounded-full ${room.stock <= 2 ? 'bg-white' : 'bg-gold'}`} />
+                                 <span>{room.stock} {room.stock === 1 ? 'Room' : 'Rooms'} Available</span>
+                              </div>
+                           </div>
 
-                          <div className="flex flex-wrap gap-4 my-8">
-                             {room.amenities.map(a => (
-                                <div key={a} className="flex items-center gap-2 text-[0.65rem] text-soft/50 border border-gold/10 px-3 py-1 rounded-full">
-                                   <ShieldCheck size={12} className="text-gold/40" />
-                                   {a}
-                                </div>
-                             ))}
-                          </div>
+                           {/* Details under image */}
+                           <div className="p-6 flex-1 flex flex-col justify-between">
+                              <div className="space-y-5">
+                                 <div className="flex items-center justify-between">
+                                    <h3 className="font-serif-display text-2xl text-soft">{room.name}</h3>
+                                    <span className="text-[0.6rem] text-gold/60 small-caps tracking-widest font-medium">Max {room.guestsMax} Guests</span>
+                                 </div>
+                                 
+                                 <div className="grid grid-cols-1 gap-3">
+                                    <div className="flex items-center gap-3 text-[0.65rem] text-soft/60 font-light">
+                                       <Maximize size={14} className="text-gold/40" />
+                                       <span>{room.size}</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-[0.65rem] text-soft/60 font-light">
+                                       <BedSingle size={14} className="text-gold/40" />
+                                       <span>{room.bed}</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-[0.65rem] text-soft/60 font-light">
+                                       <Bath size={14} className="text-gold/40" />
+                                       <span>{room.bathroom}</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                              <div className="mt-8 pt-6 border-t border-gold/5">
+                                 <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                                    {room.amenities.slice(0, 6).map(a => (
+                                       <div key={a} className="flex items-center gap-2 text-[0.6rem] text-soft/30 font-light">
+                                          <div className="w-1 h-1 bg-gold/20 rounded-full" />
+                                          <span className="truncate">{a}</span>
+                                       </div>
+                                    ))}
+                                 </div>
+                                 <button 
+                                   onClick={() => setShowRoomDetails(room)}
+                                   className="text-gold/60 text-[0.65rem] mt-6 small-caps tracking-[0.2em] hover:text-gold hover:underline block transition-colors"
+                                 >
+                                    View More Details
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
 
-                          <div className="mt-auto pt-8 border-t border-gold/5 flex flex-col sm:flex-row items-center justify-between gap-6">
-                             <div className="text-center sm:text-left">
-                                <span className="text-[0.65rem] text-soft/40 small-caps block mb-1">Price per night</span>
-                                <div className="flex items-baseline gap-2">
-                                   <span className="text-3xl font-serif-display text-soft">₹{room.price.toLocaleString()}</span>
-                                   <span className="text-xs text-soft-dim/60 font-light">+ Taxes</span>
-                                </div>
-                                {room.stock < 3 && (
-                                   <span className="text-[0.65rem] text-orange-400 font-medium block mt-2 animate-pulse">🔥 Only {room.stock} rooms left!</span>
-                                )}
-                             </div>
-                             
-                             <div className="flex gap-4">
-                                <button 
-                                  onClick={() => setShowRoomDetails(room)}
-                                  className="px-6 py-3 border border-gold/30 text-gold text-xs small-caps tracking-widest hover:bg-gold/10 transition-all"
-                                >
-                                   View Details
-                                </button>
-                                <button 
-                                  onClick={() => handleBookRoom(room)}
-                                  className="btn-gold px-8 py-3 h-auto"
-                                >
-                                   <span>Book Now</span>
-                                </button>
-                             </div>
-                          </div>
-                       </div>
+                        {/* Packages Section */}
+                        <div className="flex-1 p-8 lg:p-12 bg-panel/5 flex flex-col">
+                           <div className="flex justify-between items-start mb-10">
+                              <div>
+                                 <p className="text-soft-dim/40 text-xs font-light italic mb-2">"{room.desc}"</p>
+                                 <div className="flex items-center gap-4">
+                                    <div className="flex items-center gap-1 text-gold/80">
+                                       <Star size={12} fill="currentColor" />
+                                       <span className="text-xs font-medium">{room.rating}</span>
+                                    </div>
+                                    <span className="text-[0.6rem] text-soft/30 small-caps tracking-widest border-l border-gold/10 pl-4">{room.reviews} Guest Reviews</span>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div className="space-y-6">
+                              {room.packages.map((pkg: any) => (
+                                 <div key={pkg.id} className="group/pkg relative p-6 border border-gold/10 bg-ink-deep/30 hover:border-gold/30 transition-all duration-500 rounded-sm">
+                                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-6">
+                                       <div className="flex-1">
+                                          <div className="flex items-center gap-3 mb-3">
+                                             <h4 className="font-serif-display text-xl text-soft">{pkg.name}</h4>
+                                             {pkg.name.includes("Breakfast") && (
+                                                <span className="bg-gold/10 text-gold text-[0.55rem] px-2 py-0.5 small-caps border border-gold/20">Best Value</span>
+                                             )}
+                                          </div>
+                                          <div className="flex flex-wrap gap-4">
+                                             {pkg.includes.map((inc: string) => (
+                                                <span key={inc} className="text-[0.65rem] text-soft/40 flex items-center gap-1.5 font-light italic">
+                                                   <CheckCircle2 size={10} className="text-gold/50" /> {inc}
+                                                </span>
+                                             ))}
+                                          </div>
+                                       </div>
+                                       
+                                       <div className="flex flex-col sm:items-end gap-4">
+                                          <div className="text-center sm:text-right">
+                                             <div className="flex items-baseline gap-2 justify-center sm:justify-end">
+                                                <span className="text-3xl font-serif-display text-soft">₹{pkg.price.toLocaleString()}</span>
+                                                <span className="text-[0.6rem] text-gold/60 small-caps tracking-widest">+ Taxes</span>
+                                             </div>
+                                             <p className="text-[0.55rem] text-soft/30 italic mt-1">Per night, excluding fees</p>
+                                          </div>
+                                          
+                                          <button 
+                                            onClick={() => handleBookRoom(room, pkg)}
+                                            className="btn-gold px-10 py-3 text-[0.65rem] tracking-[0.25em]"
+                                          >
+                                             <span>Select Room</span>
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              ))}
+                           </div>
+                        </div>
                     </div>
                  ))}
               </div>
@@ -384,7 +616,7 @@ const Booking = () => {
                     <div className="space-y-2">
                        <label className="small-caps text-[0.65rem] text-gold ml-1">Email Address</label>
                        <input 
-                         placeholder="royalty@vijayvillas.com"
+                         placeholder="royalty@vishnuvilas.com"
                          className="w-full bg-ink/40 border border-gold/20 p-4 text-soft focus:border-gold outline-none transition-colors"
                          onChange={(e) => setFormData({...formData, email: e.target.value})}
                        />
@@ -432,7 +664,7 @@ const Booking = () => {
                        <div className="h-[1px] bg-gold/10 my-6" />
                        <div className="flex justify-between text-lg">
                           <span className="text-soft">Total</span>
-                          <span className="text-gold font-serif-display">₹{(selectedRoom?.price * 2).toLocaleString()}</span>
+                          <span className="text-gold font-serif-display">₹{(selectedRoom?.selectedPackage?.price * 2).toLocaleString()}</span>
                        </div>
                        <p className="text-[0.6rem] text-soft/30 italic text-center pt-4">All taxes and fees included in the final amount.</p>
                     </div>
@@ -456,7 +688,7 @@ const Booking = () => {
               </div>
               <h2 className="text-4xl font-serif-display uppercase tracking-[0.2em]">Reservation Confirmed</h2>
               <p className="text-soft-dim max-w-sm mx-auto font-light leading-relaxed">
-                Thank you, {formData.name.split(' ')[0]}. Your stay at <b>{formData.property}</b> in the <b>{selectedRoom?.name}</b> is confirmed. 
+                Thank you, {formData.name.split(' ')[0]}. Your stay at <b>{formData.property}</b> in the <b>{selectedRoom?.name}</b> ({selectedRoom?.selectedPackage?.name}) is confirmed. 
                 A confirmation voucher has been sent to your email.
               </p>
               <div className="pt-10 flex flex-col items-center gap-6">
@@ -494,13 +726,9 @@ const Booking = () => {
                </button>
 
                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="h-[400px] lg:h-full relative overflow-hidden">
-                     <img 
-                       src={showRoomDetails.images[0]} 
-                       className="w-full h-full object-cover" 
-                       alt={showRoomDetails.name} 
-                     />
-                  </div>
+                   <div className="p-4 lg:p-8 bg-ink-deep">
+                      <RoomGallery images={showRoomDetails.images} name={showRoomDetails.name} />
+                   </div>
                   <div className="p-8 lg:p-16 space-y-8">
                      <div className="flex items-center gap-3">
                         <GoldDivider width="30px" />
@@ -511,7 +739,7 @@ const Booking = () => {
                      
                      <div className="grid grid-cols-2 gap-8">
                         <div className="space-y-4">
-                           <h4 className="small-caps text-gold text-xs tracking-widest">Amenities</h4>
+                           <h3 className="font-serif-display text-3xl text-soft mb-10">Room Amenities</h3>
                            <ul className="space-y-3">
                               {showRoomDetails.amenities.map(a => (
                                  <li key={a} className="flex items-center gap-2 text-xs text-soft/60">
@@ -533,11 +761,11 @@ const Booking = () => {
 
                      <div className="pt-12 flex items-center justify-between border-t border-gold/10">
                         <div>
-                           <span className="text-4xl font-serif-display text-soft">₹{showRoomDetails.price.toLocaleString()}</span>
-                           <span className="text-xs text-soft/40 block">Price per night</span>
+                           <span className="text-4xl font-serif-display text-soft">₹{showRoomDetails.packages[0].price.toLocaleString()}</span>
+                           <span className="text-xs text-soft/40 block">Price starting from</span>
                         </div>
                         <button 
-                          onClick={() => { handleBookRoom(showRoomDetails); setShowRoomDetails(null); }}
+                          onClick={() => { handleBookRoom(showRoomDetails, showRoomDetails.packages[0]); setShowRoomDetails(null); }}
                           className="btn-gold px-12 py-4 h-auto"
                         >
                            <span>Book Now</span>

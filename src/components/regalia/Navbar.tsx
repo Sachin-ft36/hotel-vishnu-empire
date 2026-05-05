@@ -6,7 +6,6 @@ const NAV = [
   { label: "Home", to: "/" },
   { label: "Gallery", to: "/gallery" },
   { label: "Destinations", to: "/destinations" },
-  { label: "Hotels", to: "/hotels" },
   { label: "Experiences", to: "/experiences" },
   { label: "Offers", to: "/offers" },
   { label: "Memberships", to: "/memberships" },
@@ -70,7 +69,7 @@ export const Navbar = () => {
                 `
               }}
             >
-              THE VIJAY VILLAS
+              VISHNU VILAS
             </span>
           </Link>
 
@@ -135,7 +134,7 @@ export const Navbar = () => {
 
         <div className="relative h-full flex flex-col items-center justify-center px-6">
           <div className="w-full max-w-2xl">
-            <span className="eyebrow text-gold/40 mb-4 block text-center">Search The Vijay Villas</span>
+            <span className="eyebrow text-gold/40 mb-4 block text-center">Search Vishnu Vilas</span>
             <input
               autoFocus={searchOpen}
               type="text"

@@ -9,6 +9,8 @@ export const BookingBar = () => {
   const [showOut, setShowOut] = useState(false);
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
+  const [showGuests, setShowGuests] = useState(false);
+  const [guests, setGuests] = useState("01 Guest");
 
   const formatDate = (date: Date) => {
     return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -44,7 +46,7 @@ export const BookingBar = () => {
         <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
           <MapPin size={10} /> Destination
         </span>
-        <span className="text-soft text-sm font-light">The Vijay Villas, Rewa</span>
+        <span className="text-soft text-sm font-light">Vishnu Vilas, Rewa</span>
       </div>
 
       <div className="hidden lg:block h-8 w-px bg-gold/10" />
@@ -68,11 +70,13 @@ export const BookingBar = () => {
 
         <AnimatePresence>
           {showIn && (
-            <div className="absolute bottom-full lg:bottom-full mb-4 left-0">
-              <CustomCalendar
-                onSelect={(d) => setCheckIn(formatDate(d))}
-                onClose={() => setShowIn(false)}
-              />
+            <div className="fixed inset-0 lg:absolute lg:inset-auto lg:bottom-full lg:mb-4 lg:left-0 z-[100] flex items-center justify-center lg:block bg-ink/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-0 p-4 lg:p-0">
+              <div className="w-full max-w-[320px] lg:max-w-none scale-90 sm:scale-100 transition-transform">
+                <CustomCalendar
+                  onSelect={(d) => setCheckIn(formatDate(d))}
+                  onClose={() => setShowIn(false)}
+                />
+              </div>
             </div>
           )}
         </AnimatePresence>
@@ -99,11 +103,13 @@ export const BookingBar = () => {
 
         <AnimatePresence>
           {showOut && (
-            <div className="absolute bottom-full lg:bottom-full mb-4 left-0">
-              <CustomCalendar
-                onSelect={(d) => setCheckOut(formatDate(d))}
-                onClose={() => setShowOut(false)}
-              />
+            <div className="fixed inset-0 lg:absolute lg:inset-auto lg:bottom-full lg:mb-4 lg:left-0 z-[100] flex items-center justify-center lg:block bg-ink/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-0 p-4 lg:p-0">
+              <div className="w-full max-w-[320px] lg:max-w-none scale-90 sm:scale-100 transition-transform">
+                <CustomCalendar
+                  onSelect={(d) => setCheckOut(formatDate(d))}
+                  onClose={() => setShowOut(false)}
+                />
+              </div>
             </div>
           )}
         </AnimatePresence>
@@ -112,16 +118,47 @@ export const BookingBar = () => {
       <div className="hidden lg:block h-8 w-px bg-gold/10" />
 
       {/* Guests */}
-      <div className="flex flex-col gap-1 min-w-[120px]">
-        <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
-          <Users size={10} /> Guests
-        </span>
-        <select className="bg-transparent text-soft text-sm outline-none cursor-pointer font-light hover:text-gold transition-colors">
-          <option>02 Guests</option>
-          <option>01 Guest</option>
-          <option>03 Guests</option>
-          <option>04+ Guests</option>
-        </select>
+      <div className="relative min-w-[140px]">
+        <div 
+          onClick={() => setShowGuests(!showGuests)}
+          className="flex flex-col gap-1 cursor-pointer group"
+        >
+          <span className="small-caps text-[0.6rem] lg:text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
+            <Users size={10} /> Guests
+          </span>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-soft text-sm font-light group-hover:text-gold transition-colors">{guests}</span>
+            <ChevronDown size={12} className={`text-gold/40 transition-transform duration-300 ${showGuests ? 'rotate-180' : ''}`} />
+          </div>
+        </div>
+
+        <AnimatePresence>
+          {showGuests && (
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.95 }}
+              className="fixed inset-x-4 top-1/2 -translate-y-1/2 lg:absolute lg:inset-auto lg:bottom-full lg:mb-4 lg:left-0 w-auto lg:w-full min-w-[180px] bg-ink-deep border border-gold/20 shadow-2xl overflow-hidden z-[100]"
+            >
+              <div className="py-2">
+                {["01 Guest", "02 Guests", "03 Guests", "04+ Guests"].map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => {
+                      setGuests(opt);
+                      setShowGuests(false);
+                    }}
+                    className={`w-full text-left px-6 py-3 text-xs tracking-widest transition-all duration-300 ${
+                      guests === opt ? 'bg-gold/10 text-gold font-medium' : 'text-soft/60 hover:bg-gold/5 hover:text-soft'
+                    }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
@@ -164,10 +201,7 @@ export const BookingBar = () => {
               <BookingInputs />
             </div>
             <div className="p-6 border-t border-gold/10">
-              <Link 
-                to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${1}`} // Simplified guest passing for now or use a state
-                className="w-full"
-              >
+          <Link to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${guests.split(' ')[0]}`}>
                 <button className="btn-gold w-full py-5">
                   <span>CONFIRM & SEARCH</span>
                 </button>
@@ -186,7 +220,7 @@ export const BookingBar = () => {
         <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-8">
           <BookingInputs />
 
-          <Link to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${1}`}>
+          <Link to={`/book?checkIn=${checkIn}&checkOut=${checkOut}&guests=${guests.split(' ')[0]}`}>
             <button className="btn-gold px-12 py-4 whitespace-nowrap">
               <span>Check Availability</span>
             </button>
