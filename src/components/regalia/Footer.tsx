@@ -78,14 +78,21 @@ export const Footer = () => {
           </span>
           <span className="small-caps text-warm/60">A Royal Hospitality Collection</span>
           <div className="flex items-center gap-5 mt-2">
-            {[Instagram, Facebook, Twitter, Youtube].map((Icon, i) => (
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/thevijayvillas/" },
+              { Icon: Facebook, href: "https://www.facebook.com/people/The-Vijay-Villas/61566145322954/" },
+              { Icon: Twitter, href: "#" },
+              { Icon: Youtube, href: "#" }
+            ].map((social, i) => (
               <a
                 key={i}
-                href="#"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="social"
                 className="text-warm/70 hover:text-gold transition-colors"
               >
-                <Icon size={18} strokeWidth={1.2} />
+                <social.Icon size={18} strokeWidth={1.2} />
               </a>
             ))}
           </div>

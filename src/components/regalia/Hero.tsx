@@ -1,6 +1,6 @@
 import { GoldDivider } from "./GoldDivider";
-import phoneVideo from "@/assets/phonehome.mp4";
-import hotelVideo from "@/assets/hotel.mp4";
+const phoneVideo = "/heropage/phonehome.mp4";
+const hotelVideo = "/heropage/hotel.mp4";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -41,7 +41,7 @@ export const Hero = () => {
       </div>
 
       {/* Hero Content - Responsive Layout with Precise Alignment */}
-      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:justify-center pt-32 md:pt-0">
+      <div className="relative z-10 h-full container mx-auto px-6 lg:px-16 flex flex-col justify-start md:justify-center pt-48 md:pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start translate-y-0 md:-translate-y-16">
 
           {/* HEADING & EYEBROW - Left on Desktop, Shifted Up */}

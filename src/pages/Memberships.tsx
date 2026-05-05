@@ -62,7 +62,7 @@ const Memberships = () => {
           <div className="absolute inset-0 bg-ink/80" />
         </div>
 
-        <div className="relative z-10 text-center px-6 pt-24">
+        <div className="relative z-10 text-center px-6 pt-48">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

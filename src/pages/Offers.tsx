@@ -45,7 +45,7 @@ const Offers = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/60 to-ink" />
         </div>
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pt-24 pb-20">
+        <div className="relative z-10 h-full flex flex-col items-center justify-start text-center px-6 pt-36 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

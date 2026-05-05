@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-import palaceBg from "@/assets/palace_bg.png";
+const palaceBg = "/vijayvillas.png";
 
 export const BrandStatement = () => {
   return (
@@ -22,7 +22,7 @@ export const BrandStatement = () => {
 
         <div className="flex items-center justify-center gap-6 md:gap-10 mb-10 w-full max-w-4xl reveal is-visible" style={{ transitionDelay: '200ms' }}>
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold" />
-          <span className="small-caps text-gold px-4">SINCE 1903</span>
+          <span className="small-caps text-gold px-4">SINCE 2024</span>
           <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold" />
         </div>
 
@@ -42,7 +42,7 @@ export const BrandStatement = () => {
             "To the guests, we offer the world. To the world, we offer India."
           </p>
           <p className="mt-6 text-soft-dim/70 text-base font-light leading-relaxed max-w-lg mx-auto">
-            A century of stories, a thousand years of culture, and a future 
+            A century of stories, a thousand years of culture, and a future
             defined by the timeless grace of Indian hospitality.
           </p>
         </div>

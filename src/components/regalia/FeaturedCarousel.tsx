@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GoldDivider } from "./GoldDivider";
@@ -32,16 +32,45 @@ const ITEMS = [
 
 export const FeaturedCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const requestRef = useRef<number>();
+  const isPaused = useRef(false);
+
+  const DOUBLED_ITEMS = [...ITEMS, ...ITEMS];
+
+  const animate = () => {
+    if (!isPaused.current && scrollRef.current) {
+      const el = scrollRef.current;
+      el.scrollLeft += 0.5; // Slow, continuous speed
+      
+      if (el.scrollLeft >= el.scrollWidth / 2) {
+        el.scrollLeft = 0;
+      }
+    }
+    requestRef.current = requestAnimationFrame(animate);
+  };
+
+  useEffect(() => {
+    requestRef.current = requestAnimationFrame(animate);
+    return () => {
+      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
 
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollRef.current;
     if (!el) return;
-    const amount = el.clientWidth * 0.7 * dir;
-    el.scrollBy({ left: amount, behavior: "smooth" });
+    const itemWidth = el.querySelector('article')?.clientWidth || 500;
+    el.scrollBy({ left: (itemWidth + 32) * dir, behavior: "smooth" });
   };
 
   return (
-    <section className="relative bg-ink pb-24 md:pb-32 pt-0 overflow-hidden">
+    <section 
+      className="relative bg-ink pb-24 md:pb-32 pt-0 overflow-hidden"
+      onMouseEnter={() => isPaused.current = true}
+      onMouseLeave={() => isPaused.current = false}
+      onTouchStart={() => isPaused.current = true}
+      onTouchEnd={() => isPaused.current = false}
+    >
       <div className="container mx-auto px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 reveal is-visible">
           <div>
@@ -75,14 +104,14 @@ export const FeaturedCarousel = () => {
 
       <div
         ref={scrollRef}
-        className="flex gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-12 px-6 lg:px-10"
+        className="flex gap-8 overflow-x-auto no-scrollbar pb-12 px-6 lg:px-10"
         style={{ scrollPaddingLeft: "2.5rem" }}
       >
-        {ITEMS.map((item, i) => (
+        {DOUBLED_ITEMS.map((item, i) => (
           <article
-            key={item.title}
-            className="group snap-start shrink-0 relative w-[85vw] sm:w-[60vw] md:w-[500px] lg:w-[600px] aspect-[4/5] overflow-hidden bg-panel cursor-pointer shadow-2xl reveal is-visible"
-            style={{ transitionDelay: `${i * 100}ms` }}
+            key={`${item.title}-${i}`}
+            className="group shrink-0 relative w-[85vw] sm:w-[60vw] md:w-[500px] lg:w-[600px] aspect-[4/5] overflow-hidden bg-panel cursor-pointer shadow-2xl reveal is-visible"
+            style={{ transitionDelay: `${(i % ITEMS.length) * 100}ms` }}
           >
             <div className="absolute inset-0 overflow-hidden">
               <img

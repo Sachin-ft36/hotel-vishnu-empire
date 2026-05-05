@@ -48,7 +48,8 @@ const Destinations = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden flex items-center justify-center pt-14">
+      <section className="relative h-[70vh] w-full overflow-hidden flex items-center justify-center pt-44
+">
         <div className="absolute inset-0">
           <img
             src={destHeritage}

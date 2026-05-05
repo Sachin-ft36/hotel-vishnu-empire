@@ -3,10 +3,12 @@ import { Footer } from "@/components/regalia/Footer";
 import { GoldDivider } from "@/components/regalia/GoldDivider";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Check, Send } from "lucide-react";
+import { Check, Send, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const RequestInvitation = () => {
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,9 +19,17 @@ const RequestInvitation = () => {
     <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft">
       <Navbar />
 
+      <button
+        onClick={() => navigate(-1)}
+        className="fixed top-28 md:top-8 right-4 md:right-8 z-[70] p-3 rounded-full bg-panel/50 backdrop-blur-md border border-gold/20 text-gold hover:bg-gold hover:text-ink transition-all duration-500 group md:hidden"
+        aria-label="Close"
+      >
+        <X size={24} strokeWidth={1} className="group-hover:rotate-90 transition-transform duration-500" />
+      </button>
+
       <main className="pt-32 pb-24 px-6">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          
+
           {/* Left Side - Intent */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -30,14 +40,14 @@ const RequestInvitation = () => {
               <GoldDivider width="40px" />
               <span className="eyebrow text-gold">Exclusive Access</span>
             </div>
-            
+
             <h1 className="font-serif-display text-4xl md:text-6xl text-soft mb-8 leading-tight">
               Request An <br />
               <span className="text-gold italic normal-case">Invitation</span>
             </h1>
-            
+
             <p className="text-soft-dim/80 text-lg font-light leading-relaxed mb-12 max-w-md italic">
-              "Entry into our private assemblies is reserved for those who appreciate 
+              "Entry into our private assemblies is reserved for those who appreciate
               the finer threads of heritage and the quiet luxury of curated moments."
             </p>
 
@@ -78,18 +88,18 @@ const RequestInvitation = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="small-caps text-[0.65rem] text-gold tracking-widest">Given Name</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       className="w-full bg-transparent border-b border-gold/20 py-3 text-soft outline-none focus:border-gold transition-colors font-light"
                       placeholder="John Doe"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="small-caps text-[0.65rem] text-gold tracking-widest">Email Address</label>
-                    <input 
+                    <input
                       required
-                      type="email" 
+                      type="email"
                       className="w-full bg-transparent border-b border-gold/20 py-3 text-soft outline-none focus:border-gold transition-colors font-light"
                       placeholder="john@example.com"
                     />
@@ -99,8 +109,8 @@ const RequestInvitation = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="small-caps text-[0.65rem] text-gold tracking-widest">Phone Number</label>
-                    <input 
-                      type="tel" 
+                    <input
+                      type="tel"
                       className="w-full bg-transparent border-b border-gold/20 py-3 text-soft outline-none focus:border-gold transition-colors font-light"
                       placeholder="+91 00000 00000"
                     />
@@ -118,7 +128,7 @@ const RequestInvitation = () => {
 
                 <div className="space-y-2">
                   <label className="small-caps text-[0.65rem] text-gold tracking-widest">Your Inquiry</label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     className="w-full bg-transparent border-b border-gold/20 py-3 text-soft outline-none focus:border-gold transition-colors font-light resize-none"
                     placeholder="Tell us a little about yourself or your requirements..."
@@ -131,7 +141,7 @@ const RequestInvitation = () => {
                 </button>
               </form>
             ) : (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
@@ -143,7 +153,7 @@ const RequestInvitation = () => {
                 <p className="text-soft-dim/70 font-light leading-relaxed mb-10 max-w-xs mx-auto italic">
                   "Your interest has been noted in the private ledgers. Our Concierge will reach out to you within two moon cycles."
                 </p>
-                <button 
+                <button
                   onClick={() => setSubmitted(false)}
                   className="text-gold text-[0.65rem] small-caps tracking-[0.3em] hover:text-soft transition-colors"
                 >

@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Calendar, ChevronRight } from "lucide-react";
+import { Calendar, ChevronRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoImg from "@/assets/logo/logo.png";
 
 const ANNOUNCEMENTS = [
   "Upcoming: Royal Baghelkhandi Feast — May 24, 2026",
@@ -12,6 +11,7 @@ const ANNOUNCEMENTS = [
 
 export const AnnouncementBar = () => {
   const [index, setIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,27 +20,28 @@ export const AnnouncementBar = () => {
     return () => clearInterval(timer);
   }, []);
 
+  if (!isVisible) return null;
+
   return (
-    <div className="bg-gold/10 border-b border-gold/20 py-2.5 px-6 relative z-[60] overflow-hidden">
-      <div className="max-w-[1700px] mx-auto flex items-center justify-center lg:justify-between gap-4">
+    <div className="bg-gold/10 border-b border-gold/20 py-2.5 px-2 relative z-[60] overflow-hidden">
+      <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-0">
         {/* Left Side - Desktop only */}
-        <div className="hidden lg:flex items-center gap-3">
-          <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
+        <div className="hidden lg:flex items-center gap-2">
           <span className="small-caps text-[0.6rem] text-gold tracking-[0.3em]">The Private Calendar</span>
         </div>
 
         {/* Center - Announcement Ticker */}
-        <div className="flex items-center gap-3 h-4 relative overflow-hidden flex-1 max-w-lg justify-center">
-          <Calendar size={12} className="text-gold shrink-0" />
-          <div className="relative w-full h-full">
+        <div className="flex items-center justify-start gap-1.5 h-4 overflow-hidden flex-1 pr-4">
+          <Calendar size={11} className="text-gold shrink-0" />
+          <div className="relative h-full flex items-center overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.p
                 key={index}
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 15, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
+                exit={{ y: -15, opacity: 0 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-0 text-[0.65rem] md:text-[0.7rem] text-soft/80 font-light tracking-widest text-center whitespace-nowrap italic"
+                className="text-[0.6rem] md:text-[0.65rem] text-soft/80 font-light tracking-[0.1em] whitespace-nowrap italic"
               >
                 {ANNOUNCEMENTS[index]}
               </motion.p>
@@ -48,12 +49,14 @@ export const AnnouncementBar = () => {
           </div>
         </div>
 
-        {/* Right Side - Desktop only */}
-        <div className="hidden lg:flex items-center gap-2 group cursor-pointer">
-          <span className="small-caps text-[0.6rem] text-gold/60 group-hover:text-gold transition-colors tracking-widest">
-            Request Invite
-          </span>
-          <ChevronRight size={12} className="text-gold group-hover:translate-x-1 transition-transform" />
+        {/* Right Side - Visible on all screens */}
+        <div className="flex items-center shrink-0">
+          <Link to="/request-invitation" className="flex items-center gap-1 group cursor-pointer">
+            <span className="small-caps text-[0.6rem] text-gold/60 group-hover:text-gold transition-colors tracking-widest whitespace-nowrap">
+              Request Invite
+            </span>
+            <ChevronRight size={12} className="text-gold group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </div>
