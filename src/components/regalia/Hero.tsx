@@ -38,16 +38,8 @@ export function Hero() {
         >
           <source src={`${hotelVideo}#t=0,108`} type="video/mp4" />
         </video>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="md:hidden h-full w-full object-cover scale-105 slow-zoom"
-        >
-          <source src="/video/spa.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/20 to-ink/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/20 to-ink/90 hidden md:block" />
+        <div className="absolute inset-0 md:hidden bg-ink" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
 
