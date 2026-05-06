@@ -97,8 +97,15 @@ export const Footer = () => {
             VISHNU VILAS
           </span>
           <div className="flex flex-col items-center gap-2 text-center">
-            <span className="small-caps text-warm/60">Hotels & Banquets</span>
-            <span className="text-soft-dim/60 text-xs font-light tracking-widest mt-2 uppercase">Opp. Samarth Tower, Rewa, MP, India</span>
+            <span className="small-caps text-warm/60">Best Luxury Hotel & Banquet Hall in Rewa</span>
+            <a 
+              href="https://www.google.com/maps/place/Hotel+Vishnu+Vilas/@24.5467386,81.3039102,21z/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-soft-dim/60 text-xs font-light tracking-widest mt-2 uppercase hover:text-gold transition-colors"
+            >
+              University Road, Sirmour Chowk, Rewa, MP
+            </a>
             <a href="tel:+919424953899" className="text-gold/80 text-sm font-light tracking-[0.2em] hover:text-gold transition-colors mt-1">+91 94249 53899</a>
           </div>
           <div className="flex items-center gap-5 mt-2">

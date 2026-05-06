@@ -5,9 +5,16 @@ import { GoldDivider } from "@/components/regalia/GoldDivider";
 import { ArrowRight, Bed, Bath, Coffee, Tv } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { SEO } from "@/components/regalia/SEO";
+
 const LuxurySuites = () => {
   return (
     <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft">
+      <SEO 
+        title="Luxury Suites in Rewa | Premium Hotel Rooms - Hotel Vishnu Vilas"
+        description="Discover the most luxurious suites in Rewa at Hotel Vishnu Vilas. Experience historical grandeur with modern amenities in our premium heritage sanctuaries."
+        keywords="luxury suites in rewa, premium hotel rooms rewa, best stay in rewa, heritage hotel rewa, luxury accommodation rewa"
+      />
       <Navbar />
 
       {/* Hero Section */}
@@ -40,7 +47,7 @@ const LuxurySuites = () => {
               <span className="text-gold italic normal-case tracking-normal">Suites</span>
             </h1>
             <p className="text-soft-dim max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed italic">
-              "Sanctuaries of refined comfort, where historical grandeur meets modern luxury."
+              "The most refined luxury suites in Rewa, where historical grandeur meets modern comfort."
             </p>
           </motion.div>
         </div>

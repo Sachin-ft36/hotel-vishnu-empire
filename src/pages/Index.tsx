@@ -15,10 +15,16 @@ import { BookingBar } from "@/components/regalia/BookingBar";
 import { LuxuryGallery } from "@/components/regalia/LuxuryGallery";
 import { UpcomingEvents } from "@/components/regalia/UpcomingEvents";
 import { AnnouncementBar } from "@/components/regalia/AnnouncementBar";
+import { SEO } from "@/components/regalia/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-ink text-soft">
+      <SEO 
+        title="Best Luxury Hotel in Rewa | Hotel Vishnu Vilas Official Site"
+        description="Experience the pinnacle of royal hospitality at Hotel Vishnu Vilas, the best luxury hotel in Rewa. Premium rooms, banquet halls, and wedding venues in Rewa."
+        keywords="luxury hotel in rewa, best hotel in rewa, vishnu vilas rewa, wedding venue rewa, banquet hall rewa"
+      />
       <AnnouncementBar />
       <CustomCursor />
       <Navbar />

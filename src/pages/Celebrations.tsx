@@ -39,9 +39,16 @@ const FACILITIES = [
    { icon: Camera, title: "Photography", desc: "Curated list of cinematic storytellers to capture your royal journey." }
 ];
 
+import { SEO } from "@/components/regalia/SEO";
+
 const Celebrations = () => {
    return (
       <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft">
+         <SEO 
+            title="Best Banquet Hall & Wedding Venue in Rewa | Hotel Vishnu Vilas"
+            description="Looking for the best banquet hall or wedding venue in Rewa? Hotel Vishnu Vilas offers grand lawns and luxury halls for your royal celebrations in Rewa."
+            keywords="best banquet hall in rewa, wedding venue in rewa, marriage garden rewa, event spaces rewa, luxury wedding rewa"
+         />
          <Navbar />
 
          {/* Hero Section */}
@@ -66,15 +73,15 @@ const Celebrations = () => {
                >
                   <div className="flex items-center justify-center gap-4 mb-8">
                      <GoldDivider width="40px" />
-                     <span className="eyebrow text-gold">The Royal Ateliers</span>
+                     <span className="eyebrow text-gold uppercase tracking-[0.3em]">Royal Celebrations in Rewa</span>
                      <GoldDivider width="40px" />
                   </div>
                   <h1 className="font-serif-display text-[clamp(2.5rem,8vw,5.5rem)] leading-none uppercase tracking-widest mb-8">
                      Timeless <br />
-                     <span className="text-gold italic normal-case tracking-normal">Celebrations</span>
+                     <span className="text-gold italic normal-case tracking-normal">Weddings</span> & Events
                   </h1>
                   <p className="text-soft-dim max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed italic">
-                     "A bespoke destination for weddings, celebrations, dining, and unforgettable experiences."
+                     "The most prestigious wedding venue and banquet destination in the heart of Rewa."
                   </p>
                </motion.div>
             </div>
@@ -83,12 +90,12 @@ const Celebrations = () => {
          {/* Pricing & Intro */}
          <section className="py-32 px-6 lg:px-12 bg-ink-deep border-b border-gold/10">
             <div className="max-w-4xl mx-auto text-center">
-               <h2 className="font-serif-display text-4xl md:text-6xl text-soft mb-12 italic">The Pinnacle of <span className="text-gold not-italic">Hospitality</span></h2>
+               <h2 className="font-serif-display text-4xl md:text-6xl text-soft mb-12 italic">Premium <span className="text-gold not-italic">Wedding Venues</span> in Rewa</h2>
                <p className="text-soft-dim/80 text-xl leading-relaxed font-light mb-16">
                   From a grand royal procession to an intimate exchange of vows,
-                  Vishnu Vilas provides a backdrop of unparalleled majesty.
+                  Hotel Vishnu Vilas provides a backdrop of unparalleled majesty in Rewa.
                   Whether it's a milestone anniversary, a royal wedding, or an elite corporate gala,
-                  our spaces are designed with quiet intention for your most cherished moments.
+                  our spaces are the finest banquet halls in Rewa, designed with quiet intention.
                </p>
                <div className="inline-block border border-gold/30 p-8 md:p-12 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gold opacity-30" />
@@ -105,10 +112,10 @@ const Celebrations = () => {
                <div className="flex flex-col items-center text-center gap-8 mb-20">
                   <div>
                      <span className="eyebrow text-gold mb-4 block">The Estate</span>
-                     <h2 className="font-serif-display text-4xl md:text-6xl text-soft">Our Venues</h2>
+                     <h2 className="font-serif-display text-4xl md:text-6xl text-soft uppercase tracking-widest">Banquets <span className="text-gold italic">&</span> Venues <span className="text-gold font-light block mt-2 text-2xl md:text-3xl">in Rewa</span></h2>
                   </div>
                   <p className="text-soft-dim/60 max-w-2xl text-sm md:text-base font-light leading-relaxed">
-                     Choose from a selection of historic indoor and outdoor venues,
+                     Choose from a selection of the best banquet halls and outdoor wedding lawns in Rewa,
                      each offering a unique perspective of our heritage estate.
                   </p>
                </div>

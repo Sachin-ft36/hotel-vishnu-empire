@@ -41,12 +41,28 @@ export const BookingBar = () => {
 
   const BookingInputs = () => (
     <div className="flex flex-col lg:flex-row flex-1 items-stretch lg:items-center gap-6 lg:gap-8 xl:gap-12 w-full">
-      {/* Destination Select */}
       <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
-        <span className="small-caps text-[0.55rem] text-gold/60 tracking-widest flex items-center gap-2">
-          <MapPin size={10} /> Destination
-        </span>
-        <span className="text-soft text-sm font-light">Vishnu Vilas, Rewa</span>
+        <a 
+          href="https://www.google.com/maps/place/Hotel+Vishnu+Vilas/@24.5467386,81.3039102,21z/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col gap-1 group cursor-pointer"
+        >
+          <span className="small-caps text-[0.55rem] text-gold tracking-widest flex items-center gap-2 group-hover:text-gold/80 transition-colors">
+            <MapPin size={10} /> Get Directions
+          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-soft text-sm font-light border-b border-gold/30 group-hover:border-gold transition-colors pb-0.5 whitespace-nowrap">Vishnu Vilas, Rewa</span>
+            <svg 
+              className="w-3 h-3 text-gold/60 group-hover:text-gold transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </div>
+        </a>
       </div>
 
       <div className="hidden lg:block h-8 w-px bg-gold/10" />
