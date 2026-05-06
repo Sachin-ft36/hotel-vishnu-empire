@@ -20,7 +20,7 @@ const ROOMS = [
     name: "Royal Executive Room",
     desc: "Grand room featuring 24-hour housekeeping and smoking options.",
     images: [
-      "/rooms/royal executive Ac room/1.avif",
+      "/rooms/royal executive Ac room/1.webp",
       "/rooms/royal executive Ac room/2.avif",
       "/rooms/royal executive Ac room/3.avif",
       "/rooms/royal executive Ac room/4.avif",
@@ -28,7 +28,15 @@ const ROOMS = [
       "/rooms/royal executive Ac room/6.avif",
       "/rooms/royal executive Ac room/7.avif",
       "/rooms/royal executive Ac room/8.webp",
-      "/rooms/royal executive Ac room/9.webp"
+      "/rooms/royal executive Ac room/9.webp",
+      "/rooms/royal executive Ac room/10.avif",
+      "/rooms/royal executive Ac room/11.avif",
+      "/rooms/royal executive Ac room/12.avif",
+      "/rooms/royal executive Ac room/14.jpg",
+      "/rooms/royal executive Ac room/15.avif",
+      "/rooms/royal executive Ac room/16.avif",
+      "/rooms/royal executive Ac room/17.webp",
+      "/rooms/royal executive Ac room/19.jpg"
     ],
     stock: 2,
     popular: true,
@@ -98,12 +106,15 @@ const ROOMS = [
     name: "Suites",
     desc: "Our most expansive sanctuary with a city view and premium services.",
     images: [
-      "/rooms/suite/1.webp",
-      "/rooms/suite/2.jpeg",
-      "/rooms/suite/3.webp",
-      "/rooms/suite/4.webp",
-      "/rooms/suite/5.webp",
-      "/rooms/suite/6.webp"
+      "/rooms/suite/1.jpg",
+      "/rooms/suite/2.jpg",
+      "/rooms/suite/3.jpg",
+      "/rooms/suite/4.jpg",
+      "/rooms/suite/5.jpg",
+      "/rooms/suite/6.jpg",
+      "/rooms/suite/6.webp",
+      "/rooms/suite/7.jpg",
+      "/rooms/suite/8.jpg"
     ],
     stock: 1,
     popular: false,
