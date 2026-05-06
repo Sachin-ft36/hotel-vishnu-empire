@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-const palaceBg = "/vishnu_vilas/2.jpg";
+const palaceBg = "/vishnuempire.webp";
 
 export const BrandStatement = () => {
   return (
@@ -9,9 +9,9 @@ export const BrandStatement = () => {
         <img
           src={palaceBg}
           alt="Grand Indian Palace Architecture"
-          className="h-full w-full object-cover slow-zoom"
+          className="h-full w-full object-cover slow-zoom opacity-90"
         />
-        <div className="absolute inset-0 bg-ink/60" />
+        <div className="absolute inset-0 bg-ink/80" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
       </div>
 
@@ -22,7 +22,7 @@ export const BrandStatement = () => {
 
         <div className="flex items-center justify-center gap-6 md:gap-10 mb-10 w-full max-w-4xl reveal is-visible" style={{ transitionDelay: '200ms' }}>
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold" />
-          <span className="small-caps text-gold px-4">SINCE 2024</span>
+          <span className="small-caps text-gold px-4">SINCE 2020</span>
           <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold" />
         </div>
 
@@ -42,7 +42,7 @@ export const BrandStatement = () => {
             "Echoing the legacy of kings, where every stone tells a story of Baghelkhand."
           </p>
           <p className="mt-6 text-soft-dim/70 text-base font-light leading-relaxed max-w-lg mx-auto">
-            At Hotel Vishnu Vilas, we don't just provide a stay; we revive a centuries-old 
+            At Hotel Vishnu Empire, we don't just provide a stay; we revive a centuries-old
             heritage. Experience the pinnacle of royal hospitality in the heart of Rewa.
           </p>
         </div>

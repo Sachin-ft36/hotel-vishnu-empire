@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hotelvishnuvilas.com/sitemap.xml
+Sitemap: https://hotelvishnuempire.com/sitemap.xml

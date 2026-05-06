@@ -14,7 +14,7 @@ const CulinaryJourneys = () => {
       <section className="relative h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src="/food.mp4"
+            src="/video/food.mp4"
             autoPlay
             loop
             muted

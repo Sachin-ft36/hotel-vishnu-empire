@@ -20,14 +20,14 @@ export const SignatureDining = () => {
           </div>
           
           <h2 className="font-serif-display text-3xl lg:text-4xl text-soft mb-10 leading-tight">
-            Signature <br />
-            <span className="text-gold italic normal-case">Dining</span> Experiences
+            Royal Bar & <br />
+            <span className="text-gold italic normal-case">Restaurant</span>
           </h2>
           
           <p className="text-soft-dim/80 text-lg font-light leading-relaxed mb-12 max-w-lg">
-            From royal thalis served in moonlit courtyards to contemporary 
-            gastronomy overlooking city horizons, every meal is a celebration 
-            of flavor, tradition, and impeccable service.
+            Savor an exquisite blend of Indian, Chinese, and local flavors. From royal thalis 
+            to contemporary gastronomy, every meal is a celebration 
+            of flavor and impeccable service.
           </p>
           
           <div className="grid grid-cols-2 gap-8 mb-12">
@@ -57,7 +57,7 @@ export const SignatureDining = () => {
         >
           <div className="aspect-[4/5] overflow-hidden bg-ink-deep">
             <video 
-              src="/dining.mp4" 
+              src="/video/food.mp4" 
               autoPlay 
               muted 
               loop 

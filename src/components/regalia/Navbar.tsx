@@ -5,10 +5,11 @@ import { Menu, X, Search, MapPin } from "lucide-react";
 const NAV = [
   { label: "Home", to: "/" },
   { label: "Gallery", to: "/gallery" },
+  { label: "About Us", to: "/about" },
   { label: "Destinations", to: "/destinations" },
-  { label: "Experiences", to: "/experiences" },
   { label: "Offers", to: "/offers" },
   { label: "Memberships", to: "/memberships" },
+  { label: "Services", to: "/services" },
 ];
 
 export const Navbar = () => {
@@ -60,8 +61,8 @@ export const Navbar = () => {
           <Link to="/" className={`group flex items-center gap-2 shrink-0 transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             <img 
               src="/logo.png" 
-              alt="Hotel Vishnu Vilas" 
-              className="h-14 md:h-10 lg:h-10 w-auto object-contain transition-all duration-500 group-hover:brightness-110 group-hover:scale-105"
+              alt="Hotel Vishnu Empire" 
+              className="h-14 md:h-16 lg:h-20 w-auto object-contain transition-all duration-500 group-hover:brightness-110 group-hover:scale-105"
             />
           </Link>
 
@@ -126,7 +127,7 @@ export const Navbar = () => {
 
         <div className="relative h-full flex flex-col items-center justify-center px-6">
           <div className="w-full max-w-2xl">
-            <span className="eyebrow text-gold/40 mb-4 block text-center">Search Vishnu Vilas</span>
+            <span className="eyebrow text-gold/40 mb-4 block text-center">Search Vishnu Empire</span>
             <input
               autoFocus={searchOpen}
               type="text"

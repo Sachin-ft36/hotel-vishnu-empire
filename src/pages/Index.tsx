@@ -16,14 +16,15 @@ import { LuxuryGallery } from "@/components/regalia/LuxuryGallery";
 import { UpcomingEvents } from "@/components/regalia/UpcomingEvents";
 import { AnnouncementBar } from "@/components/regalia/AnnouncementBar";
 import { SEO } from "@/components/regalia/SEO";
+import { PartnerLogos } from "@/components/regalia/PartnerLogos";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-ink text-soft">
       <SEO 
-        title="Best Luxury Hotel in Rewa | Hotel Vishnu Vilas Official Site"
-        description="Experience the pinnacle of royal hospitality at Hotel Vishnu Vilas, the best luxury hotel in Rewa. Premium rooms, banquet halls, and wedding venues in Rewa."
-        keywords="luxury hotel in rewa, best hotel in rewa, vishnu vilas rewa, wedding venue rewa, banquet hall rewa"
+        title="Best Luxury Hotel in Rewa | Hotel Vishnu Empire Official Site"
+        description="Experience the pinnacle of royal hospitality at Hotel Vishnu Empire, the best luxury hotel in Rewa. Premium rooms, banquet halls, and wedding venues in Rewa."
+        keywords="luxury hotel in rewa, best hotel in rewa, Vishnu Empire rewa, wedding venue rewa, banquet hall rewa"
       />
       <AnnouncementBar />
       <CustomCursor />
@@ -36,11 +37,12 @@ const Index = () => {
         <SignatureDining />
         <DestinationsGrid />
         <HeritageStories />
-        <LuxuryGallery limit={4} />
+        <LuxuryGallery limit={4} showFilters={true} />
         <UpcomingEvents />
         <MembershipTeaser />
       </main>
       <BookingBar />
+      <PartnerLogos />
       <Footer />
     </div>
   );

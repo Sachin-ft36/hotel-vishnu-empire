@@ -1,144 +1,60 @@
 import { Navbar } from "@/components/regalia/Navbar";
 import { Footer } from "@/components/regalia/Footer";
 import { GoldDivider } from "@/components/regalia/GoldDivider";
-import destHeritage from "@/assets/hotel_amber.png";
-import destTiger from "@/assets/dest_kerala.png";
-import destNature from "@/assets/dest_london.png";
-import destUdaipur from "@/assets/hotel_udaipur.png";
 import { motion } from "framer-motion";
-
-const destinations = [
-  {
-    id: 1,
-    name: "Rewa Heritage",
-    region: "Vindhya, Madhya Pradesh",
-    description: "Explore the heart of Baghelkhand, where the royal legacy of the Baghel Kings lives through grand forts and storied museum walks.",
-    image: destHeritage,
-    type: "Heritage"
-  },
-  {
-    id: 2,
-    name: "White Tiger Legacy",
-    region: "Govindgarh, Rewa",
-    description: "Step into the origin of the world's white tigers. Govindgarh Lake and Palace stand as silent witnesses to the legendary Mohan.",
-    image: destTiger,
-    type: "Sanctuary"
-  },
-  {
-    id: 3,
-    name: "Vindhya Cascades",
-    region: "Rewa District, MP",
-    description: "Witness the raw power of nature at Bahuti and Keoti Falls—some of India's highest and most breathtaking waterfalls.",
-    image: destNature,
-    type: "Nature"
-  },
-  {
-    id: 4,
-    name: "Spiritual Vindhya",
-    region: "Near Rewa, India",
-    description: "Embark on a sacred journey to the nearby Maihar Temple and discover the deep spiritual roots of the Madhya Pradesh heartland.",
-    image: destUdaipur,
-    type: "Spiritual"
-  }
-];
 
 const Destinations = () => {
   return (
-    <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft">
+    <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft overflow-hidden">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden flex items-center justify-center pt-24
-">
-        <div className="absolute inset-0">
-          <img
-            src={destHeritage}
-            alt="Vishnu Vilas Rewa"
-            className="w-full h-full object-cover scale-105 slow-zoom opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-transparent to-ink" />
+      <main className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-40 pb-20">
+        {/* Background Ambience */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[100vh] opacity-20 bg-[radial-gradient(circle_at_center,_var(--gold)_0%,_transparent_60%)] animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink via-transparent to-ink" />
         </div>
 
-        <div className="relative z-10 text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <span className="eyebrow mb-6 block text-gold tracking-[0.4em]">The Heart of India</span>
-            <h1 className="font-serif-display text-[clamp(1.8rem,4.5vw,3rem)] leading-none uppercase tracking-wider mb-8">
-              Explore <br />
-              <span className="text-gold italic normal-case tracking-normal">Rewa, Madhya Pradesh</span>
-            </h1>
-            <p className="text-soft-dim max-w-2xl mx-auto text-lg font-light leading-relaxed">
-              Experience the untamed beauty and royal grandeur of Baghelkhand.
-              Vishnu Vilas invites you to discover the land of white tigers,
-              ancient forts, and cascading waterfalls.
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-10"
+        >
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <GoldDivider width="60px" />
+            <span className="eyebrow text-gold uppercase tracking-[0.4em] text-xs">Journeys</span>
+            <GoldDivider width="60px" />
+          </div>
+
+          <h1 className="font-serif-display text-[clamp(2.5rem,8vw,6rem)] leading-none uppercase tracking-tighter mb-8">
+            Coming <br />
+            <span className="text-gold italic normal-case tracking-normal">Soon</span>
+          </h1>
+
+          <div className="max-w-2xl mx-auto space-y-6">
+            <p className="text-soft-dim/80 text-lg md:text-xl font-light leading-relaxed italic">
+              "We are mapping out extraordinary royal routes and legendary landmarks for your next escape."
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Grid Section */}
-      <section className="pb-24 pt-0 px-6 container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
-          {destinations.map((dest, index) => (
-            <motion.div
-              key={dest.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden mb-8">
-                <img
-                  src={dest.image}
-                  alt={dest.name}
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+            
+            <div className="pt-8">
+              <p className="text-[0.65rem] small-caps text-gold/60 tracking-[0.3em] mb-4">The World of Vishnu Empire Awaits</p>
+              <div className="flex justify-center">
+                <motion.div 
+                  animate={{ width: ["0%", "100%", "0%"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="h-px bg-gold/30"
                 />
-                <div className="absolute inset-0 bg-ink/20 group-hover:bg-ink/0 transition-colors duration-500" />
-
-                {/* Destination Label */}
-                <div className="absolute top-6 left-6">
-                  <span className="bg-ink/60 backdrop-blur-sm border border-gold/20 text-gold px-4 py-1 small-caps text-[0.6rem]">
-                    {dest.type}
-                  </span>
-                </div>
               </div>
+            </div>
+          </div>
+        </motion.div>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <GoldDivider width="30px" />
-                  <span className="eyebrow text-gold text-[0.6rem]">{dest.region}</span>
-                </div>
-
-                <h3 className="font-serif-display text-4xl group-hover:text-gold transition-colors duration-500">
-                  {dest.name}
-                </h3>
-
-                <p className="text-soft-dim/70 font-light leading-relaxed max-w-md italic">
-                  "{dest.description}"
-                </p>
-
-                <button className="pt-4 link-underline text-gold small-caps text-xs">
-                  Discover {dest.name}
-                </button>
-              </div>
-            </motion.div>
-          ))}
+        {/* Decorative Elements */}
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-px h-12 bg-gradient-to-b from-gold/0 via-gold/50 to-gold/0" />
         </div>
-      </section>
-
-      {/* Quote Section */}
-      <section className="py-32 bg-panel/10 text-center px-6 border-y border-gold/5">
-        <div className="max-w-4xl mx-auto">
-          <p className="font-serif-display text-2xl md:text-4xl text-soft-dim/90 leading-relaxed italic">
-            "Rewa is not just a place; it's a legacy of the white tiger and the pride of Vindhya."
-          </p>
-          <span className="mt-8 block eyebrow text-gold/60 text-[0.7rem]">— Vishnu Vilas Philosophy</span>
-        </div>
-      </section>
+      </main>
 
       <Footer />
     </div>

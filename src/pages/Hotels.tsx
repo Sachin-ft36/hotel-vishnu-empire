@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const hotelsData = [
   {
     id: 1,
-    name: "Vishnu Vilas",
+    name: "Vishnu Empire",
     location: "Rewa, Madhya Pradesh",
     category: "Main Residence",
     image: hotelAmber,
@@ -56,7 +56,7 @@ const Hotels = () => {
         <div className="absolute inset-0">
           <img
             src={hotelAmber}
-            alt="Vishnu Vilas Rewa"
+            alt="Vishnu Empire Rewa"
             className="w-full h-full object-cover scale-105 slow-zoom opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/20 to-ink" />

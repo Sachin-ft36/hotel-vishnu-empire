@@ -1,5 +1,5 @@
 import { GoldDivider } from "./GoldDivider";
-const heritageImg = "/vishnu_vilas/vilas.jpg";
+const heritageImg = "/vishnuempire/Fecade/1.avif";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -25,8 +25,8 @@ export const HeritageStories = () => {
             />
           </div>
           <div className="absolute -bottom-8 -right-8 bg-ink p-8 border border-gold/20 hidden md:block">
-            <span className="font-serif-display text-gold text-4xl italic leading-none">2024</span>
-            <p className="small-caps text-[0.6rem] mt-2 text-soft-dim tracking-widest">A New Era of Royalty</p>
+            <span className="font-serif-display text-gold text-4xl italic leading-none">2020</span>
+            <p className="small-caps text-[0.6rem] mt-2 text-soft-dim tracking-widest">Inaugurating Excellence</p>
           </div>
         </motion.div>
 
@@ -39,7 +39,7 @@ export const HeritageStories = () => {
         >
           <div className="flex items-center gap-4 mb-8">
             <GoldDivider width="40px" />
-            <span className="eyebrow text-gold">The Soul of Vishnu Vilas</span>
+            <span className="eyebrow text-gold">The Soul of Vishnu Empire</span>
           </div>
           
           <h2 className="font-serif-display text-3xl lg:text-4xl text-soft mb-10 leading-tight">

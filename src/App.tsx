@@ -4,15 +4,15 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
+import About from "./pages/About.tsx";
 import Destinations from "./pages/Destinations.tsx";
 import Hotels from "./pages/Hotels.tsx";
-import Experiences from "./pages/Experiences.tsx";
 import Offers from "./pages/Offers.tsx";
+import Services from "./pages/Services.tsx";
 import Memberships from "./pages/Memberships.tsx";
 import Booking from "./pages/Booking.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import RequestInvitation from "./pages/RequestInvitation.tsx";
-import SignatureExperiences from "./pages/SignatureExperiences.tsx";
 import Celebrations from "./pages/Celebrations.tsx";
 import CelebrationInquiry from "./pages/CelebrationInquiry.tsx";
 import LuxurySuites from "./pages/LuxurySuites.tsx";
@@ -40,14 +40,14 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/hotels" element={<Hotels />} />
-          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/memberships" element={<Memberships />} />
           <Route path="/request-invitation" element={<RequestInvitation />} />
-          <Route path="/signature-experiences" element={<SignatureExperiences />} />
           <Route path="/celebrations" element={<Celebrations />} />
           <Route path="/celebration-inquiry" element={<CelebrationInquiry />} />
           <Route path="/luxury-suites" element={<LuxurySuites />} />

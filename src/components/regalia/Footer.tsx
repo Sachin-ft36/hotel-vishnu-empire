@@ -94,23 +94,23 @@ export const Footer = () => {
         <div className="flex flex-col items-center gap-6 py-10 border-t border-gold/15">
           <GoldDivider width="40px" />
           <span className="font-serif-display text-gold text-4xl md:text-5xl tracking-[0.35em] font-light text-center">
-            VISHNU VILAS
+            VISHNU EMPIRE
           </span>
           <div className="flex flex-col items-center gap-2 text-center">
             <span className="small-caps text-warm/60">Best Luxury Hotel & Banquet Hall in Rewa</span>
             <a 
-              href="https://www.google.com/maps/place/Hotel+Vishnu+Vilas/@24.5467386,81.3039102,21z/" 
+              href="https://www.google.com/maps/place/Vishnu+Empire+:+Hotel+in+Rewa+%7C+Banquet+in+Rewa+%7C+Restaurant+in+Rewa+%7C+Bar+in+Rewa/@24.5434469,81.2744514,17z/data=!4m6!3m5!1s0x39845bc2a44aca41:0x9a97b96f386805a9!8m2!3d24.5434469!4d81.2744514!16s%2Fg%2F11csb0nygl" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-soft-dim/60 text-xs font-light tracking-widest mt-2 uppercase hover:text-gold transition-colors"
             >
-              University Road, Sirmour Chowk, Rewa, MP
+              Rewa Railway Station Rd, Dhekaha, Rewa, MP
             </a>
-            <a href="tel:+919424953899" className="text-gold/80 text-sm font-light tracking-[0.2em] hover:text-gold transition-colors mt-1">+91 94249 53899</a>
+            <a href="tel:+918815393403" className="text-gold/80 text-sm font-light tracking-[0.2em] hover:text-gold transition-colors mt-1">+91 88153 93403</a>
           </div>
           <div className="flex items-center gap-5 mt-2">
             {[
-              { Icon: Instagram, href: "https://www.instagram.com/hotelvishnuvilasrewa/" },
+              { Icon: Instagram, href: "https://www.instagram.com/hotelvishnuempire/" },
               { Icon: Facebook, href: "https://www.facebook.com/people/Vishnu-Vilas/" },
               { Icon: Twitter, href: "#" },
               { Icon: Youtube, href: "#" }
@@ -130,7 +130,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 pt-6 text-xs text-warm/55 font-light tracking-wide">
-          <span>© {new Date().getFullYear()} VISHNU VILAS. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} VISHNU EMPIRE. All rights reserved.</span>
           <div className="flex gap-6">
             <a href="#" className="hover:text-gold transition-colors">Privacy</a>
             <a href="#" className="hover:text-gold transition-colors">Terms</a>

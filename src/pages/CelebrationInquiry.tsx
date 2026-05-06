@@ -139,7 +139,7 @@ const CelebrationInquiry = () => {
               </div>
               <h2 className="font-serif-display text-4xl text-soft uppercase tracking-widest mb-6">Inquiry Sent</h2>
               <p className="text-soft-dim max-w-md mx-auto font-light leading-relaxed mb-10">
-                Thank you for choosing Vishnu Vilas. Our Royal Concierge team will review your inquiry 
+                Thank you for choosing Vishnu Empire. Our Royal Concierge team will review your inquiry 
                 and get in touch within 24 hours to begin planning your extraordinary celebration.
               </p>
               <button 

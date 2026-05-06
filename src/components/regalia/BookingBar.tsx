@@ -43,7 +43,7 @@ export const BookingBar = () => {
     <div className="flex flex-col lg:flex-row flex-1 items-stretch lg:items-center gap-6 lg:gap-8 xl:gap-12 w-full">
       <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
         <a 
-          href="https://www.google.com/maps/place/Hotel+Vishnu+Vilas/@24.5467386,81.3039102,21z/"
+          href="https://www.google.com/maps/place/Vishnu+Empire+:+Hotel+in+Rewa+%7C+Banquet+in+Rewa+%7C+Restaurant+in+Rewa+%7C+Bar+in+Rewa/@24.5434469,81.2744514,17z/data=!4m6!3m5!1s0x39845bc2a44aca41:0x9a97b96f386805a9!8m2!3d24.5434469!4d81.2744514!16s%2Fg%2F11csb0nygl"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col gap-1 group cursor-pointer"
@@ -52,7 +52,7 @@ export const BookingBar = () => {
             <MapPin size={10} /> Get Directions
           </span>
           <div className="flex items-center gap-2">
-            <span className="text-soft text-sm font-light border-b border-gold/30 group-hover:border-gold transition-colors pb-0.5 whitespace-nowrap">Vishnu Vilas, Rewa</span>
+            <span className="text-soft text-sm font-light border-b border-gold/30 group-hover:border-gold transition-colors pb-0.5 whitespace-nowrap">Vishnu Empire, Rewa</span>
             <svg 
               className="w-3 h-3 text-gold/60 group-hover:text-gold transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" 
               fill="none" 

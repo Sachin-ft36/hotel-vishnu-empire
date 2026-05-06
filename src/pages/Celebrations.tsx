@@ -39,14 +39,53 @@ const FACILITIES = [
    { icon: Camera, title: "Photography", desc: "Curated list of cinematic storytellers to capture your royal journey." }
 ];
 
+const PACKAGES = [
+   {
+      name: "Silver",
+      price: "1,10,000",
+      pax: "100",
+      features: [
+         "Standard Decoration",
+         "Rooms - 2",
+         "Music System",
+         "Food Menu (12 Items)"
+      ],
+      highlight: false
+   },
+   {
+      name: "Platinum",
+      price: "1,60,000",
+      pax: "100",
+      features: [
+         "Decoration with Entry",
+         "Rooms - 2",
+         "Professional Music",
+         "Food Menu (21 Items)"
+      ],
+      highlight: true
+   },
+   {
+      name: "Gold",
+      price: "1,40,000",
+      pax: "100",
+      features: [
+         "Decoration with Entry",
+         "Rooms - 2",
+         "Enhanced Music",
+         "Food Menu (18 Items)"
+      ],
+      highlight: false
+   }
+];
+
 import { SEO } from "@/components/regalia/SEO";
 
 const Celebrations = () => {
    return (
       <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft">
          <SEO 
-            title="Best Banquet Hall & Wedding Venue in Rewa | Hotel Vishnu Vilas"
-            description="Looking for the best banquet hall or wedding venue in Rewa? Hotel Vishnu Vilas offers grand lawns and luxury halls for your royal celebrations in Rewa."
+            title="Best Banquet Hall & Wedding Venue in Rewa | Hotel Vishnu Empire"
+            description="Looking for the best banquet hall or wedding venue in Rewa? Hotel Vishnu Empire offers grand lawns and luxury halls for your royal celebrations in Rewa."
             keywords="best banquet hall in rewa, wedding venue in rewa, marriage garden rewa, event spaces rewa, luxury wedding rewa"
          />
          <Navbar />
@@ -55,7 +94,7 @@ const Celebrations = () => {
          <section className="relative h-[100vh] w-full overflow-hidden">
             <div className="absolute inset-0">
                <video
-                  src="/weeding.mp4"
+                  src="/video/wedding.mp4"
                   autoPlay
                   loop
                   muted
@@ -87,21 +126,67 @@ const Celebrations = () => {
             </div>
          </section>
 
-         {/* Pricing & Intro */}
-         <section className="py-32 px-6 lg:px-12 bg-ink-deep border-b border-gold/10">
-            <div className="max-w-4xl mx-auto text-center">
-               <h2 className="font-serif-display text-4xl md:text-6xl text-soft mb-12 italic">Premium <span className="text-gold not-italic">Wedding Venues</span> in Rewa</h2>
-               <p className="text-soft-dim/80 text-xl leading-relaxed font-light mb-16">
-                  From a grand royal procession to an intimate exchange of vows,
-                  Hotel Vishnu Vilas provides a backdrop of unparalleled majesty in Rewa.
-                  Whether it's a milestone anniversary, a royal wedding, or an elite corporate gala,
-                  our spaces are the finest banquet halls in Rewa, designed with quiet intention.
-               </p>
-               <div className="inline-block border border-gold/30 p-8 md:p-12 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gold opacity-30" />
-                  <span className="small-caps text-gold block mb-4 tracking-[0.3em]">Bespoke Events Start From</span>
-                  <span className="text-5xl md:text-7xl font-serif-display text-soft">₹3,50,000</span>
-                  <p className="text-[0.6rem] text-soft/40 small-caps mt-4 tracking-widest">+ Taxes as applicable | Full Property Buyout Available</p>
+         {/* Banquet Packages - Main Section */}
+         <section className="py-32 bg-ink-deep border-b border-gold/10">
+            <div className="container mx-auto px-6">
+               <div className="text-center mb-20">
+                  <span className="eyebrow text-gold mb-4 block italic uppercase tracking-[0.2em]">Grand Events, Made Easy</span>
+                  <div className="flex items-center justify-center gap-6">
+                    <GoldDivider width="40px" />
+                    <h2 className="font-serif-display text-4xl md:text-6xl text-soft uppercase tracking-wider">
+                       Banquet Packages
+                    </h2>
+                    <GoldDivider width="40px" />
+                  </div>
+                  <p className="text-soft-dim/60 max-w-2xl mx-auto mt-8 text-sm md:text-base font-light italic">
+                    "Tailored experiences for your most cherished moments, from intimate gatherings to royal celebrations."
+                  </p>
+               </div>
+
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                  {PACKAGES.map((pkg, idx) => (
+                     <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.2 }}
+                        className={`relative group ${pkg.highlight ? 'md:-translate-y-4 z-10' : ''}`}
+                     >
+                        <div className={`h-full bg-ink border transition-all duration-700 ${pkg.highlight ? 'border-gold shadow-[0_0_30px_rgba(212,175,55,0.15)]' : 'border-gold/20'}`}>
+                           {/* Package Header */}
+                           <div className={`py-5 text-center border-b ${pkg.highlight ? 'bg-gold border-gold' : 'bg-gold/5 border-gold/20'}`}>
+                              <h3 className={`font-serif-display text-2xl uppercase tracking-widest ${pkg.highlight ? 'text-ink font-bold' : 'text-gold'}`}>
+                                 {pkg.name}
+                              </h3>
+                           </div>
+
+                           {/* Capacity Callout */}
+                           <div className="py-6 text-center border-b border-gold/10 bg-gold/5">
+                              <span className="small-caps text-soft text-[0.7rem] block opacity-80 italic tracking-widest mb-1">On Booking Of</span>
+                              <span className="text-xl font-serif-display text-soft uppercase tracking-widest">{pkg.pax} PAX</span>
+                           </div>
+
+                           {/* Features List */}
+                           <div className="p-10 space-y-6 text-center min-h-[320px] flex flex-col justify-center">
+                              {pkg.features.map((feat, i) => (
+                                 <p key={i} className="text-soft-dim font-light text-base italic border-b border-gold/5 pb-4 last:border-0 last:pb-0">
+                                    {feat}
+                                 </p>
+                              ))}
+                           </div>
+
+                           {/* Price Footer */}
+                           <div className="p-8 border-t border-gold/20 bg-ink-deep/50">
+                              <div className="bg-red-950/80 border border-gold/40 py-5 px-6 text-center rounded-sm">
+                                 <span className="text-soft font-serif-display text-3xl tracking-wide">
+                                    ₹ {pkg.price}/-
+                                 </span>
+                              </div>
+                           </div>
+                        </div>
+                     </motion.div>
+                  ))}
                </div>
             </div>
          </section>

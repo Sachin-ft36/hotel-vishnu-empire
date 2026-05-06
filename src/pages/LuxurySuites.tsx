@@ -11,8 +11,8 @@ const LuxurySuites = () => {
   return (
     <div className="min-h-screen bg-ink text-soft selection:bg-gold/30 selection:text-soft">
       <SEO 
-        title="Luxury Suites in Rewa | Premium Hotel Rooms - Hotel Vishnu Vilas"
-        description="Discover the most luxurious suites in Rewa at Hotel Vishnu Vilas. Experience historical grandeur with modern amenities in our premium heritage sanctuaries."
+        title="Luxury Suites in Rewa | Premium Hotel Rooms - Hotel Vishnu Empire"
+        description="Discover the most luxurious suites in Rewa at Hotel Vishnu Empire. Experience historical grandeur with modern amenities in our premium heritage sanctuaries."
         keywords="luxury suites in rewa, premium hotel rooms rewa, best stay in rewa, heritage hotel rewa, luxury accommodation rewa"
       />
       <Navbar />
@@ -21,7 +21,7 @@ const LuxurySuites = () => {
       <section className="relative h-[80vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <video
-            src="/bedroom.mp4"
+            src="/video/room.mp4"
             autoPlay
             loop
             muted
@@ -67,7 +67,7 @@ const LuxurySuites = () => {
               <span className="text-gold italic normal-case">Poem</span> of Rest
             </h2>
             <p className="text-soft-dim/80 text-lg leading-relaxed font-light mb-10">
-              Each suite at Vishnu Vilas is a meticulously restored sanctuary,
+              Each suite at Vishnu Empire is a meticulously restored sanctuary,
               featuring original period furniture, hand-carved marble, and the
               finest Italian linens. Here, silence is the ultimate luxury.
             </p>

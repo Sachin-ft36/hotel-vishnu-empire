@@ -16,93 +16,33 @@ import { LuxurySelect } from "@/components/regalia/LuxurySelect";
 // Mock Room Data
 const ROOMS = [
   {
-    id: "executive-ac",
-    name: "Executive AC Room",
-    desc: "Modern and comfortable room with a double bed and essential amenities.",
-    images: [
-      "/rooms/executive AC/1.webp",
-      "/rooms/executive AC/2.avif",
-      "/rooms/executive AC/3.webp",
-      "/rooms/executive AC/4.jpg"
-    ],
-    stock: 5,
-    popular: false,
-    size: "225 sq. ft (21 sq. mt)",
-    bed: "1 Double Bed",
-    guestsMax: 3,
-    bathroom: "1 Bathroom",
-    packages: [
-      { id: "exec-standard", name: "Room With Free Cancellation", price: 1400, includes: ["Free Cancellation"] },
-      { id: "exec-breakfast", name: "Room With Free Cancellation | Breakfast included", price: 1700, includes: ["Free Cancellation", "Breakfast included"] }
-    ],
-    rating: 4.5,
-    reviews: 98,
-    amenities: ["Iron/Ironing Board", "Mineral Water - additional charge", "Daily Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning"],
-    categorizedAmenities: {
-      "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "Daily Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning", "Free Wi-Fi", "Room Service"],
-      "Room Features": ["Charging Points", "Seating Area", "Chair", "Telephone"],
-      "Beds and Blanket": ["Woollen Blanket"],
-      "Media and Entertainment": ["TV"],
-      "Bathroom": ["Shaving Mirror", "Towels", "Geyser/Water Heater", "Western Toilet Seat", "Hot & Cold Water", "Jetspray", "Toiletries"],
-      "Other Facilities": ["Newspaper", "Fan"]
-    }
-  },
-  {
-    id: "super-executive-ac",
-    name: "Super Executive AC Room",
-    desc: "Enhanced comfort with sophisticated decor and extra space.",
-    images: [
-      "/rooms/super executive Ac room/1.avif",
-      "/rooms/super executive Ac room/2.jfif",
-      "/rooms/super executive Ac room/3.jpg",
-      "/rooms/super executive Ac room/4.jpg",
-      "/rooms/super executive Ac room/5.jpg"
-    ],
-    stock: 3,
-    popular: true,
-    size: "270 sq. ft (25 sq. mt)",
-    bed: "1 Double Bed",
-    guestsMax: 3,
-    bathroom: "1 Bathroom",
-    packages: [
-      { id: "super-standard", name: "Room With Free Cancellation", price: 2389, includes: ["Free Cancellation"] },
-      { id: "super-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 2631, includes: ["Free Cancellation", "Breakfast"] }
-    ],
-    rating: 4.7,
-    reviews: 112,
-    amenities: ["Iron/Ironing Board", "Mineral Water - additional charge", "Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning"],
-    categorizedAmenities: {
-      "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning", "Wi-Fi", "Room Service"],
-      "Room Features": ["Closet", "Chair", "Work Desk", "Sofa"],
-      "Beds and Blanket": ["Woollen Blanket"],
-      "Safety and Security": ["Safe"],
-      "Media and Entertainment": ["TV"],
-      "Bathroom": ["Shaving Mirror", "Towels", "Geyser/Water Heater", "Western Toilet Seat", "Hot & Cold Water", "Jetspray", "Toiletries", "Bidet"],
-      "Other Facilities": ["Ceiling Fan"]
-    }
-  },
-  {
     id: "royal-executive-ac",
-    name: "Royal Executive AC Room",
+    name: "Royal Executive Room",
     desc: "Grand room featuring 24-hour housekeeping and smoking options.",
     images: [
       "/rooms/royal executive Ac room/1.avif",
-      "/rooms/royal executive Ac room/2.jpg",
-      "/rooms/royal executive Ac room/3.jpg"
+      "/rooms/royal executive Ac room/2.avif",
+      "/rooms/royal executive Ac room/3.avif",
+      "/rooms/royal executive Ac room/4.avif",
+      "/rooms/royal executive Ac room/5.avif",
+      "/rooms/royal executive Ac room/6.avif",
+      "/rooms/royal executive Ac room/7.avif",
+      "/rooms/royal executive Ac room/8.webp",
+      "/rooms/royal executive Ac room/9.webp"
     ],
     stock: 2,
-    popular: false,
+    popular: true,
     size: "300 sq. ft (28 sq. mt)",
     bed: "1 Double Bed",
     guestsMax: 3,
     bathroom: "1 Bathroom",
     packages: [
-      { id: "royal-standard", name: "Room With Free Cancellation", price: 2843, includes: ["Free Cancellation"] },
-      { id: "royal-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 3199, includes: ["Free Cancellation", "Breakfast"] }
+      { id: "royal-standard", name: "Room With Free Cancellation", price: 2357, includes: ["Free Cancellation till check-in"] },
+      { id: "royal-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 2841, includes: ["Free Cancellation till check-in", "Free Breakfast"] }
     ],
     rating: 4.8,
     reviews: 75,
-    amenities: ["Iron/Ironing Board", "Smoking Room", "Bathroom", "24-hour Housekeeping", "Laundry Service", "Air Conditioning"],
+    amenities: ["Iron/Ironing Board", "Smoking Room", "Mineral Water - additional charge", "Wi-Fi", "Air Purifier", "Bathroom"],
     categorizedAmenities: {
       "Popular with Guests": ["Iron/Ironing Board", "Smoking Room", "Bathroom", "24-hour Housekeeping", "Laundry Service", "Air Conditioning", "Free Wi-Fi", "Room Service"],
       "Room Features": ["Telephone", "Closet", "Seating Area", "Chair", "Centre Table", "Work Desk", "Blackout Curtains"],
@@ -114,29 +54,70 @@ const ROOMS = [
     }
   },
   {
+    id: "grand-executive-ac",
+    name: "Grand Executive",
+    desc: "Enhanced luxury featuring a queen bed and comprehensive room services.",
+    images: [
+      "/rooms/grand executive AC/1.webp",
+      "/rooms/grand executive AC/2.jpg",
+      "/rooms/grand executive AC/3.jpg",
+      "/rooms/grand executive AC/4.jpg",
+      "/rooms/grand executive AC/5.jpg",
+      "/rooms/grand executive AC/6.jpg",
+      "/rooms/grand executive AC/7.jpg",
+      "/rooms/grand executive AC/8.jpg",
+      "/rooms/grand executive AC/9.jpg",
+      "/rooms/grand executive AC/10.jpg",
+      "/rooms/grand executive AC/11.jpg"
+    ],
+    stock: 3,
+    popular: true,
+    size: "324 sq. ft (30 sq. mt)",
+    bed: "1 Queen Bed",
+    guestsMax: 3,
+    bathroom: "1 Bathroom",
+    packages: [
+      { id: "grand-standard", name: "Room With Free Cancellation", price: 4488, includes: ["Late Check-Out upto 3 hours", "Free Cancellation till check-in"] },
+      { id: "grand-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 5328, includes: ["Guaranteed Complimentary Breakfast", "Free Cancellation till check-in"] }
+    ],
+    rating: 4.7,
+    reviews: 112,
+    amenities: ["Mineral Water", "Daily Housekeeping", "Laundry Service", "Iron/Ironing Board", "Bathroom", "Air Conditioning"],
+    categorizedAmenities: {
+      "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "Housekeeping", "Bathroom", "Laundry Service", "Air Conditioning", "Wi-Fi", "Room Service"],
+      "Room Features": ["Closet", "Chair", "Work Desk", "Sofa"],
+      "Beds and Blanket": ["Woollen Blanket"],
+      "Safety and Security": ["Safe"],
+      "Media and Entertainment": ["TV"],
+      "Bathroom": ["Shaving Mirror", "Towels", "Geyser/Water Heater", "Western Toilet Seat", "Hot & Cold Water", "Jetspray", "Toiletries", "Bidet"],
+      "Other Facilities": ["Ceiling Fan"]
+    }
+  },
+  {
     id: "luxury-suite",
-    name: "Suite",
+    name: "Suites",
     desc: "Our most expansive sanctuary with a city view and premium services.",
     images: [
       "/rooms/suite/1.webp",
       "/rooms/suite/2.jpeg",
       "/rooms/suite/3.webp",
       "/rooms/suite/4.webp",
-      "/rooms/suite/5.webp"
+      "/rooms/suite/5.webp",
+      "/rooms/suite/6.webp"
     ],
     stock: 1,
     popular: false,
-    size: "450 sq. ft (42 sq. mt)",
-    bed: "1 Queen Bed",
+    size: "441 sq. ft (41 sq. mt)",
+    bed: "1 King Bed",
     guestsMax: 3,
     bathroom: "1 Bathroom",
     packages: [
-      { id: "suite-standard", name: "Room With Free Cancellation", price: 4354, includes: ["Free Cancellation"] },
-      { id: "suite-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 4958, includes: ["Free Cancellation", "Breakfast"] }
+      { id: "suite-standard", name: "Room With Free Cancellation", price: 5070, includes: ["Free Cancellation till check-in"] },
+      { id: "suite-breakfast", name: "Room With Free Cancellation | Breakfast only", price: 5942, includes: ["Guaranteed Complimentary Breakfast", "Free Cancellation till check-in"] }
     ],
     rating: 4.9,
     reviews: 56,
-    amenities: ["Iron/Ironing Board", "Mineral Water - additional charge", "24-hour Housekeeping", "Shared Bathroom", "Laundry Service", "Air Conditioning", "City View"],
+    amenities: ["Iron/Ironing Board", "Smoking Room", "Laundry Service", "Bathroom", "Daily Housekeeping", "Air Conditioning"],
     categorizedAmenities: {
       "Popular with Guests": ["Iron/Ironing Board", "Mineral Water - additional charge", "24-hour Housekeeping", "Shared Bathroom", "Laundry Service", "Air Conditioning", "Free Wi-Fi"],
       "Room Features": ["Closet", "Living Area", "Seating Area", "Chair", "Centre Table", "Dining Area", "Work Desk", "Blackout Curtains", "Dining Table", "Sofa"],
@@ -255,7 +236,7 @@ const Booking = () => {
   const [checkOutDate, setCheckOutDate] = useState<Date | undefined>();
 
   const [formData, setFormData] = useState({
-    property: "Vishnu Vilas",
+    property: "Vishnu Empire",
     checkIn: "",
     checkOut: "",
     guests: "1",
@@ -616,7 +597,7 @@ const Booking = () => {
                     <div className="space-y-2">
                        <label className="small-caps text-[0.65rem] text-gold ml-1">Email Address</label>
                        <input 
-                         placeholder="royalty@vishnuvilas.com"
+                         placeholder="royalty@vishnuempire.com"
                          className="w-full bg-ink/40 border border-gold/20 p-4 text-soft focus:border-gold outline-none transition-colors"
                          onChange={(e) => setFormData({...formData, email: e.target.value})}
                        />

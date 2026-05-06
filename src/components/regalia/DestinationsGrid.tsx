@@ -16,7 +16,7 @@ import heritageWing from "@/assets/generated/royal_heritage_wing.png";
 import chachaiFalls from "@/assets/generated/chachai_falls.png";
 
 const DESTS = [
-  { img: "/vishnu_vilas/2.jpg", name: "Vishnu Vilas Rewa", region: "The Estate", span: "tall" },
+  { img: "/vishnuempire.webp", name: "Vishnu Empire Rewa", region: "The Estate", span: "tall" },
   { img: whiteTiger, name: "White Tiger Sanctuary Rewa", region: "Rewa Wilds", span: "short" },
   { img: govindgarh, name: "Govindgarh Palace Rewa", region: "Lake Heritage", span: "short" },
   { img: rewaFort, name: "Rewa Fort Landmark", region: "The Museum", span: "tall" },

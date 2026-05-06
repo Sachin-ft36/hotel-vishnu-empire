@@ -6,33 +6,34 @@ import { GoldDivider } from "./GoldDivider";
 const ITEMS = [
   {
     img: "/Signature Experiences/wedding.jpg",
-    video: "/weeding.mp4",
-    eyebrow: "Signature",
-    title: "Timeless Celebrations",
-    desc: "A bespoke destination for weddings, celebrations, dining, and unforgettable experiences.",
+    video: "/video/wedding.mp4",
+    eyebrow: "Celebrations",
+    title: "Grand Banquets",
+    desc: "Host up to 200+ guests in our ornate banquet halls, the premier choice for weddings and galas in Rewa.",
     id: "weddings"
   },
   {
     img: "/Signature Experiences/room.jpg",
-    video: "/bedroom.mp4",
-    eyebrow: "Heritage",
-    title: "Luxury Suites",
-    desc: "Sanctuaries of refined comfort, where historical grandeur meets modern luxury.",
+    video: "/video/room.mp4",
+    eyebrow: "Stay",
+    title: "Royal Accommodations",
+    desc: "20 elegant and ornate rooms, from Royal Executive to Presidential Suites, designed for ultimate comfort.",
     id: "suites"
   },
   {
-    img: "/vishnu_vilas/hall.webp",
-    eyebrow: "Sanctuary",
-    title: "Hallways of Elegance",
-    desc: "A journey through time, where every corridor whispers stories of a storied past.",
-    id: "hallways"
+    img: "/Signature Experiences/Cinema",
+    video: "/video/spa.mp4",
+    eyebrow: "Cinema",
+    title: "Integrated Multiplex",
+    desc: "Experience cinema in HD with 3D sound systems across two screens, exclusively at Vishnu Empire.",
+    id: "bar"
   },
   {
     img: "/Signature Experiences/food.jpg",
     video: "/food.mp4",
-    eyebrow: "Maison",
-    title: "Culinary Journeys",
-    desc: "Tables set by master chefs, vintages drawn from a vault of three centuries.",
+    eyebrow: "Dining",
+    title: "Royal Restaurant",
+    desc: "A multi-cuisine culinary hub serving authentic Indian, Chinese, and Tandoor delicacies.",
     id: "culinary"
   },
 ];

@@ -45,7 +45,7 @@ export function Hero() {
           playsInline
           className="md:hidden h-full w-full object-cover scale-105 slow-zoom"
         >
-          <source src={phoneVideo} type="video/mp4" />
+          <source src="/video/spa.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/20 to-ink/90" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-vignette)" }} />
@@ -61,11 +61,11 @@ export function Hero() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <GoldDivider width="40px" />
-                <span className="eyebrow uppercase tracking-[0.4em] text-gold/90 font-medium">Hotel Vishnu Vilas</span>
+                <span className="eyebrow uppercase tracking-[0.4em] text-gold/90 font-medium">Hotel Vishnu Empire</span>
               </div>
-              <h1 className="font-serif-display text-soft font-light leading-[1.1] tracking-[0.02em] text-[clamp(1.6rem,4.5vw,5rem)] uppercase max-w-md">
-                Where Legends <br />
-                <span className="text-gold italic normal-case tracking-normal">Reside</span>
+              <h1 className="font-serif-display text-soft font-light leading-[1.1] tracking-[0.02em] text-[clamp(1.6rem,4.5vw,5rem)] uppercase max-w-lg">
+                Rewa's Premier <br />
+                <span className="text-gold italic normal-case tracking-normal">Luxury Destination</span>
               </h1>
             </motion.div>
           </div>
